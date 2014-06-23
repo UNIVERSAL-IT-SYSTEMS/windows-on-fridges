@@ -1,0 +1,6 @@
+baseurl = "http://ms-iot.github.io/windows-on-fridges"
+languageCode = "en-us"
+title = "Windows on Fridges"
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "publish"

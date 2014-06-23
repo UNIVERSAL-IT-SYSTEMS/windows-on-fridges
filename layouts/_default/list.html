@@ -1,0 +1,13 @@
+  {{ template "theme/partials/head.html" . }}
+  <body>
+
+    <ul>
+      {{ range .Data.Pages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <time>{{ .Date.Format "Mon, Jan 2 2006" }}</time>
+      {{ end }}
+    </ul>
+
+  </body>
+</html>
