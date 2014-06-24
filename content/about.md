@@ -1,7 +1,8 @@
 +++
 date = 2014-06-23T21:54:38Z
-draft = true
+draft = false
 title = "About"
+menu = "main"
 
 +++
 

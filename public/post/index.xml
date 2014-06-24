@@ -3,19 +3,22 @@
   <channel>
       <title>Posts on Windows on Fridges </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/post/index.xml</link>
+    <link>http://ms-iot.github.io/post/index.xml</link>
     <language>en-us</language>
     
     
-    <updated>Mon, 23 Jun 2014 23:37:46 UTC</updated>
+    <updated>Tue, 24 Jun 2014 01:11:11 UTC</updated>
     
     <item>
-      <title>test</title>
-      <link>http://localhost:1313/post/test</link>
-      <pubDate>Mon, 23 Jun 2014 23:37:46 UTC</pubDate>
+      <title>nodebot</title>
+      <link>http://ms-iot.github.io/post/nodebot</link>
+      <pubDate>Tue, 24 Jun 2014 01:11:11 UTC</pubDate>
       
-      <guid>http://localhost:1313/post/test</guid>
-      <description></description>
+      <guid>http://ms-iot.github.io/post/nodebot</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Nodebot with Windows on Devices&lt;/h2&gt;
+</description>
     </item>
     
   </channel>
