@@ -62,7 +62,7 @@ a.sidebar-nav-item:focus {
   padding-bottom: 4rem;
 }
 
-.content h1, h2, a {
+.content h1, h2, a, p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200; 
 }
