@@ -4,7 +4,7 @@
       <h1>{{ .Site.Title }}</h1>                                                                                      
     </div>                                                                                                            
     <ul class="sidebar-nav">                                                                                          
-      <li><a href="{{ .site.baseurl }}">Home</a> </li>                                                                                  
+      <li><a href="{{ .Site.BaseUrl }}">Home</a> </li>                                                                                  
       {{ range .Site.Menus.main }}                                                                                    
         <li><a href="{{.Url}}"> {{ .Name }} </a></li>                                                                 
       {{end}}                                                                                                         
