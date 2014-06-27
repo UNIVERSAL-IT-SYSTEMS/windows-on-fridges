@@ -6,7 +6,25 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Fri, 27 Jun 2014 17:50:06 UTC</updated>
+    <updated>Fri, 27 Jun 2014 23:57:05 UTC</updated>
+    
+    <item>
+      <title>test</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/test</link>
+      <pubDate>Fri, 27 Jun 2014 23:57:05 UTC</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/test</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/test</link>
+      <pubDate>Fri, 27 Jun 2014 23:56:08 UTC</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://ms-iot.github.io/windows-on-fridges/test</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Installing Node</title>
