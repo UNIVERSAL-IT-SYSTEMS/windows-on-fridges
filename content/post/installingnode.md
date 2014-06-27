@@ -1,6 +1,6 @@
 +++
 date = 2014-06-27T17:50:06Z
-draft = true
+draft = false 
 title = "installingnode"
 
 +++
