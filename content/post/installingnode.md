@@ -1,7 +1,7 @@
 +++
 date = 2014-06-27T17:50:06Z
 draft = false 
-title = "installingnode"
+title = "Installing Node"
 
 +++
 

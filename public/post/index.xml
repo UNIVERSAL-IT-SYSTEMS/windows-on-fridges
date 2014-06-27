@@ -9,7 +9,7 @@
     <updated>Fri, 27 Jun 2014 17:50:06 UTC</updated>
     
     <item>
-      <title>installingnode</title>
+      <title>Installing Node</title>
       <link>http://ms-iot.github.io/post/installingnode</link>
       <pubDate>Fri, 27 Jun 2014 17:50:06 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
@@ -44,7 +44,7 @@ console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
     </item>
     
     <item>
-      <title>nodebothowto</title>
+      <title>How To: Build a NodeBot</title>
       <link>http://ms-iot.github.io/post/nodebothowto</link>
       <pubDate>Fri, 27 Jun 2014 17:47:29 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>

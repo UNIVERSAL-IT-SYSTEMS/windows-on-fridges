@@ -1,7 +1,7 @@
 +++
 date = 2014-06-27T17:47:29Z
 draft = false
-title = "nodebothowto"
+title = "How To: Build a NodeBot"
 
 +++
 
