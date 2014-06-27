@@ -2,18 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
       <title>Recent Content on Windows on Fridges </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://ms-iot.github.io/index.xml</link>
-    <language>en-us</language>
-    
-    
+    <language>en-US</language>
+    <author>Enthusiastic Hugo User</author>
+    <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
     <updated>Fri, 27 Jun 2014 17:50:06 UTC</updated>
     
     <item>
       <title>installingnode</title>
       <link>http://ms-iot.github.io/post/installingnode</link>
       <pubDate>Fri, 27 Jun 2014 17:50:06 UTC</pubDate>
-      
+      <author>Enthusiastic Hugo User</author>
       <guid>http://ms-iot.github.io/post/installingnode</guid>
       <description>
 
@@ -24,20 +23,23 @@
 &lt;ul&gt;
 &lt;li&gt;Download &lt;a href=&#34;http://nodejs.org&#34;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;The MSI installer should take care of anything including adding node to your path variable.&lt;/li&gt;
-&lt;li&gt;To test your installation write a simple hello world web server
-&lt;code&gt;
-var http = require(&#39;http&#39;);
+&lt;li&gt;To test your installation write a simple hello world web server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;var http = require(&#39;http&#39;);
 http.createServer(function (req, res) {
-res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
-res.end(&#39;Hello World\n&#39;);
+    res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+    res.end(&#39;Hello World\n&#39;);
 }).listen(1337, &#39;127.0.0.1&#39;);
 console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
-&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Run the server from command line
-&lt;code&gt;
-node path/to/server.js
-&lt;/code&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run the server from command line&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;node path/to/server.js
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -45,7 +47,7 @@ node path/to/server.js
       <title>nodebothowto</title>
       <link>http://ms-iot.github.io/post/nodebothowto</link>
       <pubDate>Fri, 27 Jun 2014 17:47:29 UTC</pubDate>
-      
+      <author>Enthusiastic Hugo User</author>
       <guid>http://ms-iot.github.io/post/nodebothowto</guid>
       <description>
 
@@ -94,7 +96,7 @@ from the wof-nodebot directory.&lt;/li&gt;
       <title>Making a Nodebot with Windows on Devices</title>
       <link>http://ms-iot.github.io/post/nodebot</link>
       <pubDate>Mon, 23 Jun 2014 22:09:36 UTC</pubDate>
-      
+      <author>Enthusiastic Hugo User</author>
       <guid>http://ms-iot.github.io/post/nodebot</guid>
       <description>
 
@@ -116,10 +118,10 @@ and does not require the Galileo plugin normally used with Johnny-Five.&lt;/p&gt
     
     <item>
       <title>About</title>
-      <link>http://ms-iot.github.io/about</link>
+      <link>http://ms-iot.github.io/post/about</link>
       <pubDate>Mon, 23 Jun 2014 21:54:38 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/about</guid>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://ms-iot.github.io/post/about</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Windows on Fridges&lt;/h2&gt;

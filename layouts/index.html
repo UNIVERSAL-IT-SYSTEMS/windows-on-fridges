@@ -1,22 +1,19 @@
-  {{ template "partials/head.html" . }}
-  <body>
-  {{ template "partials/sidebar.html" .  }}
+{{ template "chrome/header.html" . }}
+<body>
+{{ template "chrome/navbar.html" . }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+        {{ range first 10 .Data.Pages }}
+            {{ .Render "summary" }}
+        {{ end }}
+        </div>
 
-      <div class="content container">
-  <div class="posts">
-
-      {{ range .Data.Pages }}
-      <div class="post">
-        <h1 class="post-title">
-          <a href="{{ .Permalink }}">
-            {{ .Title }}
-          </a>
-        </h1>
-        
-        {{ .Content }}
+        <!-- Sidebar -->
+        <div class="col-md-3">
+        {{ template "chrome/menu.html" . }}
+        </div>
     </div>
-    {{ end }}
+{{ template "chrome/footer.copyright.html" . }}
 </div>
-
-  </body>
-</html>
+{{ template "chrome/footer.html" . }}
