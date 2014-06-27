@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #build project
+hugo
 
 # add content changes
 git add content
