@@ -6,7 +6,32 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Fri, 27 Jun 2014 17:50:06 UTC</updated>
+    <updated>Mon, 30 Jun 2014 22:40:54 UTC</updated>
+    
+    <item>
+      <title>Using a Wifi Adapter with the Intel Galileo</title>
+      <link>http://ms-iot.github.io/post/wifiadapter</link>
+      <pubDate>Mon, 30 Jun 2014 22:40:54 UTC</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://ms-iot.github.io/post/wifiadapter</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Using a Wifi Gaming Adapter with the Intel Galileo&lt;/h2&gt;
+
+&lt;p&gt;Wifi gaming adapters allow you to connect devices to wifi that otherwise could
+only connect over LAN.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Purchase an adapter, such as &lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_1_3?ie=UTF8&amp;amp;qid=1404169366&amp;amp;sr=8-3&amp;amp;keywords=wireless+gaming+adapter&#34;&gt;this recommended option&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow the instructions supplied with your gaming adapter to connect it to your wireless network.&lt;/li&gt;
+&lt;li&gt;Connect the Gaming Adapter to the Galileo with an ethernet cable.&lt;/li&gt;
+&lt;li&gt;The recommended adapter also includes a USB power cable; If your adapter includes a USB power cable connect it to the Galileo with a &lt;a href=&#34;http://www.amazon.com/Micro-USB-Male-Female-Adapter/dp/B0027YYMU6&#34;&gt;Micro USB Male to USB A Female Adapter&lt;/a&gt; . The Galileo can provide sufficient power to the recommended adapter.&lt;/li&gt;
+&lt;li&gt;Connect your development machine to the same wireless network as the gaming adapter.&lt;/li&gt;
+&lt;li&gt;Ping the Galileo by hostname and ensure it is connected to the network.&lt;/li&gt;
+&lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Installing Node</title>
