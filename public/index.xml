@@ -6,28 +6,14 @@
     <language>en-US</language>
     <author>Enthusiastic Hugo User</author>
     <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Mon, 30 Jun 2014 20:15:21 UTC</updated>
-    
-    <item>
-      <title>test</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/test</link>
-      <pubDate>Mon, 30 Jun 2014 20:15:21 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/test</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Test for this post thing working&lt;/h2&gt;
-
-&lt;p&gt;test specific url&lt;/p&gt;
-</description>
-    </item>
+    <updated>Fri, 27 Jun 2014 17:50:06 UTC</updated>
     
     <item>
       <title>Installing Node</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/installingnode</link>
+      <link>http://ms-iot.github.io/post/installingnode</link>
       <pubDate>Fri, 27 Jun 2014 17:50:06 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/installingnode</guid>
+      <guid>http://ms-iot.github.io/post/installingnode</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Installing Nodejs&lt;/h2&gt;
@@ -108,10 +94,10 @@ from the wof-nodebot directory.&lt;/li&gt;
     
     <item>
       <title>Making a Nodebot with Windows on Devices</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/nodebot</link>
+      <link>http://ms-iot.github.io/post/nodebot</link>
       <pubDate>Mon, 23 Jun 2014 22:09:36 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/nodebot</guid>
+      <guid>http://ms-iot.github.io/post/nodebot</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Wireless Nodebot&lt;/h2&gt;
@@ -132,10 +118,10 @@ and does not require the Galileo plugin normally used with Johnny-Five.&lt;/p&gt
     
     <item>
       <title>About</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/about</link>
+      <link>http://ms-iot.github.io/post/about</link>
       <pubDate>Mon, 23 Jun 2014 21:54:38 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/about</guid>
+      <guid>http://ms-iot.github.io/post/about</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Windows on Fridges&lt;/h2&gt;
