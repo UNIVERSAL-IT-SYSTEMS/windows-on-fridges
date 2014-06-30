@@ -23,7 +23,9 @@ title = "How To: Build a NodeBot"
 2. Connect the motor shield to the galileo and attach the 2 motors to the shield.
 3. Find the Sample Project in $(samples repository) named FirmataForGalileo and open the solution.
 4. Run the solution on the remote debugger.
-5. To run the node server clone the wof-nodebot repo and from command line run 
+3. [Install Nodejs](http://ms-iot.github.io/windows-on-fridges/post/installingnode/)
+5. Clone the wof-nodebot repo
+5. To run the node server, execute the following command in cmd line 
 ```
     npm install 
 ```
@@ -37,3 +39,8 @@ from the wof-nodebot directory.
 ```
 { "direction" : "left/right/forward/backward", "speed":0-255, "duration":2000 }
 ```
+
+## Steps when debugging
+* Run Firmata on the Galileo from Visual Studio.
+* Run the Node server from cmd line.
+* If you have to stop the node server or Firmata currently you must reboot the Galileo.
