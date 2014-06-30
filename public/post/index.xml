@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Posts on Windows on Fridges </title>
+    <link>http://ms-iot.github.io/post/index.xml</link>
+    <language>en-US</language>
+    <author>Enthusiastic Hugo User</author>
+    <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
+    <updated>Mon, 30 Jun 2014 20:15:21 UTC</updated>
+    
+    <item>
+      <title>test</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/test</link>
+      <pubDate>Mon, 30 Jun 2014 20:15:21 UTC</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/test</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Test for this post thing working&lt;/h2&gt;
+
+&lt;p&gt;test specific url&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
