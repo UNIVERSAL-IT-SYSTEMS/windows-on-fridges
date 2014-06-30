@@ -45,10 +45,10 @@ console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
     
     <item>
       <title>How To: Build a NodeBot</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/nodebothowto</link>
+      <link>http://ms-iot.github.io/post/nodebothowto</link>
       <pubDate>Fri, 27 Jun 2014 17:47:29 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/nodebothowto</guid>
+      <guid>http://ms-iot.github.io/post/nodebothowto</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;How to Build a Nodebot with Windows for Intel Galileo&lt;/h1&gt;

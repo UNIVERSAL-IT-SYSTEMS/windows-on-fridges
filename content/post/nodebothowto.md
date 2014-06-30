@@ -2,7 +2,6 @@
 date = 2014-06-27T17:47:29Z
 draft = false
 title = "How To: Build a NodeBot"
-url = "/windows-on-fridges/post/nodebothowto"
 
 +++
 
