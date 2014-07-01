@@ -3,7 +3,7 @@ windows-on-fridges
 
 
 Github pages for Windows on Fridges.
-Visit the site at [Windows on Fridges](http://ms-iot.github.io/windows-on-fridges).
+Visit the site at [Windows on Fridges](https://ms-iot.github.io/windows-on-fridges).
 Uses [Hugo](hugo.spf13.com) for static site generation.
 
 
