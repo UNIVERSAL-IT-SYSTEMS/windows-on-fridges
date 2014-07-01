@@ -101,23 +101,21 @@ console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
 &lt;li&gt;Run the solution on the remote debugger.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/post/installingnode/&#34;&gt;Install Nodejs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Clone the wof-nodebot repo&lt;/li&gt;
-&lt;li&gt;To run the node server, execute the following command in cmd line&lt;/li&gt;
+&lt;li&gt;To run the node server, execute the following command in cmd line
+&lt;code&gt;
+npm install 
+&lt;/code&gt;
+You will need to add node and npm to your path.&lt;/li&gt;
+&lt;li&gt;Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with
+&lt;code&gt;
+node server.js
+&lt;/code&gt;
+from the wof-nodebot directory.&lt;/li&gt;
+&lt;li&gt;Use curl to send a post request to http://&lt;robot ip address&gt;/robot in the post body include
+&lt;code&gt;
+{ &amp;quot;direction&amp;quot; : &amp;quot;left/right/forward/backward&amp;quot;, &amp;quot;speed&amp;quot;:0-255, &amp;quot;duration&amp;quot;:2000 }
+&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;    npm install 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You will need to add node and npm to your path.
-5. Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;   node server.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;from the wof-nodebot directory.
-6. Use curl to send a post request to http://&lt;robot ip address&gt;/robot in the post body include&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{ &amp;quot;direction&amp;quot; : &amp;quot;left/right/forward/backward&amp;quot;, &amp;quot;speed&amp;quot;:0-255, &amp;quot;duration&amp;quot;:2000 }
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;toc_3&#34;&gt;Steps when debugging&lt;/h2&gt;
 
