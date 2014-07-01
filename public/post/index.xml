@@ -10,10 +10,10 @@
     
     <item>
       <title>Using a Wifi Adapter with the Intel Galileo</title>
-      <link>http://ms-iot.github.io/post/using-a-wifi-adapter-with-the-intel-galileo/</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/using-a-wifi-adapter-with-the-intel-galileo/</link>
       <pubDate>Mon, 30 Jun 2014 22:40:54 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/post/using-a-wifi-adapter-with-the-intel-galileo/</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/using-a-wifi-adapter-with-the-intel-galileo/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Using a Wifi Gaming Adapter with the Intel Galileo&lt;/h2&gt;
@@ -34,11 +34,46 @@ only connect over LAN.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Installing Node</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/installing-node/</link>
+      <pubDate>Fri, 27 Jun 2014 17:50:06 UTC</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/installing-node/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Installing Nodejs&lt;/h2&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Local machine&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href=&#34;http://nodejs.org&#34;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The MSI installer should take care of anything including adding node to your path variable.&lt;/li&gt;
+&lt;li&gt;To test your installation write a simple hello world web server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;var http = require(&#39;http&#39;);
+http.createServer(function (req, res) {
+    res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+    res.end(&#39;Hello World\n&#39;);
+}).listen(1337, &#39;127.0.0.1&#39;);
+console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run the server from command line&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;node path/to/server.js
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How To: Build a NodeBot</title>
-      <link>http://ms-iot.github.io/post/how-to-build-a-nodebot/</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/how-to-build-a-nodebot/</link>
       <pubDate>Fri, 27 Jun 2014 17:47:29 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/post/how-to-build-a-nodebot/</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/how-to-build-a-nodebot/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;How to Build a Nodebot with Windows for Intel Galileo&lt;/h1&gt;
@@ -94,10 +129,10 @@ from the wof-nodebot directory.&lt;/li&gt;
     
     <item>
       <title>Making a Nodebot with Windows on Devices</title>
-      <link>http://ms-iot.github.io/post/making-a-nodebot-with-windows-on-devices/</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/making-a-nodebot-with-windows-on-devices/</link>
       <pubDate>Mon, 23 Jun 2014 22:09:36 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/post/making-a-nodebot-with-windows-on-devices/</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/making-a-nodebot-with-windows-on-devices/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Wireless Nodebot&lt;/h2&gt;
@@ -118,10 +153,10 @@ and does not require the Galileo plugin normally used with Johnny-Five.&lt;/p&gt
     
     <item>
       <title>About</title>
-      <link>http://ms-iot.github.io/post/about/</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/post/about/</link>
       <pubDate>Mon, 23 Jun 2014 21:54:38 UTC</pubDate>
       <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/post/about/</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/post/about/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Windows on Fridges&lt;/h2&gt;
