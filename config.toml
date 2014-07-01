@@ -5,6 +5,6 @@ contentdir = "content"
 publishdir = "public"
 layoutdir = "layouts"
 [permalinks]
-  post = "windows-on-fridges/:title/"
+  post = "post/:title/"
 
 
