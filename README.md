@@ -7,7 +7,7 @@ Visit the site at [Windows on Fridges](https://ms-iot.github.io/windows-on-fridg
 Uses [Hugo](hugo.spf13.com) for static site generation.
 
 ## Project Overview
-* Windows on Galileo running Firmata protocol
+* [Windows on Galileo](https://ms-iot.github.io/content) running [Firmata protocol](https://github.com/firmata/arduino).
 * [Node Server](http://github.com/ms-iot/wof-nodebot) to control Galileo board.
 * [Web Application](http://github.com/ms-iot/wof-webapp) and service to request robot to come to specified room.
 
