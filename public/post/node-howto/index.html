@@ -9,8 +9,8 @@
     <meta name="author" content="Windows on Fridges"> 
 
 
-    <title>Using a Wifi Adapter with the Intel Galileo - http://ms-iot.github.io/windows-on-fridges</title>
-    <link rel="canonical" href="http://ms-iot.github.io/post/wifiadapter">
+    <title>Installing Node - http://ms-iot.github.io/windows-on-fridges</title>
+    <link rel="canonical" href="http://ms-iot.github.io/post/node-howto">
     
     <link href="http://ms-iot.github.io/windows-on-fridges/css/bootstrap.css" rel="stylesheet">
     <link href="http://ms-iot.github.io/windows-on-fridges/css/font-awesome.css" rel="stylesheet">
@@ -47,24 +47,34 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h3>Using a Wifi Adapter with the Intel Galileo<br> <small></small></h3>
+                    <h3>Installing Node<br> <small></small></h3>
                     <hr>
                     
 
-<h2 id="toc_0">Using a Wifi Gaming Adapter with the Intel Galileo</h2>
+<h2 id="toc_0">Installing Nodejs</h2>
 
-<p>Wifi gaming adapters allow you to connect devices to wifi that otherwise could
-only connect over LAN.</p>
+<h3 id="toc_1">Local machine</h3>
 
 <ul>
-<li>Purchase an adapter, such as <a href="http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_1_3?ie=UTF8&amp;qid=1404169366&amp;sr=8-3&amp;keywords=wireless+gaming+adapter">this recommended option</a></li>
-<li>Follow the instructions supplied with your gaming adapter to connect it to your wireless network.</li>
-<li>Connect the Gaming Adapter to the Galileo with an ethernet cable.</li>
-<li>The recommended adapter also includes a USB power cable; If your adapter includes a USB power cable connect it to the Galileo with a <a href="http://www.amazon.com/Micro-USB-Male-Female-Adapter/dp/B0027YYMU6">Micro USB Male to USB A Female Adapter</a> . The Galileo can provide sufficient power to the recommended adapter.</li>
-<li>Connect your development machine to the same wireless network as the gaming adapter.</li>
-<li>Ping the Galileo by hostname and ensure it is connected to the network.</li>
-<li>You should now be able to deploy to the Galileo over wireless network!</li>
+<li>Download <a href="http://nodejs.org">Nodejs</a></li>
+<li>The MSI installer should take care of anything including adding node to your path variable.</li>
+<li>To test your installation write a simple hello world web server</li>
 </ul>
+
+<pre><code>var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+</code></pre>
+
+<ul>
+<li>Run the server from command line</li>
+</ul>
+
+<pre><code>node path/to/server.js
+</code></pre>
 
             </div>
         </div>
@@ -72,8 +82,8 @@ only connect over LAN.</p>
         
         <div class="col-md-3">
             <div class="well well-sm"> 
-                <h4>June 30, 2014<br>
-                <small>142 words</small></h4>
+                <h4>June 27, 2014<br>
+                <small>59 words</small></h4>
                 <hr>
                 <strong>Categories</strong>
                 <ul class="list-unstyled">

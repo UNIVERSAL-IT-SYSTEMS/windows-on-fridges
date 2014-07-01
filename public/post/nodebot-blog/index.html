@@ -9,8 +9,8 @@
     <meta name="author" content="Windows on Fridges"> 
 
 
-    <title>How To: Build a NodeBot - http://ms-iot.github.io/windows-on-fridges</title>
-    <link rel="canonical" href="http://ms-iot.github.io/post/nodebothowto">
+    <title>Making a Nodebot with Windows on Devices - http://ms-iot.github.io/windows-on-fridges</title>
+    <link rel="canonical" href="http://ms-iot.github.io/post/nodebot-blog">
     
     <link href="http://ms-iot.github.io/windows-on-fridges/css/bootstrap.css" rel="stylesheet">
     <link href="http://ms-iot.github.io/windows-on-fridges/css/font-awesome.css" rel="stylesheet">
@@ -47,58 +47,23 @@
     <div class="row">
         <div class="col-md-9">
             <div class="well well-sm">
-                    <h3>How To: Build a NodeBot<br> <small></small></h3>
+                    <h3>Making a Nodebot with Windows on Devices<br> <small></small></h3>
                     <hr>
                     
 
-<h1 id="toc_0">How to Build a Nodebot with Windows for Intel Galileo</h1>
+<h2 id="toc_0">Wireless Nodebot</h2>
 
-<h2 id="toc_1">Materials</h2>
-
-<ul>
-<li>Intel Galileo flashed with uefi bootloader (how can user check this?)</li>
-<li>Windows for Devices (or whatever seriously needs a name) on SD card</li>
-<li>Ethernet cable</li>
-<li>Arduino motor shield</li>
-<li>Makeblock robot kit, or any robot with 2 motors (a specific type of motor or just whatever?)</li>
-<li>Netgear Gaming Adapter</li>
-<li>Mophie/Anker battery pack (5V, 2.1A)</li>
-<li>USB to USB Micro adapter</li>
-<li>USB to barrel plug (add instructions on how to make this or get it in another way)</li>
-</ul>
-
-<h2 id="toc_2">Steps</h2>
-
-<ol>
-<li>Follow the getting started guide to get hello blinky working with Galileo for Windows. $(external link to docs)</li>
-<li>Connect the motor shield to the galileo and attach the 2 motors to the shield.</li>
-<li>Find the Sample Project in $(samples repository) named FirmataForGalileo and open the solution.</li>
-<li>Run the solution on the remote debugger.</li>
-<li><a href="http://ms-iot.github.io/windows-on-fridges/post/installingnode/">Install Nodejs</a></li>
-<li>Clone the wof-nodebot repo</li>
-<li>To run the node server, execute the following command in cmd line
-<code>
-npm install 
-</code>
-You will need to add node and npm to your path.</li>
-<li>Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with
-<code>
-node server.js
-</code>
-from the wof-nodebot directory.</li>
-<li>Use curl to send a post request to http://<robot ip address>/robot in the post body include
-<code>
-{ &quot;direction&quot; : &quot;left/right/forward/backward&quot;, &quot;speed&quot;:0-255, &quot;duration&quot;:2000 }
-</code></li>
-</ol>
-
-<h2 id="toc_3">Steps when debugging</h2>
-
-<ul>
-<li>Run Firmata on the Galileo from Visual Studio.</li>
-<li>Run the Node server from cmd line.</li>
-<li>If you have to stop the node server or Firmata currently you must reboot the Galileo.</li>
-</ul>
+<p>The Intel Galileo with Windows is a great platform for building NodeBots as
+the board itself can run the node server that controls the robot. This allows
+you to use one board for your server and hardware. Windows on the Galileo makes
+arduino development easy and much more powerful since you are able to use
+Visual Studio and other tools that you already know. In the case of this project
+however you can do all of your arduino programming through javascript using
+Nodejs and Cylonjs or Johnny-Five. For this project Johnny-Five made more sense
+as it had greater support for the types of motors that I wanted to use. On the
+board itself we are using standard <a href="firmata.com">firmata</a>, the arduino protocol, to talk to
+the node server. The firmata running on Galileo for Windows has been ported
+and does not require the Galileo plugin normally used with Johnny-Five.</p>
 
             </div>
         </div>
@@ -106,8 +71,8 @@ from the wof-nodebot directory.</li>
         
         <div class="col-md-3">
             <div class="well well-sm"> 
-                <h4>June 27, 2014<br>
-                <small>254 words</small></h4>
+                <h4>June 23, 2014<br>
+                <small>150 words</small></h4>
                 <hr>
                 <strong>Categories</strong>
                 <ul class="list-unstyled">
