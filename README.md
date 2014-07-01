@@ -26,3 +26,15 @@ sh contrib.sh
 ```
 * Make a pull request from your master branch to the official master branch.
 * Content will be merged and site will be rebuilt.
+
+## Windows Workflow
+* Download the [Hugo Binary](https://github.com/spf13/hugo/releases) for your specific system (eg. hugo_0.11_windows_amd64.zip). The binary has no external dependencies.
+* Extract the zip file.
+* Copy the executable to C:\Program Files (x86)\Git\bin and rename the executable to hugo.exe
+* To regenerate the site, navigate to the source directory where you cloned this project and from Git Bash execute (the windows version has some path issues)
+```
+hugo --source="."
+```
+* For all of the commands in the contribute section just add --source="." if you are using the windows version.
+
+
