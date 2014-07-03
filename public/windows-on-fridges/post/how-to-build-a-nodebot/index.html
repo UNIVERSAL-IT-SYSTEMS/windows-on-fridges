@@ -76,21 +76,23 @@
 <li>Run the solution on the remote debugger.</li>
 <li><a href="http://ms-iot.github.io/windows-on-fridges/post/installingnode/">Install Nodejs</a></li>
 <li>Clone the wof-nodebot repo</li>
-<li>To run the node server, execute the following command in cmd line
-<code>
-npm install 
-</code>
-You will need to add node and npm to your path.</li>
-<li>Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with
-<code>
-node server.js
-</code>
-from the wof-nodebot directory.</li>
-<li>Use curl to send a post request to http://<robot ip address>/robot in the post body include
-<code>
-{ &quot;direction&quot; : &quot;left/right/forward/backward&quot;, &quot;speed&quot;:0-255, &quot;duration&quot;:2000 }
-</code></li>
+<li>To run the node server, execute the following command in cmd line</li>
 </ol>
+
+<pre><code>    npm install 
+</code></pre>
+
+<p>You will need to add node and npm to your path.
+5. Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with</p>
+
+<pre><code>   node server.js
+</code></pre>
+
+<p>from the wof-nodebot directory.
+6. Use curl to send a post request to http://<robot ip address>/robot in the post body include</p>
+
+<pre><code>{ &quot;direction&quot; : &quot;left/right/forward/backward&quot;, &quot;speed&quot;:0-255, &quot;duration&quot;:2000 }
+</code></pre>
 
 <h2 id="toc_3">Steps when debugging</h2>
 
@@ -107,7 +109,7 @@ from the wof-nodebot directory.</li>
         <div class="col-md-3">
             <div class="well well-sm"> 
                 <h4>June 27, 2014<br>
-                <small>254 words</small></h4>
+                <small>256 words</small></h4>
                 <hr>
                 <strong>Categories</strong>
                 <ul class="list-unstyled">
