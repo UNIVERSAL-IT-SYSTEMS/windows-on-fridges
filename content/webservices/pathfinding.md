@@ -42,4 +42,7 @@ weight: 80
 * If all the tests pass, then you know you can use the files in the project. If you want to make changes to any of these files or extend them in any way, make sure that you write tests for your changes and that your changes don't break anyone ese's tests. 
 
 ###Running the Code
-* <Need Anna's help filling in>
+####Creating an SVG Map
+####Getting a Path
+####Running From Azure
+ <Need Anna's help filling in>
