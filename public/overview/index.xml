@@ -3,7 +3,7 @@
   <channel>
       <title>Overviews on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://ms-iot.github.io/overview/index.xml</link>
+    <link>http:///ms-iot.github.io/windows-on-fridges/overview/index.xml</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Introduction</title>
-      <link>http://ms-iot.github.io/overview/introduction</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/introduction</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/introduction</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/introduction</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;What is Windows on Fridges?&lt;/h2&gt;
@@ -56,10 +56,10 @@ with the hardware.&lt;/p&gt;
     
     <item>
       <title>Getting Started</title>
-      <link>http://ms-iot.github.io/overview/quickstart</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/quickstart</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/quickstart</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/quickstart</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Step 1. Get Hello Blinky running on your board.&lt;/h2&gt;
@@ -90,10 +90,10 @@ Development Platform for Windows.&lt;/p&gt;
     
     <item>
       <title>Configuring</title>
-      <link>http://ms-iot.github.io/overview/configuration</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/configuration</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/configuration</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/configuration</guid>
       <description>
 
 &lt;p&gt;There is some small configuration to keep in mind as you use the different parts
@@ -109,10 +109,10 @@ of this project&lt;/p&gt;
     
     <item>
       <title>Source Organization</title>
-      <link>http://ms-iot.github.io/overview/source-directory</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/source-directory</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/source-directory</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/source-directory</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Source for the Project&lt;/h2&gt;

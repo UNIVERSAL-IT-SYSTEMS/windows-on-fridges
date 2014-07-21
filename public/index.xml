@@ -3,7 +3,7 @@
   <channel>
       <title>Recent Content on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://ms-iot.github.io/index.xml</link>
+    <link>http:///ms-iot.github.io/windows-on-fridges/index.xml</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Introduction</title>
-      <link>http://ms-iot.github.io/overview/introduction</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/introduction</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/introduction</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/introduction</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;What is Windows on Fridges?&lt;/h2&gt;
@@ -56,10 +56,10 @@ with the hardware.&lt;/p&gt;
     
     <item>
       <title>Press, Blogs and Media Coverage</title>
-      <link>http://ms-iot.github.io/community/press</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/community/press</link>
       <pubDate>Mon, 24 Mar 2014 20:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/community/press</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/community/press</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Press&lt;/h2&gt;
@@ -68,10 +68,10 @@ with the hardware.&lt;/p&gt;
     
     <item>
       <title>Getting Started</title>
-      <link>http://ms-iot.github.io/overview/quickstart</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/quickstart</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/quickstart</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/quickstart</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Step 1. Get Hello Blinky running on your board.&lt;/h2&gt;
@@ -101,11 +101,21 @@ Development Platform for Windows.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Contributing to Hugo</title>
-      <link>http://ms-iot.github.io/community/contributing</link>
+      <title>Future</title>
+      <link>http:///ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/community/contributing</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
+      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contributing to Hugo</title>
+      <link>http:///ms-iot.github.io/windows-on-fridges/community/contributing</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http:///ms-iot.github.io/windows-on-fridges/community/contributing</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
@@ -113,21 +123,11 @@ Development Platform for Windows.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Future</title>
-      <link>http://ms-iot.github.io/meta/roadmap</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/meta/roadmap</guid>
-      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Contact</title>
-      <link>http://ms-iot.github.io/community/contact</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/community/contact</link>
       <pubDate>Mon, 24 Mar 2014 20:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/community/contact</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/community/contact</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Contact&lt;/h2&gt;
@@ -138,10 +138,10 @@ Development Platform for Windows.&lt;/p&gt;
     
     <item>
       <title>Hardware</title>
-      <link>http://ms-iot.github.io/nodebot/hardware</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/hardware</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/hardware</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/hardware</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Hardware&lt;/h2&gt;
@@ -167,10 +167,10 @@ This is the parts list for the robot that we built.&lt;/p&gt;
     
     <item>
       <title>Configuring</title>
-      <link>http://ms-iot.github.io/overview/configuration</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/configuration</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/configuration</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/configuration</guid>
       <description>
 
 &lt;p&gt;There is some small configuration to keep in mind as you use the different parts
@@ -185,11 +185,23 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Source Organization</title>
-      <link>http://ms-iot.github.io/overview/source-directory</link>
+      <title>License</title>
+      <link>http:///ms-iot.github.io/windows-on-fridges/meta/license</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/overview/source-directory</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/meta/license</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Source Organization</title>
+      <link>http:///ms-iot.github.io/windows-on-fridges/overview/source-directory</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http:///ms-iot.github.io/windows-on-fridges/overview/source-directory</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Source for the Project&lt;/h2&gt;
@@ -206,23 +218,11 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>License</title>
-      <link>http://ms-iot.github.io/meta/license</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/meta/license</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Build</title>
-      <link>http://ms-iot.github.io/nodebot/building</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/building</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/building</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/building</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Building the Robot&lt;/h1&gt;
@@ -269,23 +269,11 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Web App</title>
-      <link>http://ms-iot.github.io/webservices/webapp</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/webservices/webapp</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Firmata</title>
-      <link>http://ms-iot.github.io/nodebot/firmata</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/firmata</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
@@ -293,11 +281,23 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Path Finding</title>
-      <link>http://ms-iot.github.io/webservices/pathfinding</link>
+      <title>Web App</title>
+      <link>http:///ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/webservices/pathfinding</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/webservices/webapp</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Path Finding</title>
+      <link>http:///ms-iot.github.io/windows-on-fridges/webservices/pathfinding</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http:///ms-iot.github.io/windows-on-fridges/webservices/pathfinding</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
@@ -306,10 +306,10 @@ of this project&lt;/p&gt;
     
     <item>
       <title>Node Client</title>
-      <link>http://ms-iot.github.io/nodebot/client</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/client</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/client</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/client</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;

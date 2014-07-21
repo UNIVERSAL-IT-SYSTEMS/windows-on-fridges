@@ -3,7 +3,7 @@
   <channel>
       <title>Nodebots on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://ms-iot.github.io/nodebot/index.xml</link>
+    <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/index.xml</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Hardware</title>
-      <link>http://ms-iot.github.io/nodebot/hardware</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/hardware</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/hardware</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/hardware</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Hardware&lt;/h2&gt;
@@ -40,10 +40,10 @@ This is the parts list for the robot that we built.&lt;/p&gt;
     
     <item>
       <title>Build</title>
-      <link>http://ms-iot.github.io/nodebot/building</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/building</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/building</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/building</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Building the Robot&lt;/h1&gt;
@@ -91,10 +91,10 @@ This is the parts list for the robot that we built.&lt;/p&gt;
     
     <item>
       <title>Firmata</title>
-      <link>http://ms-iot.github.io/nodebot/firmata</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/firmata</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
@@ -103,10 +103,10 @@ This is the parts list for the robot that we built.&lt;/p&gt;
     
     <item>
       <title>Node Client</title>
-      <link>http://ms-iot.github.io/nodebot/client</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/client</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/client</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/client</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;
@@ -117,10 +117,10 @@ This is the parts list for the robot that we built.&lt;/p&gt;
     
     <item>
       <title>Node Server</title>
-      <link>http://ms-iot.github.io/nodebot/server</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/server</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/server</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/server</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Node Server&lt;/h2&gt;
@@ -129,10 +129,10 @@ This is the parts list for the robot that we built.&lt;/p&gt;
     
     <item>
       <title>Wifi Adapter</title>
-      <link>http://ms-iot.github.io/nodebot/wifiadapter</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/nodebot/wifiadapter</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/nodebot/wifiadapter</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/nodebot/wifiadapter</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Using a Wifi Gaming Adapter with the Intel Galileo&lt;/h2&gt;

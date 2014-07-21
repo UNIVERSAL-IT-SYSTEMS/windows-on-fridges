@@ -3,7 +3,7 @@
   <channel>
       <title>Communities on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://ms-iot.github.io/community/index.xml</link>
+    <link>http:///ms-iot.github.io/windows-on-fridges/community/index.xml</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Press, Blogs and Media Coverage</title>
-      <link>http://ms-iot.github.io/community/press</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/community/press</link>
       <pubDate>Mon, 24 Mar 2014 20:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/community/press</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/community/press</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Press&lt;/h2&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Contributing to Hugo</title>
-      <link>http://ms-iot.github.io/community/contributing</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/community/contributing</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/community/contributing</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/community/contributing</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>Contact</title>
-      <link>http://ms-iot.github.io/community/contact</link>
+      <link>http:///ms-iot.github.io/windows-on-fridges/community/contact</link>
       <pubDate>Mon, 24 Mar 2014 20:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/community/contact</guid>
+      <guid>http:///ms-iot.github.io/windows-on-fridges/community/contact</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Contact&lt;/h2&gt;
