@@ -63,22 +63,22 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/nodebot/firmata</loc>
-    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://ms-iot.github.io/webservices/webapp</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/nodebot/client</loc>
+    <loc>http://ms-iot.github.io/nodebot/firmata</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://ms-iot.github.io/webservices/pathfinding</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/client</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   

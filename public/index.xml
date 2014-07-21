@@ -269,6 +269,18 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
+      <title>Web App</title>
+      <link>http://ms-iot.github.io/webservices/webapp</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/webservices/webapp</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Firmata</title>
       <link>http://ms-iot.github.io/nodebot/firmata</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
@@ -281,14 +293,14 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Web App</title>
-      <link>http://ms-iot.github.io/webservices/webapp</link>
+      <title>Path Finding</title>
+      <link>http://ms-iot.github.io/webservices/pathfinding</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/webservices/webapp</guid>
+      <guid>http://ms-iot.github.io/webservices/pathfinding</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
 </description>
     </item>
     
@@ -303,18 +315,6 @@ of this project&lt;/p&gt;
 &lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Make sure you have &lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; installed and in your path&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Path Finding</title>
-      <link>http://ms-iot.github.io/webservices/pathfinding</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/webservices/pathfinding</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
 </description>
     </item>
     
