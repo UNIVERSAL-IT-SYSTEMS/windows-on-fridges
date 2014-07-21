@@ -101,6 +101,16 @@ Development Platform for Windows.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Future</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
+      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Contributing to Hugo</title>
       <link>http://ms-iot.github.io/windows-on-fridges/community/contributing</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
@@ -109,16 +119,6 @@ Development Platform for Windows.&lt;/p&gt;
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Future</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
-      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
 </description>
     </item>
     
@@ -185,18 +185,6 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>License</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Source Organization</title>
       <link>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
@@ -214,6 +202,18 @@ of this project&lt;/p&gt;
 &lt;li&gt;Nodebot Client&lt;/li&gt;
 &lt;li&gt;Documentation&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
 </description>
     </item>
     
@@ -269,6 +269,18 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Web App</title>
       <link>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
@@ -281,14 +293,14 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Firmata</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
+      <title>Path Finding</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
 </description>
     </item>
     
@@ -303,18 +315,6 @@ of this project&lt;/p&gt;
 &lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Make sure you have &lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; installed and in your path&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Path Finding</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
 </description>
     </item>
     
