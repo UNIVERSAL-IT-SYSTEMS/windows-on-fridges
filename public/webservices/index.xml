@@ -3,7 +3,7 @@
   <channel>
       <title>Webservices on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http:///ms-iot.github.io/windows-on-fridges/webservices/index.xml</link>
+    <link>http://ms-iot.github.io/windows-on-fridges//webservices/index.xml</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>Web App</title>
-      <link>http:///ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http:///ms-iot.github.io/windows-on-fridges/webservices/webapp</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Path Finding</title>
-      <link>http:///ms-iot.github.io/windows-on-fridges/webservices/pathfinding</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http:///ms-iot.github.io/windows-on-fridges/webservices/pathfinding</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;

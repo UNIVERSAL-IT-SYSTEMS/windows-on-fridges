@@ -3,7 +3,7 @@
   <channel>
       <title>Meta on  </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http:///ms-iot.github.io/windows-on-fridges/meta/index.xml</link>
+    <link>http://ms-iot.github.io/windows-on-fridges//meta/index.xml</link>
     
     
     
@@ -11,20 +11,20 @@
     
     <item>
       <title>Future</title>
-      <link>http:///ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http:///ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
       <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>License</title>
-      <link>http:///ms-iot.github.io/windows-on-fridges/meta/license</link>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http:///ms-iot.github.io/windows-on-fridges/meta/license</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
