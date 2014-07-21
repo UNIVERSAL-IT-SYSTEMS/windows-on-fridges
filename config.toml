@@ -1,10 +1,33 @@
 baseurl = "http://ms-iot.github.io/windows-on-fridges/"
-languageCode = "en-us"
-title = "Windows on Fridges"
-contentdir = "content"
-publishdir = "public"
-layoutdir = "layouts"
-[permalinks]
-  post = "windows-on-fridges/post/:title/"
+MetaDataFormat = "yaml"
 
+[indexes]
+  tag = "tags"
+  group = "groups"
 
+[[menu.main]]
+    name = "Windows IoT Dev"
+    pre = "<i class='fa fa-download'></i>"
+    url = "http://windowsondevices.com"
+    weight = -200
+[[menu.main]]
+    name = "about"
+    pre = "<i class='fa fa-info-circle'></i>"
+    weight = -110
+    identifier = "about"
+[[menu.main]]
+    name = "getting started"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -100
+[[menu.main]]
+    name = "nodebot"
+    pre = "<i class='fa fa-cogs'></i>"
+    weight = -90
+[[menu.main]]
+    name = "web services"
+    pre = "<i class='fa fa-cloud'></i>"
+    weight = -80
+[[menu.main]]
+    name = "community"
+    pre = "<i class='fa fa-group'></i>"
+    weight = -70

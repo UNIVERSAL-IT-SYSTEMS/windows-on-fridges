@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Webservices on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://ms-iot.github.io/webservices/index.xml</link>
+    
+    
+    
+    <updated>Tue, 01 Jul 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Web App</title>
+      <link>http://ms-iot.github.io/webservices/webapp</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/webservices/webapp</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Path Finding</title>
+      <link>http://ms-iot.github.io/webservices/pathfinding</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/webservices/pathfinding</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

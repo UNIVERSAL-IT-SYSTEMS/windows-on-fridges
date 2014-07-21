@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Nodebots on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://ms-iot.github.io/nodebot/index.xml</link>
+    
+    
+    
+    <updated>Tue, 01 Jul 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Hardware</title>
+      <link>http://ms-iot.github.io/nodebot/hardware</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/hardware</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;The parts used are entirely dependent on what you wish to build.
+This is the parts list for the robot that we built.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://windowsondevices.com&#34;&gt;Galileo Board&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://radioshack.com&#34;&gt;Motor Shield&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://makeblocks.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Wireless Adapter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Galileo Battery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;USB to Barrel Plug&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Motor Battery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Deans connector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Battery Charger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;USB Hub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://thinkgeek.com&#34;&gt;Micro Fridge&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Build</title>
+      <link>http://ms-iot.github.io/nodebot/building</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/building</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Building the Robot&lt;/h1&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Steps&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Follow the getting started guide to get hello blinky working with Galileo for Windows. $(external link to docs)&lt;/li&gt;
+&lt;li&gt;Connect the motor shield to the galileo and attach the 2 motors to the shield.&lt;/li&gt;
+&lt;li&gt;Find the Sample Project in $(samples repository) named FirmataForGalileo and open the solution.&lt;/li&gt;
+&lt;li&gt;Run the solution on the remote debugger.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/post/installingnode/&#34;&gt;Install Nodejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Clone the wof-nodebot repo&lt;/li&gt;
+&lt;li&gt;To run the node server, execute the following command in cmd line&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;    npm install 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will need to add node and npm to your path.
+5. Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   node server.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;from the wof-nodebot directory.
+6. Use curl to send a post request to http://&lt;robot ip address&gt;/robot in the post body include&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{ 
+  &amp;quot;direction&amp;quot; : &amp;quot;left/right/forward/backward&amp;quot;, 
+  &amp;quot;speed&amp;quot;:0-255, 
+  &amp;quot;duration&amp;quot;:2000 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Steps when debugging&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run Firmata on the Galileo from Visual Studio.&lt;/li&gt;
+&lt;li&gt;Run the Node server from cmd line.&lt;/li&gt;
+&lt;li&gt;If you have to stop the node server or Firmata currently you must reboot the Galileo.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/nodebot/firmata</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/firmata</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Node Client</title>
+      <link>http://ms-iot.github.io/nodebot/client</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/client</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Make sure you have &lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; installed and in your path&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Node Server</title>
+      <link>http://ms-iot.github.io/nodebot/server</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/server</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Node Server&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wifi Adapter</title>
+      <link>http://ms-iot.github.io/nodebot/wifiadapter</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/wifiadapter</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Using a Wifi Gaming Adapter with the Intel Galileo&lt;/h2&gt;
+
+&lt;p&gt;Wifi gaming adapters allow you to connect devices to wifi that otherwise could
+only connect over LAN.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Purchase an adapter, such as &lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_1_3?ie=UTF8&amp;amp;qid=1404169366&amp;amp;sr=8-3&amp;amp;keywords=wireless+gaming+adapter&#34;&gt;this recommended option&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow the instructions supplied with your gaming adapter to connect it to your wireless network.&lt;/li&gt;
+&lt;li&gt;Connect the Gaming Adapter to the Galileo with an ethernet cable.&lt;/li&gt;
+&lt;li&gt;The recommended adapter also includes a USB power cable; If your adapter includes a USB power cable connect it to the Galileo with a &lt;a href=&#34;http://www.amazon.com/Micro-USB-Male-Female-Adapter/dp/B0027YYMU6&#34;&gt;Micro USB Male to USB A Female Adapter&lt;/a&gt; . The Galileo can provide sufficient power to the recommended adapter.&lt;/li&gt;
+&lt;li&gt;Connect your development machine to the same wireless network as the gaming adapter.&lt;/li&gt;
+&lt;li&gt;Ping the Galileo by hostname and ensure it is connected to the network.&lt;/li&gt;
+&lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

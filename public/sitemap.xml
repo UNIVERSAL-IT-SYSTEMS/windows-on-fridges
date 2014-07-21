@@ -3,33 +3,93 @@
   
   <url>
     <loc>http://ms-iot.github.io/</loc>
-    <lastmod>2014-06-30T22:40:54+00:00</lastmod>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/post/using-a-wifi-adapter-with-the-intel-galileo/</loc>
-    <lastmod>2014-06-30T22:40:54+00:00</lastmod>
+    <loc>http://ms-iot.github.io/overview/introduction</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/post/installing-node/</loc>
-    <lastmod>2014-06-27T17:50:06+00:00</lastmod>
+    <loc>http://ms-iot.github.io/community/press</loc>
+    <lastmod>2014-03-24T20:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/post/how-to-build-a-nodebot/</loc>
-    <lastmod>2014-06-27T17:47:29+00:00</lastmod>
+    <loc>http://ms-iot.github.io/overview/quickstart</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/post/making-a-nodebot-with-windows-on-devices/</loc>
-    <lastmod>2014-06-23T22:09:36+00:00</lastmod>
+    <loc>http://ms-iot.github.io/community/contributing</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/post/about/</loc>
-    <lastmod>2014-06-23T21:54:38+00:00</lastmod>
+    <loc>http://ms-iot.github.io/meta/roadmap</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/community/contact</loc>
+    <lastmod>2014-03-24T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/hardware</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/overview/configuration</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/overview/source-directory</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/meta/license</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/building</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/firmata</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/webservices/webapp</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/client</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/webservices/pathfinding</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/server</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/nodebot/wifiadapter</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

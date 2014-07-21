@@ -1,98 +1,233 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on Windows on Fridges </title>
+      <title>Recent Content on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://ms-iot.github.io/index.xml</link>
-    <language>en-US</language>
-    <author>Enthusiastic Hugo User</author>
-    <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
-    <updated>Mon, 30 Jun 2014 22:40:54 UTC</updated>
+    
+    
+    
+    <updated>Mon, 01 Jul 2013 00:00:00 UTC</updated>
     
     <item>
-      <title>Using a Wifi Adapter with the Intel Galileo</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/using-a-wifi-adapter-with-the-intel-galileo/</link>
-      <pubDate>Mon, 30 Jun 2014 22:40:54 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/using-a-wifi-adapter-with-the-intel-galileo/</guid>
+      <title>Introduction</title>
+      <link>http://ms-iot.github.io/overview/introduction</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/overview/introduction</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Using a Wifi Gaming Adapter with the Intel Galileo&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;What is Windows on Fridges?&lt;/h2&gt;
 
-&lt;p&gt;Wifi gaming adapters allow you to connect devices to wifi that otherwise could
-only connect over LAN.&lt;/p&gt;
+&lt;p&gt;Windows on Fridges is an end-to-end solution that makes use of the &lt;a href=&#34;http://windowsondevices.com&#34;&gt;Microsoft
+Developer Platform for IoT&lt;/a&gt; with an Intel Galileo
+board, and &lt;a href=&#34;http://azure.microsoft.com&#34;&gt;Microsoft Azure&lt;/a&gt; web services.&lt;/p&gt;
+
+&lt;p&gt;It is the intern project for the 2014 Explorer interns on the Internet of Things
+Experiences Team. The original conception of this project was to create an autonomous robot that
+would deliver drinks to your office.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;The End-to-end&lt;/h2&gt;
+
+&lt;p&gt;The full end to end consists of multiple different pieces.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Purchase an adapter, such as &lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_1_3?ie=UTF8&amp;amp;qid=1404169366&amp;amp;sr=8-3&amp;amp;keywords=wireless+gaming+adapter&#34;&gt;this recommended option&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Follow the instructions supplied with your gaming adapter to connect it to your wireless network.&lt;/li&gt;
-&lt;li&gt;Connect the Gaming Adapter to the Galileo with an ethernet cable.&lt;/li&gt;
-&lt;li&gt;The recommended adapter also includes a USB power cable; If your adapter includes a USB power cable connect it to the Galileo with a &lt;a href=&#34;http://www.amazon.com/Micro-USB-Male-Female-Adapter/dp/B0027YYMU6&#34;&gt;Micro USB Male to USB A Female Adapter&lt;/a&gt; . The Galileo can provide sufficient power to the recommended adapter.&lt;/li&gt;
-&lt;li&gt;Connect your development machine to the same wireless network as the gaming adapter.&lt;/li&gt;
-&lt;li&gt;Ping the Galileo by hostname and ensure it is connected to the network.&lt;/li&gt;
-&lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Web application&lt;/a&gt; that allows users to input a room they want a drink delivered to.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Pathfinding service&lt;/a&gt; that is hosted on azure.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;REST server&lt;/a&gt; that interacts with the client.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-client&#34;&gt;Client application&lt;/a&gt; which interacts directly with the hardware.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://google.com&#34;&gt;Firmata&lt;/a&gt; the protocol running on the Galileo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All together this allows a user to input the room they want a drink delivered to.
+The path is then calculated and converted to a list of instructions that are then
+sent to the REST server. The REST server then sends the list to the client over
+a websocket connection. The client uses a Firmata client library to communicate
+with the hardware.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Next Steps&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/overview/quickstart&#34;&gt;Quick start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/windows-on-fridges&#34;&gt;Star us on Github&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>Installing Node</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/installing-node/</link>
-      <pubDate>Fri, 27 Jun 2014 17:50:06 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/installing-node/</guid>
+      <title>Press, Blogs and Media Coverage</title>
+      <link>http://ms-iot.github.io/community/press</link>
+      <pubDate>Mon, 24 Mar 2014 20:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/community/press</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Installing Nodejs&lt;/h2&gt;
-
-&lt;h3 id=&#34;toc_1&#34;&gt;Local machine&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download &lt;a href=&#34;http://nodejs.org&#34;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;The MSI installer should take care of anything including adding node to your path variable.&lt;/li&gt;
-&lt;li&gt;To test your installation write a simple hello world web server&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;var http = require(&#39;http&#39;);
-http.createServer(function (req, res) {
-    res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
-    res.end(&#39;Hello World\n&#39;);
-}).listen(1337, &#39;127.0.0.1&#39;);
-console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Run the server from command line&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;node path/to/server.js
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Press&lt;/h2&gt;
 </description>
     </item>
     
     <item>
-      <title>How To: Build a NodeBot</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/how-to-build-a-nodebot/</link>
-      <pubDate>Fri, 27 Jun 2014 17:47:29 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/how-to-build-a-nodebot/</guid>
+      <title>Getting Started</title>
+      <link>http://ms-iot.github.io/overview/quickstart</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/overview/quickstart</guid>
       <description>
 
-&lt;h1 id=&#34;toc_0&#34;&gt;How to Build a Nodebot with Windows for Intel Galileo&lt;/h1&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Step 1. Get Hello Blinky running on your board.&lt;/h2&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Materials&lt;/h2&gt;
+&lt;p&gt;Follow the instructions for &lt;a href=&#34;http://ms-iot.github.io/content/HelloBlinky.htm&#34;&gt;Hello Blinky&lt;/a&gt;.
+This will ensure that you can create projects and deploy to your board.&lt;/p&gt;
+
+&lt;p&gt;This tutorial will assume a general level of understanding of the Galileo
+Development Platform for Windows.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Step 2. Install Project Dependencies&lt;/h2&gt;
+
+&lt;p&gt;This project requires a few extra peices of software.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Intel Galileo flashed with uefi bootloader (how can user check this?)&lt;/li&gt;
-&lt;li&gt;Windows for Devices (or whatever seriously needs a name) on SD card&lt;/li&gt;
-&lt;li&gt;Ethernet cable&lt;/li&gt;
-&lt;li&gt;Arduino motor shield&lt;/li&gt;
-&lt;li&gt;Makeblock robot kit, or any robot with 2 motors (a specific type of motor or just whatever?)&lt;/li&gt;
-&lt;li&gt;Netgear Gaming Adapter&lt;/li&gt;
-&lt;li&gt;Mophie/Anker battery pack (5V, 2.1A)&lt;/li&gt;
-&lt;li&gt;USB to USB Micro adapter&lt;/li&gt;
-&lt;li&gt;USB to barrel plug (add instructions on how to make this or get it in another way)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://git-scm.com/&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://python.org&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;Steps&lt;/h2&gt;
+&lt;h2 id=&#34;toc_2&#34;&gt;Step 3. Setup Azure&lt;/h2&gt;
+
+&lt;p&gt;This step is not required as everything can be hosted locally.&lt;/p&gt;
+
+&lt;p&gt;At this point if you do want to use Azure, just create an account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contributing to Hugo</title>
+      <link>http://ms-iot.github.io/community/contributing</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/community/contributing</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Future</title>
+      <link>http://ms-iot.github.io/meta/roadmap</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/meta/roadmap</guid>
+      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://ms-iot.github.io/community/contact</link>
+      <pubDate>Mon, 24 Mar 2014 20:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/community/contact</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Contact&lt;/h2&gt;
+
+&lt;p&gt;Join us on Freenode at #windowsondevices&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hardware</title>
+      <link>http://ms-iot.github.io/nodebot/hardware</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/hardware</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;The parts used are entirely dependent on what you wish to build.
+This is the parts list for the robot that we built.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://windowsondevices.com&#34;&gt;Galileo Board&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://radioshack.com&#34;&gt;Motor Shield&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://makeblocks.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Wireless Adapter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Galileo Battery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;USB to Barrel Plug&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Motor Battery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Deans connector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Battery Charger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;USB Hub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://thinkgeek.com&#34;&gt;Micro Fridge&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring</title>
+      <link>http://ms-iot.github.io/overview/configuration</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/overview/configuration</guid>
+      <description>
+
+&lt;p&gt;There is some small configuration to keep in mind as you use the different parts
+of this project&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Nodebot Server&lt;/h2&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Nodebot Client&lt;/h2&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Firmata&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Source Organization</title>
+      <link>http://ms-iot.github.io/overview/source-directory</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/overview/source-directory</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Source for the Project&lt;/h2&gt;
+
+&lt;p&gt;Sources for our project are located in multiple different repositories.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web App&lt;/li&gt;
+&lt;li&gt;Nodebot Server&lt;/li&gt;
+&lt;li&gt;Nodebot Client&lt;/li&gt;
+&lt;li&gt;Documentation&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>http://ms-iot.github.io/meta/license</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/meta/license</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Build</title>
+      <link>http://ms-iot.github.io/nodebot/building</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/building</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Building the Robot&lt;/h1&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Steps&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Follow the getting started guide to get hello blinky working with Galileo for Windows. $(external link to docs)&lt;/li&gt;
@@ -116,10 +251,14 @@ console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
 &lt;p&gt;from the wof-nodebot directory.
 6. Use curl to send a post request to http://&lt;robot ip address&gt;/robot in the post body include&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{ &amp;quot;direction&amp;quot; : &amp;quot;left/right/forward/backward&amp;quot;, &amp;quot;speed&amp;quot;:0-255, &amp;quot;duration&amp;quot;:2000 }
+&lt;pre&gt;&lt;code&gt;{ 
+  &amp;quot;direction&amp;quot; : &amp;quot;left/right/forward/backward&amp;quot;, 
+  &amp;quot;speed&amp;quot;:0-255, 
+  &amp;quot;duration&amp;quot;:2000 
+}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;Steps when debugging&lt;/h2&gt;
+&lt;h2 id=&#34;toc_2&#34;&gt;Steps when debugging&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Run Firmata on the Galileo from Visual Studio.&lt;/li&gt;
@@ -130,41 +269,52 @@ console.log(&#39;Server running at http://127.0.0.1:1337/&#39;);
     </item>
     
     <item>
-      <title>Making a Nodebot with Windows on Devices</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/making-a-nodebot-with-windows-on-devices/</link>
-      <pubDate>Mon, 23 Jun 2014 22:09:36 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/making-a-nodebot-with-windows-on-devices/</guid>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/nodebot/firmata</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/firmata</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Wireless Nodebot&lt;/h2&gt;
-
-&lt;p&gt;The Intel Galileo with Windows is a great platform for building NodeBots as
-the board itself can run the node server that controls the robot. This allows
-you to use one board for your server and hardware. Windows on the Galileo makes
-arduino development easy and much more powerful since you are able to use
-Visual Studio and other tools that you already know. In the case of this project
-however you can do all of your arduino programming through javascript using
-Nodejs and Cylonjs or Johnny-Five. For this project Johnny-Five made more sense
-as it had greater support for the types of motors that I wanted to use. On the
-board itself we are using standard &lt;a href=&#34;firmata.com&#34;&gt;firmata&lt;/a&gt;, the arduino protocol, to talk to
-the node server. The firmata running on Galileo for Windows has been ported
-and does not require the Galileo plugin normally used with Johnny-Five.&lt;/p&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
 </description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/post/about/</link>
-      <pubDate>Mon, 23 Jun 2014 21:54:38 UTC</pubDate>
-      <author>Enthusiastic Hugo User</author>
-      <guid>http://ms-iot.github.io/windows-on-fridges/post/about/</guid>
+      <title>Web App</title>
+      <link>http://ms-iot.github.io/webservices/webapp</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/webservices/webapp</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Windows on Fridges&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Node Client</title>
+      <link>http://ms-iot.github.io/nodebot/client</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/nodebot/client</guid>
+      <description>
 
-&lt;p&gt;Windows on Fridges is an end to end solution using Windows on the Intel Galileo and
-Microsoft Azure.&lt;/p&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Make sure you have &lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; installed and in your path&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Path Finding</title>
+      <link>http://ms-iot.github.io/webservices/pathfinding</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/webservices/pathfinding</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
 </description>
     </item>
     
