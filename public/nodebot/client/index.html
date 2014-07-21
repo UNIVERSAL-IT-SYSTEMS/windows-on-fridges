@@ -212,7 +212,58 @@
 
 <h2 id="toc_0">Node Client</h2>
 
-<p><em>Make sure you have <a href="http://nodejs.org">NodeJS</a> installed and in your path</em></p>
+<p><em>Make sure you have <a href="http://nodejs.org">NodeJS</a> and <a href="http://python.org">Python</a> installed and in your path</em></p>
+
+<p>Johnny-Five is the client library we will be using to interact with Firmata on the Galileo. Johnny-Five requires <a href="https://github.com/voodootikigod/node-serialport">SerialPort</a> which is built with Python.</p>
+
+<p>To get started clone the <a href="https://github.com/ms-iot/wof-nodebot">wof-nodebot-client</a> repo.</p>
+
+<p>Open this directory in Command Line and type</p>
+
+<pre><code>npm install
+</code></pre>
+
+<p>This will install all the dependencies in the packages.json file.</p>
+
+<p>There is currently one change that need to be made before we can run this project</p>
+
+<pre><code>node_modules &gt; johnny-five &gt; lib &gt; board.js
+</code></pre>
+
+<p>comment out the line</p>
+
+<pre><code>message[color];
+</code></pre>
+
+<p>in the function</p>
+
+<pre><code>Board.prototype.log
+</code></pre>
+
+<p>In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.</p>
+
+<pre><code>var galileoIP = 'mygalileo';
+</code></pre>
+
+<p>later when we connect to the socket server you may want to change the serverUrl</p>
+
+<pre><code>var serverUrl = 'http://localhost:1337';
+</code></pre>
+
+<p>We should now be able to test the client, from the client source directory</p>
+
+<pre><code>node client.js
+</code></pre>
+
+<p>this should display a REPL prompt, at the prompt we can test the motors</p>
+
+<pre><code>motors.left.fwd(255)
+motors.right.rev(255)
+motors.left.stop()
+motors.right.stop()
+</code></pre>
+
+<p>At this point we should have a working robot that you can control from the command line.</p>
 
 
                     </div>

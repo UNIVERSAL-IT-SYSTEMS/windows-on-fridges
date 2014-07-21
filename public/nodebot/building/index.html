@@ -196,7 +196,7 @@
               <div class="row">
                   <div class="col-md-1">
                       
-                      <a class="navigation prev" href="/nodebot/hardware">
+                      <a class="navigation prev" href="/windows-on-fridges/nodebot/hardware">
                       <i class="fa fa-angle-left"></i>
                       </a>
                       
@@ -210,46 +210,21 @@
 
 
 
-<h1 id="toc_0">Building the Robot</h1>
+<h2 id="toc_0">Building the Robot</h2>
 
-<h2 id="toc_1">Steps</h2>
+<h2 id="toc_1">Step 1. Motors</h2>
 
-<ol>
-<li>Follow the getting started guide to get hello blinky working with Galileo for Windows. $(external link to docs)</li>
-<li>Connect the motor shield to the galileo and attach the 2 motors to the shield.</li>
-<li>Find the Sample Project in $(samples repository) named FirmataForGalileo and open the solution.</li>
-<li>Run the solution on the remote debugger.</li>
-<li><a href="http://ms-iot.github.io/windows-on-fridges/post/installingnode/">Install Nodejs</a></li>
-<li>Clone the wof-nodebot repo</li>
-<li>To run the node server, execute the following command in cmd line</li>
-</ol>
+<p>Your Galileo should be plugged in and you should have <a href="http://ms-iot.github.io/content/HelloBlinky.htm">HelloBlinky</a> working.
+Connect the motor shield to the galileo and attach the 2 motors to the shield.
+The motor shield we used is a <a href="http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92">SeeedStudio V2 Motor Shield</a>. This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.</p>
 
-<pre><code>    npm install 
-</code></pre>
+<h2 id="toc_2">Step 2. Robot frame</h2>
 
-<p>You will need to add node and npm to your path.
-5. Run the node server either on the Galileo or from a computer and pick the IP address accordingly. Run the server with</p>
+<p>There are many frames to choose from when it comes to building a small to mid sized robot. <a href="http://www.makeblock.cc/">Makeblock</a> is a simple open platform for robotics that is easy to put together. Here is an example configuration of a Makeblock robot with a galileo attached. You can get pretty creative here, there is no right way to build an awesome robot.</p>
 
-<pre><code>   node server.js
-</code></pre>
+<h2 id="toc_3">Step 3. Putting it all together</h2>
 
-<p>from the wof-nodebot directory.
-6. Use curl to send a post request to http://<robot ip address>/robot in the post body include</p>
-
-<pre><code>{ 
-  &quot;direction&quot; : &quot;left/right/forward/backward&quot;, 
-  &quot;speed&quot;:0-255, 
-  &quot;duration&quot;:2000 
-}
-</code></pre>
-
-<h2 id="toc_2">Steps when debugging</h2>
-
-<ul>
-<li>Run Firmata on the Galileo from Visual Studio.</li>
-<li>Run the Node server from cmd line.</li>
-<li>If you have to stop the node server or Firmata currently you must reboot the Galileo.</li>
-</ul>
+<p>Secure all your parts on the robot frame. You will need space for a Galileo, 2 batteries, and a wifi adapter.</p>
 
 
                     </div>
@@ -257,7 +232,7 @@
                 </div>
                 <div class="col-md-1">
                     
-                    <a class="navigation next" href="/nodebot/firmata">
+                    <a class="navigation next" href="/windows-on-fridges/nodebot/firmata">
                         <i class="fa fa-angle-right"> </i>
                     </a>
                     
