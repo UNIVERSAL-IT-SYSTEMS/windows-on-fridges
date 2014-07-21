@@ -27,5 +27,9 @@ to run locally just run the server
 
     node server.js
     
-to deploy to Azure
+to deploy to Azure you can follow [this guide](http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/) which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure's endpoint
+
+    git remote add azure [URL for remote repository]
+    git push azure master
+    
 
