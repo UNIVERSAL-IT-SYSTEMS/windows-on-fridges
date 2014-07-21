@@ -111,7 +111,7 @@ Development Platform for Windows.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Contributing to Hugo</title>
+      <title>Contributing</title>
       <link>http://ms-iot.github.io/windows-on-fridges/community/contributing</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
@@ -269,18 +269,6 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Firmata</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Web App</title>
       <link>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
@@ -289,6 +277,18 @@ of this project&lt;/p&gt;
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
 </description>
     </item>
     
