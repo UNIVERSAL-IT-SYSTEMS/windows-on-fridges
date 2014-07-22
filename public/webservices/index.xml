@@ -10,6 +10,15 @@
     <updated>Tue, 01 Jul 2014 00:00:00 UTC</updated>
     
     <item>
+      <title>Azure</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/azure</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/azure</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Web App</title>
       <link>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
@@ -32,6 +41,9 @@
 &lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
 
 &lt;h3 id=&#34;toc_1&#34;&gt;Editing and Testing the Code&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;/static/img/File-New-Project.png&#34; alt=&#34;New Project&#34; /&gt;
+&lt;/p&gt;
 
 &lt;h4 id=&#34;toc_2&#34;&gt;Create a Unit Test Project&lt;/h4&gt;
 
@@ -82,6 +94,18 @@
 &lt;h4 id=&#34;toc_9&#34;&gt;Running From Azure&lt;/h4&gt;
 
 &lt;p&gt;&lt;Need Anna&#39;s help filling in&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/testing</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/testing</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Testing&lt;/h2&gt;
 </description>
     </item>
     

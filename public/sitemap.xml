@@ -48,12 +48,12 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/meta/license</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/meta/license</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,12 +63,17 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/webservices/azure</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -84,6 +89,11 @@
   
   <url>
     <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/server</loc>
+    <lastmod>2014-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://ms-iot.github.io/windows-on-fridges/webservices/testing</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
