@@ -6,9 +6,9 @@ linktitle: Pathfinding
 menu:
   main:
     parent: web services 
-next: /community/contributing
+next: /windows-on-fridges/community/contributing
 notoc: true
-prev: /webservices/webapp
+prev: /windows-on-fridges/webservices/webapp
 title: Path Finding
 weight: 80
 ---
