@@ -4,7 +4,7 @@ linktitle: Introduction
 menu:
   main:
     parent: getting started
-next: /overview/quickstart
+next: /windows-on-fridges/overview/quickstart
 title: Introduction
 weight: 5
 ---

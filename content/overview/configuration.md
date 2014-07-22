@@ -6,9 +6,9 @@ linktitle: Configuration
 menu:
   main:
     parent: getting started
-next: /overview/source-directory
+next: /windows-on-fridges/overview/source-directory
 notoc: true
-prev: /overview/quickstart
+prev: /windows-on-fridges/overview/quickstart
 title: Configuring 
 weight: 40
 ---

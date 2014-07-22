@@ -6,9 +6,9 @@ linktitle: Webapp
 menu:
   main:
     parent: web services 
-next: /webservices/pathfinding
+next: /windows-on-fridges/webservices/pathfinding
 notoc: true
-prev: /nodebot/wifiadapter
+prev: /windows-on-fridges/nodebot/wifiadapter
 title: Web App 
 weight: 70
 ---

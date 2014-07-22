@@ -6,9 +6,9 @@ linktitle: Wifi Adapter
 menu:
   main:
     parent: nodebot 
-next: /webservices/webapp
+next: /windows-on-fridges/webservices/webapp
 notoc: true
-prev: /nodebot/server
+prev: /windows-on-fridges/nodebot/server
 title: Wifi Adapter 
 weight: 100 
 ---

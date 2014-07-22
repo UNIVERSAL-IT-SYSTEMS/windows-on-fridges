@@ -6,9 +6,9 @@ linktitle: server
 menu:
   main:
     parent: nodebot 
-next: /nodebot/wifiadapter
+next: /windows-on-fridges/nodebot/wifiadapter
 notoc: true
-prev: /nodebot/client
+prev: /windows-on-fridges/nodebot/client
 title: Node Server
 weight: 90
 ---

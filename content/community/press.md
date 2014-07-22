@@ -4,9 +4,9 @@ linktitle: Press
 menu:
   main:
     parent: community
-next: /community/contributing
+next: /window-on-fridges/community/contributing
 notoc: true
-prev: /webservices/pathfinding
+prev: /windows-on-fridges/webservices/pathfinding
 title: Press, Blogs and Media Coverage
 weight: 10
 ---

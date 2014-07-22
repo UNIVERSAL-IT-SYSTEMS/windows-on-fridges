@@ -5,7 +5,7 @@ menu:
   main:
     parent: community
 notoc: true
-prev: /community/contributing
+prev: /windows-on-fridges/community/contributing
 title: Contact
 weight: 30
 ---

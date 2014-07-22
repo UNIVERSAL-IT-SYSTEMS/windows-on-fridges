@@ -4,8 +4,8 @@ linktitle: Quickstart
 menu:
   main:
     parent: getting started
-next: /overview/configuration
-prev: /overview/introduction
+next: /windows-on-fridges/overview/configuration
+prev: /windows-on-fridges/overview/introduction
 title: Getting Started 
 weight: 10
 ---

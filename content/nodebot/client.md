@@ -6,9 +6,9 @@ linktitle: client
 menu:
   main:
     parent: nodebot 
-next: /nodebot/server
+next: /windows-on-fridges/nodebot/server
 notoc: true
-prev: /nodebot/firmata
+prev: /windows-on-fridges/nodebot/firmata
 title: Node Client 
 weight: 80
 ---

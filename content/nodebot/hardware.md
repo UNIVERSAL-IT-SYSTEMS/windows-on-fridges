@@ -6,9 +6,9 @@ linktitle: hardware
 menu:
   main:
     parent: nodebot 
-next: /nodebot/building
+next: /windows-on-fridges/nodebot/building
 notoc: true
-prev: /overview/source-directory
+prev: /windows-on-fridges/overview/source-directory
 title: Hardware 
 weight: 40 
 ---

@@ -5,9 +5,9 @@ date: 2013-07-01
 menu:
   main:
     parent: getting started
-next: /nodebot/hardware
+next: /windows-on-fridges/nodebot/hardware
 notoc: true
-prev: /overview/configuration
+prev: /windows-on-fridges/overview/configuration
 title: Source Organization
 weight: 50
 ---

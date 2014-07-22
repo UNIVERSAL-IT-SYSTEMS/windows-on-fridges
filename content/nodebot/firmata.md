@@ -6,9 +6,9 @@ linktitle: firmata
 menu:
   main:
     parent: nodebot 
-next: /nodebot/client
+next: /windows-on-fridges/nodebot/client
 notoc: true
-prev: /nodebot/building
+prev: /windows-on-fridges/nodebot/building
 title: Firmata 
 weight: 70
 ---
