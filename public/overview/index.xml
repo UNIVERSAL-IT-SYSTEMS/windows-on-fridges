@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Overviews on  </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://ms-iot.github.io/windows-on-fridges//overview/index.xml</link>
+    
+    
+    
+    <updated>Mon, 01 Jul 2013 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Introduction</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/overview/introduction</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/overview/introduction</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;What is Windows on Fridges?&lt;/h2&gt;
+
+&lt;p&gt;Windows on Fridges is an end-to-end solution that makes use of the &lt;a href=&#34;http://windowsondevices.com&#34;&gt;Microsoft
+Developer Platform for IoT&lt;/a&gt; with an Intel Galileo
+board, and &lt;a href=&#34;http://azure.microsoft.com&#34;&gt;Microsoft Azure&lt;/a&gt; web services.&lt;/p&gt;
+
+&lt;p&gt;It is the intern project for the 2014 Explorer interns on the Internet of Things
+Experiences Team. The original conception of this project was to create an autonomous robot that
+would deliver drinks to your office.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;The End-to-end&lt;/h2&gt;
+
+&lt;p&gt;The full end to end consists of multiple different pieces.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Web application&lt;/a&gt; that allows users to input a room they want a drink delivered to.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Pathfinding service&lt;/a&gt; that is hosted on azure.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;REST server&lt;/a&gt; that interacts with the client.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-client&#34;&gt;Client application&lt;/a&gt; which interacts directly with the hardware.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://google.com&#34;&gt;Firmata&lt;/a&gt; the protocol running on the Galileo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All together this allows a user to input the room they want a drink delivered to.
+The path is then calculated and converted to a list of instructions that are then
+sent to the REST server. The REST server then sends the list to the client over
+a websocket connection. The client uses a Firmata client library to communicate
+with the hardware.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Next Steps&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/overview/quickstart&#34;&gt;Quick start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/windows-on-fridges&#34;&gt;Star us on Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/overview/quickstart</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/overview/quickstart</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Step 1. Get Hello Blinky running on your board.&lt;/h2&gt;
+
+&lt;p&gt;Follow the instructions for &lt;a href=&#34;http://ms-iot.github.io/content/HelloBlinky.htm&#34;&gt;Hello Blinky&lt;/a&gt;.
+This will ensure that you can create projects and deploy to your board.&lt;/p&gt;
+
+&lt;p&gt;This tutorial will assume a general level of understanding of the Galileo
+Development Platform for Windows.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Step 2. Install Project Dependencies&lt;/h2&gt;
+
+&lt;p&gt;This project requires a few extra peices of software.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://git-scm.com/&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://python.org&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Step 3. Setup Azure&lt;/h2&gt;
+
+&lt;p&gt;This step is not required as everything can be hosted locally.&lt;/p&gt;
+
+&lt;p&gt;At this point if you do want to use Azure, just create an account.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configuring</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/overview/configuration</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/overview/configuration</guid>
+      <description>
+
+&lt;p&gt;There is some small configuration to keep in mind as you use the different parts
+of this project&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Nodebot Server&lt;/h2&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Nodebot Client&lt;/h2&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Firmata&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Source Organization</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Source for the Project&lt;/h2&gt;
+
+&lt;p&gt;Sources for our project are located in multiple different repositories.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web App&lt;/li&gt;
+&lt;li&gt;Nodebot Server&lt;/li&gt;
+&lt;li&gt;Nodebot Client&lt;/li&gt;
+&lt;li&gt;Documentation&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
