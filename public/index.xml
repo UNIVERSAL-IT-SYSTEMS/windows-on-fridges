@@ -101,6 +101,16 @@ Development Platform for Windows.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Future</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
+      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Contributing</title>
       <link>http://ms-iot.github.io/windows-on-fridges/community/contributing</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
@@ -109,16 +119,6 @@ Development Platform for Windows.&lt;/p&gt;
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Future</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
-      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
 </description>
     </item>
     
@@ -218,6 +218,15 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
+      <title>Azure</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/azure</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/azure</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Build</title>
       <link>http://ms-iot.github.io/windows-on-fridges/nodebot/building</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
@@ -244,12 +253,17 @@ The motor shield we used is a &lt;a href=&#34;http://www.seeedstudio.com/depot/M
     </item>
     
     <item>
-      <title>Azure</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/webservices/azure</link>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/azure</guid>
-      <description></description>
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -261,20 +275,6 @@ The motor shield we used is a &lt;a href=&#34;http://www.seeedstudio.com/depot/M
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Web App&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Firmata</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
-
-&lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
 </description>
     </item>
     

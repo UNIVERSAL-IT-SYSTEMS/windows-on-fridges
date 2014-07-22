@@ -16,7 +16,7 @@ weight: 80
 ## Path Finding
 ### Editing and Testing the Code
 
-![New Project](/img/File-New-Project.png)
+![New Project](/windows-on-fridges/img/File-New-Project.png)
 
 #### Create a Unit Test Project
 * If you haven't already, download Visual Studio. <link> //Should this be in getting started?
