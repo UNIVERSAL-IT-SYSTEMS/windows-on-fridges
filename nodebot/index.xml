@@ -140,6 +140,94 @@ motors.right.stop()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;At this point we should have a working robot that you can control from the command line.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Calibrating the Robot&lt;/h2&gt;
+
+&lt;p&gt;The commands coming from Azure are in this format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:0},{&amp;quot;Distance&amp;quot;:1.4142135623730952,&amp;quot;Angle&amp;quot;:45},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:-135},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:180}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But the commands the robot understands are in this format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[{&amp;quot;direction&amp;quot;:&#39;RIGHT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;LEFT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To translate between the two, we need to find out how long it takes the robot to turn a certain angle, and how long it takes to go forward a certain distance. The duration needed for each command can be easily calculated given the right, left, and forwards speeds. To make sure these speeds stay constant, we will have a set PWM at which they are measured. See below for instructions on how to measure the right and left rotational speeds, and the forward speed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var direction; 
+var speed; 
+
+if (command.Angle &amp;gt; 0) { 
+    this.motorControl(&#39;RIGHT&#39;, setPWM, command.Angle / rotationalSpeedRight); 
+    // deg/(deg/ms) = ms 
+} else if (command.Angle &amp;lt; 0) { 
+
+this.motorControl(&#39;LEFT&#39;, setPWM, command.Angle / rotationalSpeedLeft);  
+// deg/(deg/ms) = ms 
+} 
+
+this.motorControl(&#39;FORWARD&#39;, setPWM, command.Distance / forwardSpeed);  
+// distance/(distance/ms) = ms 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Calibration Variables&lt;/h3&gt;
+
+&lt;p&gt;Every robot will be slightly different. To calibrate your robot to accurately follow your commands, follow the directions below.&lt;/p&gt;
+
+&lt;p&gt;While measuring, keep in mind that your robot might move differently based on what surface (ex: carpet, tile, or wood flooring) it is moving on. Try to take your measurements on the surface the robot will be using most. If there are significant differences in robot performance on different surfaces you may want to keep the robot from going on certain surfaces that will throw it off by removing those paths from your map. The weight of the robot will also cause these numbers to shift. Do your measurements with a full can in the fridge.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_3&#34;&gt;PWM&lt;/h4&gt;
+
+&lt;p&gt;If we are going to measure a consistent speed of the robot, the motors need to have a consistent PWM. Choose one [0, 255] and stick with it. This must stay constant throughout your measurements and whenever your robot is following the angle, distance style of instructions or else your measured speeds will be meaningless.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_4&#34;&gt;Rotational Speed Right&lt;/h4&gt;
+
+&lt;p&gt;Rotational speed right can be calculated by sending the command&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{direction: RIGHT, speed: setPWM, duration: 100} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then measure the degrees the robot turned. It may be helpful to mark the robot&amp;rsquo;s initial heading on the ground with tape to assist with measurements.&lt;/p&gt;
+
+&lt;p&gt;Try with a few different durations to make sure the degrees/duration stays relatively consistent.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rotationalSpeedRight = average(degrees/duration)  // degrees/millisecond when turning right  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;toc_5&#34;&gt;Rotational Speed Left&lt;/h4&gt;
+
+&lt;p&gt;Rotational speed left can be similarly calculated with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{direction: LEFT, speed: setPWM, duration: 100} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It may turn out to be the same as rotationalSpeedRight, but you can&amp;rsquo;t assume that will be the case.&lt;/p&gt;
+
+&lt;p&gt;Again, try with a few different durations to make sure the it is relatively consistent.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rotationalSpeedLeft = average(degrees/duration)  // degrees/millisecond when turning left 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;toc_6&#34;&gt;Forward Speed&lt;/h4&gt;
+
+&lt;p&gt;forwardSpeed is the distance your robot moves forward in one millisecond.&lt;/p&gt;
+
+&lt;p&gt;The unit of distance you use should match the unit of distance of the map you use.&lt;/p&gt;
+
+&lt;p&gt;For example, if your directions pass in the distance in meters, forwardSpeed should be calculated in meters/millisecond.&lt;/p&gt;
+
+&lt;p&gt;Use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{direction: FORWARD, speed: setPWM, duration: 100}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and measure how far your robot moves forward.&lt;/p&gt;
+
+&lt;p&gt;Again, marking the ground could be helpful.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;forwardSpeed = average(distance/millisecond)  // distance/millisecond when going forward 
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
