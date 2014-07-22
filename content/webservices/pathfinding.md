@@ -6,7 +6,7 @@ linktitle: Pathfinding
 menu:
   main:
     parent: web services 
-next: /windows-on-fridges/community/contributing
+next: /windows-on-fridges/webservices/testing
 notoc: true
 prev: /windows-on-fridges/webservices/webapp
 title: Path Finding

@@ -8,7 +8,7 @@ menu:
     parent: web services 
 next: /windows-on-fridges/webservices/pathfinding
 notoc: true
-prev: /windows-on-fridges/nodebot/wifiadapter
+prev: /windows-on-fridges/webservices/azure
 title: Web App 
 weight: 70
 ---
