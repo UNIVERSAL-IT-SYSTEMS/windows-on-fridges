@@ -78,6 +78,7 @@ We have a simple converter that takes an image of the map in SVG format and crea
   * After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.
   ![Before](/windows-on-fridges/img/map/8.jpg)
   ![After](/windows-on-fridges/img/map/9.jpg)
+  * Make sure you don't have any particular shape selected to avoid having only this shape saved.
   * Go to file -> export -> change file type. Double-click on "SVG Scalable Vector Graphics". Save your map as "map.svg".
 
 Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.
