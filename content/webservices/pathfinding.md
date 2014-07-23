@@ -70,12 +70,12 @@ We have a simple converter that takes an image of the map in SVG format and crea
   
 * Step 2
   * Take any map of the space in JPEG format and open it in Visio
-    * WARNING: Other file types might work with this instructions but were not tested.
+    * WARNING: Other file types might work with these instructions but were not tested.
     * HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.
 
 <img src="/windows-on-fridges/img/map/1.jpg" style='width:100%;' border="0" alt="Null">
 
-  * To make your future SVG map be easily extracted from the map you opened, create a new layer by going to Home -> Layers -> Layer properties -> New. Press "ok" after you’re done.
+  * To make your future SVG map easily extractable from the image you opened, create a new layer by going to Home -> Layers -> Layer properties -> New. Press "ok" after you’re done.
 
 <img src="/windows-on-fridges/img/map/2.jpg" style='width:100%;' border="0" alt="Null">
 
@@ -113,6 +113,7 @@ We have a simple converter that takes an image of the map in SVG format and crea
 
   * Make sure you don't have any particular shape selected to avoid having only this shape saved.
   * Go to file -> export -> change file type. Double-click on "SVG Scalable Vector Graphics". Save your map as "map.svg".
+  * WARNING: Don't save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.
 
 Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.
 
