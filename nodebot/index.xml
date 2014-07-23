@@ -74,12 +74,12 @@ There are many configurations of robots you can build on Makeblocks &lt;a href=&
 
 &lt;ul&gt;
 &lt;li&gt;There is more documentation for the motor shield on the SeeedStudio &lt;a href=&#34;http://www.seeedstudio.com/wiki/Motor_Shield_V2.0&#34;&gt;wiki&lt;/a&gt;.
-&lt;em&gt;Either the V1 or V2 motor shield from SeeedStudio will work&lt;/em&gt;&lt;/li&gt;
+&lt;em&gt;Either the V1 or V2 motor shield from SeeedStudio will work&lt;/em&gt;
+&lt;img src=&#34;/windows-on-fridges/img/nodebot/motorshield.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Connect the motor shield to the Galileo.&lt;/li&gt;
 &lt;li&gt;Attach 2 motors to the shield, the polarity does not matter but will affect the direction of the motors. You may have to switch the wires if the motors are turning the wrong way.&lt;/li&gt;
-&lt;li&gt;Attach the battery connector to the motor shield&amp;rsquo;s external power input.
-&lt;img src=&#34;/windows-on-fridges/img/nodebot/motorshield.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Attach the battery connector to the motor shield&amp;rsquo;s external power input.&lt;/li&gt;
 &lt;li&gt;All together it should look something like this. &lt;em&gt;This version has the V1 shield, they are functionally the same&lt;/em&gt;
 &lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-motors-shield.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -116,6 +116,36 @@ only connect over LAN.&lt;/p&gt;
 &lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
 
 &lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
+
+&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/connerbrooks/firmata-galileo&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt; the headers have been altered to be compatible with the Galileo SDK.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Running Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata must be running on the board before the node client can interact with it.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
+
+&lt;p&gt;git clone &lt;a href=&#34;https://github.com/path/to/galileo/firmata&#34;&gt;https://github.com/path/to/galileo/firmata&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open the Visual Studio project.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Configure the remote debugging settings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Refer to the &lt;a href=&#34;http://ms-iot.github.io/content&#34;&gt;Galileo SDK documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Deploy the project to the Galileo.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once you have deployed you will be able to telnet into the Galileo and remotely start firmata&lt;/p&gt;
+
+&lt;p&gt;telnet mygalileo
+cd c:\test
+Firmata.exe&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We can now control the Galileo using the Firmata protocol with any client library.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -133,54 +163,73 @@ only connect over LAN.&lt;/p&gt;
 
 &lt;p&gt;Johnny-Five is the client library we will be using to interact with Firmata on the Galileo. Johnny-Five requires &lt;a href=&#34;https://github.com/voodootikigod/node-serialport&#34;&gt;SerialPort&lt;/a&gt; which is built with Python.&lt;/p&gt;
 
-&lt;p&gt;To get started clone the &lt;a href=&#34;https://github.com/ms-iot/wof-nodebot&#34;&gt;wof-nodebot-client&lt;/a&gt; repo.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;To get started clone the &lt;a href=&#34;https://github.com/ms-iot/wof-nodebot&#34;&gt;wof-nodebot-client&lt;/a&gt; repo.&lt;/p&gt;
 
-&lt;p&gt;Open this directory in Command Line and type&lt;/p&gt;
+&lt;p&gt;git clone &lt;a href=&#34;https://github.com/ms-iot/wof-nodebot&#34;&gt;https://github.com/ms-iot/wof-nodebot&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;pre&gt;&lt;code&gt;npm install
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;Install Node dependencies from the packages.json file.&lt;/p&gt;
 
-&lt;p&gt;This will install all the dependencies in the packages.json file.&lt;/p&gt;
+&lt;p&gt;cd wof-nodebot
+npm install&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;There is currently one change that need to be made before we can run this project&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Comment out line 485, there are some issues with a logging dependency&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;node_modules &amp;gt; johnny-five &amp;gt; lib &amp;gt; board.js
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;//message[color];&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;comment out the line&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;message[color];
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;var galileoIP = &amp;lsquo;mygalileo&amp;rsquo;;&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;in the function&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;When we connect to a socket server you may want to change the serverUrl to an endpoint on Azure.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Board.prototype.log
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;var serverUrl = &amp;lsquo;&lt;a href=&#34;http://localhost:1337&#39;&#34;&gt;http://localhost:1337&#39;&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;We should now be able to test the client, from the client source directory&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var galileoIP = &#39;mygalileo&#39;;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;node client.js&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;later when we connect to the socket server you may want to change the serverUrl&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;We should see a REPL prompt, at the prompt we can test the motors&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var serverUrl = &#39;http://localhost:1337&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We should now be able to test the client, from the client source directory&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;node client.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;this should display a REPL prompt, at the prompt we can test the motors&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;motors.left.fwd(255)
+&lt;p&gt;motors.left.fwd(255)
 motors.right.rev(255)
 motors.left.stop()
-motors.right.stop()
-&lt;/code&gt;&lt;/pre&gt;
+motors.right.stop()&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;At this point we should have a working robot that you can control from the command line.&lt;/p&gt;
+&lt;p&gt;At this point we should have a working robot that you can control from the command line.
+We will now connect the client to the socket server that can run locally or on Azure.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Connecting to Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata is normally controlled over serial however, the Galileo does not have a proper serial connection to the computer.
+  We instead use &lt;a href=&#34;https://github.com/ms-iot/galileo-sdk/blob/develop/source/NetworkSerial.h&#34;&gt;Network Serial&lt;/a&gt; for serial communication.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;In the case of Node we use the net package to create a socket connection on the &lt;em&gt;default port 27015&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;var net = require(&amp;ldquo;net&amp;rdquo;);&lt;/p&gt;
+
+&lt;p&gt;var socket = net.createConnection(27015, galileoIP);
+console.log(&amp;lsquo;Socket created.&amp;rsquo;);
+this.socket.on(&amp;lsquo;data&amp;rsquo;, function (data) {
+  // Log the response from the HTTP server.
+  console.log(&amp;lsquo;RESPONSE: &amp;lsquo; + data);
+}).on(&amp;lsquo;connect&amp;rsquo;, function () {
+  // Manually write an HTTP request.
+  console.log(&amp;ldquo;connected&amp;rdquo;);
+}).on(&amp;lsquo;end&amp;rsquo;, function () {
+  console.log(&amp;lsquo;DONE&amp;rsquo;);
+});&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Then we can create a Johnny-Five board object with this socket as the port.&lt;/p&gt;
+
+&lt;p&gt;var five = require(&amp;ldquo;johnny-five&amp;rdquo;);&lt;/p&gt;
+
+&lt;p&gt;board = new five.Board({
+  port: socket
+});&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -196,23 +245,29 @@ motors.right.stop()
 
 &lt;p&gt;The node server uses Expressjs for handling HTTP requests and socket.io for talking to the client. This allows us to control the robot with simple REST calls to an endpoint either locally or in the cloud.&lt;/p&gt;
 
-&lt;p&gt;To get started clone the &lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;wof-nodebot-server&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clone the &lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;wof-nodebot-server&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Install dependencies&lt;/p&gt;
+&lt;p&gt;git clone &lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;http://github.com/ms-iot/wof-nodebot-server&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;pre&gt;&lt;code&gt;npm install
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;Install dependencies&lt;/p&gt;
 
-&lt;p&gt;to run locally just run the server&lt;/p&gt;
+&lt;p&gt;npm install&lt;/p&gt;&lt;/li&gt;
 
-&lt;pre&gt;&lt;code&gt;node server.js
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;To run locally&lt;/p&gt;
 
-&lt;p&gt;to deploy to Azure you can follow &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/&#34;&gt;this guide&lt;/a&gt; which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure&amp;rsquo;s endpoint&lt;/p&gt;
+&lt;p&gt;node server.js&lt;/p&gt;&lt;/li&gt;
 
-&lt;pre&gt;&lt;code&gt;git remote add azure [URL for remote repository]
-git push azure master
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;To deploy to Azure you can follow &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/&#34;&gt;this guide&lt;/a&gt; which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure&amp;rsquo;s endpoint.&lt;/p&gt;
+
+&lt;p&gt;git remote add azure [URL for remote repository]
+git push azure master&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You will need to change the server endpoint in the nodebot client&lt;/p&gt;
+
+&lt;p&gt;// example Azure endpoint
+var serverUrl = &amp;lsquo;test-robotcontrol.azurewebsites.net&amp;rsquo;;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

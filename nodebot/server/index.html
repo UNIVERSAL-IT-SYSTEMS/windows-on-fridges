@@ -218,23 +218,29 @@
 
 <p>The node server uses Expressjs for handling HTTP requests and socket.io for talking to the client. This allows us to control the robot with simple REST calls to an endpoint either locally or in the cloud.</p>
 
-<p>To get started clone the <a href="http://github.com/ms-iot/wof-nodebot-server">wof-nodebot-server</a>.</p>
+<ul>
+<li><p>Clone the <a href="http://github.com/ms-iot/wof-nodebot-server">wof-nodebot-server</a>.</p>
 
-<p>Install dependencies</p>
+<p>git clone <a href="http://github.com/ms-iot/wof-nodebot-server">http://github.com/ms-iot/wof-nodebot-server</a></p></li>
 
-<pre><code>npm install
-</code></pre>
+<li><p>Install dependencies</p>
 
-<p>to run locally just run the server</p>
+<p>npm install</p></li>
 
-<pre><code>node server.js
-</code></pre>
+<li><p>To run locally</p>
 
-<p>to deploy to Azure you can follow <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/">this guide</a> which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure&rsquo;s endpoint</p>
+<p>node server.js</p></li>
 
-<pre><code>git remote add azure [URL for remote repository]
-git push azure master
-</code></pre>
+<li><p>To deploy to Azure you can follow <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/">this guide</a> which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure&rsquo;s endpoint.</p>
+
+<p>git remote add azure [URL for remote repository]
+git push azure master</p></li>
+
+<li><p>You will need to change the server endpoint in the nodebot client</p>
+
+<p>// example Azure endpoint
+var serverUrl = &lsquo;test-robotcontrol.azurewebsites.net&rsquo;;</p></li>
+</ul>
 
 
                     </div>

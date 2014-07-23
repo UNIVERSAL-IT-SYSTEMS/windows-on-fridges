@@ -220,54 +220,73 @@
 
 <p>Johnny-Five is the client library we will be using to interact with Firmata on the Galileo. Johnny-Five requires <a href="https://github.com/voodootikigod/node-serialport">SerialPort</a> which is built with Python.</p>
 
-<p>To get started clone the <a href="https://github.com/ms-iot/wof-nodebot">wof-nodebot-client</a> repo.</p>
+<ul>
+<li><p>To get started clone the <a href="https://github.com/ms-iot/wof-nodebot">wof-nodebot-client</a> repo.</p>
 
-<p>Open this directory in Command Line and type</p>
+<p>git clone <a href="https://github.com/ms-iot/wof-nodebot">https://github.com/ms-iot/wof-nodebot</a></p></li>
 
-<pre><code>npm install
-</code></pre>
+<li><p>Install Node dependencies from the packages.json file.</p>
 
-<p>This will install all the dependencies in the packages.json file.</p>
+<p>cd wof-nodebot
+npm install</p></li>
 
-<p>There is currently one change that need to be made before we can run this project</p>
+<li><p>Comment out line 485, there are some issues with a logging dependency</p>
 
-<pre><code>node_modules &gt; johnny-five &gt; lib &gt; board.js
-</code></pre>
+<p>//message[color];</p></li>
 
-<p>comment out the line</p>
+<li><p>In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.</p>
 
-<pre><code>message[color];
-</code></pre>
+<p>var galileoIP = &lsquo;mygalileo&rsquo;;</p></li>
 
-<p>in the function</p>
+<li><p>When we connect to a socket server you may want to change the serverUrl to an endpoint on Azure.</p>
 
-<pre><code>Board.prototype.log
-</code></pre>
+<p>var serverUrl = &lsquo;<a href="http://localhost:1337'">http://localhost:1337'</a>;</p></li>
 
-<p>In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.</p>
+<li><p>We should now be able to test the client, from the client source directory</p>
 
-<pre><code>var galileoIP = 'mygalileo';
-</code></pre>
+<p>node client.js</p></li>
 
-<p>later when we connect to the socket server you may want to change the serverUrl</p>
+<li><p>We should see a REPL prompt, at the prompt we can test the motors</p>
 
-<pre><code>var serverUrl = 'http://localhost:1337';
-</code></pre>
-
-<p>We should now be able to test the client, from the client source directory</p>
-
-<pre><code>node client.js
-</code></pre>
-
-<p>this should display a REPL prompt, at the prompt we can test the motors</p>
-
-<pre><code>motors.left.fwd(255)
+<p>motors.left.fwd(255)
 motors.right.rev(255)
 motors.left.stop()
-motors.right.stop()
-</code></pre>
+motors.right.stop()</p></li>
+</ul>
 
-<p>At this point we should have a working robot that you can control from the command line.</p>
+<p>At this point we should have a working robot that you can control from the command line.
+We will now connect the client to the socket server that can run locally or on Azure.</p>
+
+<h2 id="toc_1">Connecting to Firmata</h2>
+
+<p>Firmata is normally controlled over serial however, the Galileo does not have a proper serial connection to the computer.
+  We instead use <a href="https://github.com/ms-iot/galileo-sdk/blob/develop/source/NetworkSerial.h">Network Serial</a> for serial communication.</p>
+
+<ul>
+<li><p>In the case of Node we use the net package to create a socket connection on the <em>default port 27015</em></p>
+
+<p>var net = require(&ldquo;net&rdquo;);</p>
+
+<p>var socket = net.createConnection(27015, galileoIP);
+console.log(&lsquo;Socket created.&rsquo;);
+this.socket.on(&lsquo;data&rsquo;, function (data) {
+  // Log the response from the HTTP server.
+  console.log(&lsquo;RESPONSE: &lsquo; + data);
+}).on(&lsquo;connect&rsquo;, function () {
+  // Manually write an HTTP request.
+  console.log(&ldquo;connected&rdquo;);
+}).on(&lsquo;end&rsquo;, function () {
+  console.log(&lsquo;DONE&rsquo;);
+});</p></li>
+
+<li><p>Then we can create a Johnny-Five board object with this socket as the port.</p>
+
+<p>var five = require(&ldquo;johnny-five&rdquo;);</p>
+
+<p>board = new five.Board({
+  port: socket
+});</p></li>
+</ul>
 
 
                     </div>
