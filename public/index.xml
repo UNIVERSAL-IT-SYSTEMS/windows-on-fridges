@@ -197,6 +197,18 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
+      <title>License</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Source Organization</title>
       <link>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
@@ -214,18 +226,6 @@ of this project&lt;/p&gt;
 &lt;li&gt;Nodebot Client&lt;/li&gt;
 &lt;li&gt;Documentation&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>License</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
 </description>
     </item>
     
@@ -252,8 +252,7 @@ of this project&lt;/p&gt;
 
 &lt;p&gt;There are many frames to choose from when it comes to building a small to mid sized robot. &lt;a href=&#34;http://www.makeblock.cc/&#34;&gt;Makeblock&lt;/a&gt; is a simple open platform for robotics that is easy to put together. Here is an example configuration of a Makeblock robot with a galileo attached. You can get pretty creative here, there is no right way to build an awesome robot.
 We chose to use the &lt;a href=&#34;/windows-on-fridges/pdf/Makeblock-Big-Tank.pdf&#34;&gt;Big Tank&lt;/a&gt; frame.
-&lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-frame.jpg&#34; alt=&#34;nodebot frame&#34; /&gt;
-
+&lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-frame.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;
 There are many configurations of robots you can build on Makeblocks &lt;a href=&#34;https://github.com/Makeblock-official/Assembly-Instructions&#34;&gt;assembly instruction&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_2&#34;&gt;Step 2. Motors&lt;/h2&gt;
@@ -262,8 +261,7 @@ There are many configurations of robots you can build on Makeblocks &lt;a href=&
 Connect the motor shield to the galileo and attach the 2 motors to the shield.
 The motor shield we used is a &lt;a href=&#34;http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92&#34;&gt;SeeedStudio V1/V2 Motor Shield&lt;/a&gt;. This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.
 &lt;em&gt;Either the V1 or V2 motor shield from SeeedStudio will work&lt;/em&gt;
-&lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-motors-shield.jpg&#34; alt=&#34;Motors and shield&#34; /&gt;
-&lt;/p&gt;
+&lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-motors-shield.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_3&#34;&gt;Step 3. Putting it all together&lt;/h2&gt;
 
@@ -434,7 +432,7 @@ only connect over LAN.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;Step 4&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.
+&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.
 &lt;img src=&#34;/windows-on-fridges/img/map/6.5.jpg&#34; alt=&#34;Starting point&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
