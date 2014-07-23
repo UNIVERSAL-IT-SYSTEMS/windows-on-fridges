@@ -117,6 +117,16 @@ We have a simple converter that takes an image of the map in SVG format and crea
 
 Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.
 
-#### Getting a Path
+#### Running pathfinding locally
+
+To try out the pathfinding algorithm locally you can use a console application we created. You do need to [create a map](link) first to run the pathfinding.
+
+* To access the source files clone the git repository at https://github.com/ms-iot/wof-webapp.git. 
+•	Image clone ripo
+* Delete workerRole.cs from the project. 
+* Run “wof-pathfinding.exe”. 
+
+Congratulations! Now you can convert your map into a graph and run pathfinding on it.
+
 #### Running From Azure
  <Need Anna's help filling in>
