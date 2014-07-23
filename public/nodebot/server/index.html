@@ -70,8 +70,6 @@
             </a>
                 <ul class="sub">
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/meta/roadmap"> Future </a> </li>
-                    
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/meta/license"> License </a> </li>
                     
                 </ul>
@@ -91,12 +89,6 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/introduction"> Introduction </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/quickstart"> Quickstart </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/configuration"> Configuration </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/source-directory"> Source Organization </a> </li>
-                    
                 </ul>
               
               </li>
@@ -111,12 +103,6 @@
                 
             </a>
                 <ul class="sub">
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/hardware"> hardware </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/building"> build </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/firmata"> firmata </a> </li>
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/client"> client </a> </li>
                     
@@ -139,36 +125,19 @@
             </a>
                 <ul class="sub">
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/azure"> Azure </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/webapp"> Webapp </a> </li>
-                    
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/testing"> Testing </a> </li>
                     
                 </ul>
               
               </li>
           
               
-
-            <li class="sub-menu">
-            <a href="javascript:;" class="">
-                <i class='fa fa-group'></i>
-                
-                <span>community</span>
-                
-            </a>
-                <ul class="sub">
+                <li>
+                <a class="" href="">
+                    <i class='fa fa-group'></i>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/community/press"> Press </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/community/contributing"> Contributing </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/community/contact"> Contact </a> </li>
-                    
-                </ul>
+                    <span>community</span>
+                </a>
               
               </li>
           
@@ -221,25 +190,30 @@
 <ul>
 <li><p>Clone the <a href="http://github.com/ms-iot/wof-nodebot-server">wof-nodebot-server</a>.</p>
 
-<p>git clone <a href="http://github.com/ms-iot/wof-nodebot-server">http://github.com/ms-iot/wof-nodebot-server</a></p></li>
+<pre><code>git clone http://github.com/ms-iot/wof-nodebot-server
+</code></pre></li>
 
 <li><p>Install dependencies</p>
 
-<p>npm install</p></li>
+<pre><code>npm install
+</code></pre></li>
 
 <li><p>To run locally</p>
 
-<p>node server.js</p></li>
+<pre><code>node server.js
+</code></pre></li>
 
 <li><p>To deploy to Azure you can follow <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/">this guide</a> which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure&rsquo;s endpoint.</p>
 
-<p>git remote add azure [URL for remote repository]
-git push azure master</p></li>
+<pre><code>git remote add azure [URL for remote repository]
+git push azure master
+</code></pre></li>
 
 <li><p>You will need to change the server endpoint in the nodebot client</p>
 
-<p>// example Azure endpoint
-var serverUrl = &lsquo;test-robotcontrol.azurewebsites.net&rsquo;;</p></li>
+<pre><code>// example Azure endpoint
+var serverUrl = 'test-robotcontrol.azurewebsites.net';
+</code></pre></li>
 </ul>
 
 
