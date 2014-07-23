@@ -6,7 +6,7 @@ linktitle: server
 menu:
   main:
     parent: nodebot 
-next: /windows-on-fridges/nodebot/wifiadapter
+next: /windows-on-fridges/nodebot/calibrating
 notoc: true
 prev: /windows-on-fridges/nodebot/client
 title: Node Server
