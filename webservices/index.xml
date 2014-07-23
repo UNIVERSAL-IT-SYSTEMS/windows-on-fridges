@@ -152,7 +152,7 @@
 &lt;li&gt;&lt;p&gt;Step 4&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.
+&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.
 &lt;img src=&#34;/windows-on-fridges/img/map/6.5.jpg&#34; alt=&#34;Starting point&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
