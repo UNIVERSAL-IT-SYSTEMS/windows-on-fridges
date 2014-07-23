@@ -19,23 +19,23 @@ The node server uses Expressjs for handling HTTP requests and socket.io for talk
 
   * Clone the [wof-nodebot-server](http://github.com/ms-iot/wof-nodebot-server).
 
-    git clone http://github.com/ms-iot/wof-nodebot-server
+        git clone http://github.com/ms-iot/wof-nodebot-server
 
   * Install dependencies
 
-    npm install
+        npm install
     
   * To run locally 
 
-    node server.js
+        node server.js
     
   * To deploy to Azure you can follow [this guide](http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/) which will teach you how to deploy a hello world application. Instead of the the hello world application just set the upstream on the server you cloned to Azure's endpoint.
 
-    git remote add azure [URL for remote repository]
-    git push azure master
-
+        git remote add azure [URL for remote repository]
+        git push azure master
+  
   * You will need to change the server endpoint in the nodebot client
 
-    // example Azure endpoint
-    var serverUrl = 'test-robotcontrol.azurewebsites.net';
+        // example Azure endpoint
+        var serverUrl = 'test-robotcontrol.azurewebsites.net';
     
