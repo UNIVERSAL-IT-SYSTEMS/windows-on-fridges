@@ -57,7 +57,7 @@ We will now connect the client to the socket server that can run locally or on A
 ## Connecting to Firmata
 
   Firmata is normally controlled over serial however, the Galileo does not have a proper serial connection to the computer.
-  We instead use [Network Serial](https://github.com/ms-iot/galileo-sdk/blob/develop/source/NetworkSerial.h) for serial communication.
+  We instead use [Network Serial](https://github.com/ms-iot/galileo-sdk/blob/develop/source/NetworkSerial.cpp) for serial communication.
   
   * In the case of Node we use the net package to create a socket connection on the _default port 27015_
     
