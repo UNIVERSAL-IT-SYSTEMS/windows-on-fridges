@@ -22,28 +22,28 @@ weight: 80
 * If you haven't already, download Visual Studio. <link> //Should this be in getting started?
 * The first step is to make sure the code works. Create a new test project by opening Visual Studio and going to File->New->Project at the top.
 
-![New Project](/windows-on-fridges/img/creating-test-project/file-new-project.png)
+<img src="/windows-on-fridges/img/creating-test-project/file-new-project.png" style='width:100%;' border="0" alt="Null">
 
 * On the left hand side of the pop-up window, select Installed->Templates->Visual C#->Test. Then in the middle part of the pop-up, click on Unit Test Project. Having a Unit Test Project will allow you to easily run all the tests at once. If you change anything in the code, you can quickly know whether it broke something else. Be sure to change the name of the project at the bottom. We called ours PathFindingTests, but you can name yours whatever you like. Press ok when you are done.
 
-![New Unit Test Project](/windows-on-fridges/img/creating-test-project/new-unit-test-project.png)
+<img src="/windows-on-fridges/img/creating-test-project/new-unit-test-project.png" style='width:100%;' border="0" alt="Null">
 
 #### Adding the Files
 * Now that you have a brand new Unit Test Project, you need to add the test files, and the files you need to run those tests... These can be found on our [web app's github repository](https://github.com/ms-iot/wof-webapp.png).
 * While those files are downloading, create a place to put them in your project. The files will be sorted into classes and tests so let's make two folders in our project labeled classes, and tests. Right click on the project name in the solution explorer (found on the right hand side). Select Add->New Folder as shown in the picture. Do this twice, naming one "tests" and the other "classes".
 
-![New Folder](/windows-on-fridges/img/creating-test-project/add-folder.png)
+<img src="/windows-on-fridges/img/creating-test-project/add-folder.png" style='width:100%;' border="0" alt="Null">
 
 * Once you have downloaded the files, right click on the newly created classes file. Select Add->Existing Item... Find the place where you downloaded the wof-webapp code. In wof-webapp->App_Code, open the classes folder and select all the files in there. Click add. Do the same with the tests folder, selecting all the files from github's test folder and clicking add.
 
-![Add Items](/windows-on-fridges/img/creating-test-project/add-existing-item.png)
+<img src="/windows-on-fridges/img/creating-test-project/add-existing-item.png" style='width:100%;' border="0" alt="Null">
 
 #### Adding References
 
 * Now you have all the code you need. You should be able to just click Test->Run->All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don't worry, this is easy to fix.
 * Right click on the project name again in the Solution Explorer. Select Add->Reference...
 
-![Add References](/windows-on-fridges/img/creating-test-project/add-reference.png)
+<img src="/windows-on-fridges/img/creating-test-project/add-reference.png" style='width:100%;' border="0" alt="Null">
 
 * On the left hand side of the pop-up, click on Assemblies->Framework. Next, click the checkmark next to each of the following Assemblies:
     * System.Drawing
@@ -53,7 +53,7 @@ weight: 80
     * System.Xml.Linq
 * Once all these are checked, click ok.
 
-![Which References](/windows-on-fridges/img/creating-test-project/picking-references.png)
+<img src="/windows-on-fridges/img/creating-test-project/picking-references.png" style='width:100%;' border="0" alt="Null">
 
 * NOW you can click Test->Run->All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.
 
@@ -72,43 +72,45 @@ We have a simple converter that takes an image of the map in SVG format and crea
   * Take any map of the space in JPEG format and open it in Visio
     * WARNING: Other file types might work with this instructions but were not tested.
     * HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.
-    ![Opening in Visio](/windows-on-fridges/img/map/1.jpg)
-    <img src="/windows-on-fridges/img/map/1.jpg" style='width:100%;' border="0" alt="Null">
+
+<img src="/windows-on-fridges/img/map/1.jpg" style='width:100%;' border="0" alt="Null">
 
   * To make your future SVG map be easily extracted from the map you opened, create a new layer by going to Home -> Layers -> Layer properties -> New. Press "ok" after you’re done.
-  ![New layer](/windows-on-fridges/img/map/2.jpg)
-  <img src="/windows-on-fridges/img/map/2.jpg" style='width:100%;' border="0" alt="Null">
+
+<img src="/windows-on-fridges/img/map/2.jpg" style='width:100%;' border="0" alt="Null">
 
 * Step 3
   * Use the line tool to draw all paths that you want the robot to wander. Make sure you "snap" the lines together if you want the two paths to actually be connected.
-  ![Line tool](/windows-on-fridges/img/map/3.jpg)
+
   <img src="/windows-on-fridges/img/map/3.jpg" style='width:100%;' border="0" alt="Null">
-  ![Paths](/windows-on-fridges/img/map/4.jpg)
+
   <img src="/windows-on-fridges/img/map/4.jpg" style='width:100%;' border="0" alt="Null">
+
   * Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -> define shape data. In the pop-up input "officeNumber" as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.
-  ![Stops](/windows-on-fridges/img/map/5.jpg)
+
   <img src="/windows-on-fridges/img/map/5.jpg" style='width:100%;' border="0" alt="Null">
-  ![Shape data](/windows-on-fridges/img/map/6.JPG)
+
   <img src="/windows-on-fridges/img/map/6.JPG" style='width:100%;' border="0" alt="Null">
 
 * Step 4
   * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don't want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its "officeNumber" value to 0.
-  ![Starting point](/windows-on-fridges/img/map/65.JPG)
+
   <img src="/windows-on-fridges/img/map/65.JPG" style='width:100%;' border="0" alt="Null">
 
 * Step 5
   * A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose "define shape data". In the pop-up input "scale" as a title and the actual length as value. Save. 
   * Note that the units you put in the "value" field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.
-  ![Scale](/windows-on-fridges/img/map/7.JPG)
+
   <img src="/windows-on-fridges/img/map/7.JPG" style='width:100%;' border="0" alt="Null">
    
 * Step 6
   * When you're done, save your Visio project to come back and modify your map whenever you want. 
   * After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.
-  ![Before](/windows-on-fridges/img/map/8.JPG)
+
   <img src="/windows-on-fridges/img/map/8.JPG" style='width:100%;' border="0" alt="Null">
-  ![After](/windows-on-fridges/img/map/9.JPG)
+
   <img src="/windows-on-fridges/img/map/9.JPG" style='width:100%;' border="0" alt="Null">
+
   * Make sure you don't have any particular shape selected to avoid having only this shape saved.
   * Go to file -> export -> change file type. Double-click on "SVG Scalable Vector Graphics". Save your map as "map.svg".
 
