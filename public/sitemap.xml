@@ -23,12 +23,12 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/community/contributing</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/community/contributing</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,12 +48,12 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/meta/license</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/meta/license</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,12 +78,12 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/client</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/client</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,7 +98,7 @@
   </url>
   
   <url>
-    <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/wifiadapter</loc>
+    <loc>http://ms-iot.github.io/windows-on-fridges/nodebot/calibrating</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
   </url>
   
