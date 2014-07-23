@@ -197,18 +197,6 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>License</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Source Organization</title>
       <link>http://ms-iot.github.io/windows-on-fridges/overview/source-directory</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
@@ -230,12 +218,15 @@ of this project&lt;/p&gt;
     </item>
     
     <item>
-      <title>Azure</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/webservices/azure</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      <title>License</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/azure</guid>
-      <description></description>
+      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
+</description>
     </item>
     
     <item>
@@ -291,6 +282,15 @@ only connect over LAN.&lt;/p&gt;
 &lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Azure</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/azure</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/azure</guid>
+      <description></description>
     </item>
     
     <item>
@@ -350,178 +350,86 @@ Firmata.exe&lt;/p&gt;&lt;/li&gt;
     </item>
     
     <item>
-      <title>Path Finding</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</link>
+      <title>Node Client</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/client</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/client</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Path Finding&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Node Client&lt;/h2&gt;
 
-&lt;h3 id=&#34;toc_1&#34;&gt;Editing and Testing the Code&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Make sure you have &lt;a href=&#34;http://nodejs.org&#34;&gt;NodeJS&lt;/a&gt; and &lt;a href=&#34;http://python.org&#34;&gt;Python&lt;/a&gt; installed and in your path&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_2&#34;&gt;Create a Unit Test Project&lt;/h4&gt;
+&lt;p&gt;Johnny-Five is the client library we will be using to interact with Firmata on the Galileo. Johnny-Five requires &lt;a href=&#34;https://github.com/voodootikigod/node-serialport&#34;&gt;SerialPort&lt;/a&gt; which is built with Python.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;If you haven&amp;rsquo;t already, download Visual Studio. &lt;link&gt; //Should this be in getting started?&lt;/li&gt;
-&lt;li&gt;The first step is to make sure the code works. Create a new test project by opening Visual Studio and going to File-&amp;gt;New-&amp;gt;Project at the top.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To get started clone the &lt;a href=&#34;https://github.com/ms-iot/wof-nodebot&#34;&gt;wof-nodebot-client&lt;/a&gt; repo.&lt;/p&gt;
+
+&lt;p&gt;git clone &lt;a href=&#34;https://github.com/ms-iot/wof-nodebot&#34;&gt;https://github.com/ms-iot/wof-nodebot&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Install Node dependencies from the packages.json file.&lt;/p&gt;
+
+&lt;p&gt;cd wof-nodebot
+npm install&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Comment out line 485, there are some issues with a logging dependency&lt;/p&gt;
+
+&lt;p&gt;//message[color];&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.&lt;/p&gt;
+
+&lt;p&gt;var galileoIP = &amp;lsquo;mygalileo&amp;rsquo;;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;When we connect to a socket server you may want to change the serverUrl to an endpoint on Azure.&lt;/p&gt;
+
+&lt;p&gt;var serverUrl = &amp;lsquo;&lt;a href=&#34;http://localhost:1337&#39;&#34;&gt;http://localhost:1337&#39;&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We should now be able to test the client, from the client source directory&lt;/p&gt;
+
+&lt;p&gt;node client.js&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We should see a REPL prompt, at the prompt we can test the motors&lt;/p&gt;
+
+&lt;p&gt;motors.left.fwd(255)
+motors.right.rev(255)
+motors.left.stop()
+motors.right.stop()&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/file-new-project.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;At this point we should have a working robot that you can control from the command line.
+We will now connect the client to the socket server that can run locally or on Azure.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Connecting to Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata is normally controlled over serial however, the Galileo does not have a proper serial connection to the computer.
+  We instead use &lt;a href=&#34;https://github.com/ms-iot/galileo-sdk/blob/develop/source/NetworkSerial.cpp&#34;&gt;Network Serial&lt;/a&gt; for serial communication.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;On the left hand side of the pop-up window, select Installed-&amp;gt;Templates-&amp;gt;Visual C#-&amp;gt;Test. Then in the middle part of the pop-up, click on Unit Test Project. Having a Unit Test Project will allow you to easily run all the tests at once. If you change anything in the code, you can quickly know whether it broke something else. Be sure to change the name of the project at the bottom. We called ours PathFindingTests, but you can name yours whatever you like. Press ok when you are done.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the case of Node we use the net package to create a socket connection on the &lt;em&gt;default port 27015&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;var net = require(&amp;ldquo;net&amp;rdquo;);&lt;/p&gt;
+
+&lt;p&gt;var socket = net.createConnection(27015, galileoIP);
+console.log(&amp;lsquo;Socket created.&amp;rsquo;);
+this.socket.on(&amp;lsquo;data&amp;rsquo;, function (data) {
+  // Log the response from the HTTP server.
+  console.log(&amp;lsquo;RESPONSE: &amp;lsquo; + data);
+}).on(&amp;lsquo;connect&amp;rsquo;, function () {
+  // Manually write an HTTP request.
+  console.log(&amp;ldquo;connected&amp;rdquo;);
+}).on(&amp;lsquo;end&amp;rsquo;, function () {
+  console.log(&amp;lsquo;DONE&amp;rsquo;);
+});&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Then we can create a Johnny-Five board object with this socket as the port.&lt;/p&gt;
+
+&lt;p&gt;var five = require(&amp;ldquo;johnny-five&amp;rdquo;);&lt;/p&gt;
+
+&lt;p&gt;board = new five.Board({
+  port: socket
+});&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/new-unit-test-project.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;toc_3&#34;&gt;Adding the Files&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Now that you have a brand new Unit Test Project, you need to add the test files, and the files you need to run those tests&amp;hellip; These can be found on our &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.png&#34;&gt;web app&amp;rsquo;s github repository&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;While those files are downloading, create a place to put them in your project. The files will be sorted into classes and tests so let&amp;rsquo;s make two folders in our project labeled classes, and tests. Right click on the project name in the solution explorer (found on the right hand side). Select Add-&amp;gt;New Folder as shown in the picture. Do this twice, naming one &amp;ldquo;tests&amp;rdquo; and the other &amp;ldquo;classes&amp;rdquo;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-folder.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Once you have downloaded the files, right click on the newly created classes file. Select Add-&amp;gt;Existing Item&amp;hellip; Find the place where you downloaded the wof-webapp code. In wof-webapp-&amp;gt;App_Code, open the classes folder and select all the files in there. Click add. Do the same with the tests folder, selecting all the files from github&amp;rsquo;s test folder and clicking add.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-existing-item.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;toc_4&#34;&gt;Adding References&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Now you have all the code you need. You should be able to just click Test-&amp;gt;Run-&amp;gt;All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don&amp;rsquo;t worry, this is easy to fix.&lt;/li&gt;
-&lt;li&gt;Right click on the project name again in the Solution Explorer. Select Add-&amp;gt;Reference&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-reference.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;On the left hand side of the pop-up, click on Assemblies-&amp;gt;Framework. Next, click the checkmark next to each of the following Assemblies:
-
-&lt;ul&gt;
-&lt;li&gt;System.Drawing&lt;/li&gt;
-&lt;li&gt;System.Web.Extensions&lt;/li&gt;
-&lt;li&gt;System.Windows&lt;/li&gt;
-&lt;li&gt;System.XML&lt;/li&gt;
-&lt;li&gt;System.Xml.Linq&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Once all these are checked, click ok.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/picking-references.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;NOW you can click Test-&amp;gt;Run-&amp;gt;All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;toc_5&#34;&gt;What&amp;rsquo;s Next?&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;If all the tests pass, then you know you can use the files in the project. If you want to make changes to any of these files or extend them in any way, make sure that you write tests for your changes and that your changes don&amp;rsquo;t break anyone ese&amp;rsquo;s tests.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;toc_6&#34;&gt;Running the Code&lt;/h3&gt;
-
-&lt;h4 id=&#34;toc_7&#34;&gt;Creating an SVG Map&lt;/h4&gt;
-
-&lt;p&gt;We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Step 1&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Install Microsoft Visio 2013 if you don&amp;rsquo;t have one already&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Step 2&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Take any map of the space in JPEG format and open it in Visio&lt;/li&gt;
-&lt;li&gt;WARNING: Other file types might work with these instructions but were not tested.&lt;/li&gt;
-&lt;li&gt;HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/1.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To make your future SVG map easily extractable from the image you opened, create a new layer by going to Home -&amp;gt; Layers -&amp;gt; Layer properties -&amp;gt; New. Press &amp;ldquo;ok&amp;rdquo; after you’re done.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/2.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Step 3
-
-&lt;ul&gt;
-&lt;li&gt;Use the line tool to draw all paths that you want the robot to wander. Make sure you &amp;ldquo;snap&amp;rdquo; the lines together if you want the two paths to actually be connected.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/3.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/4.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -&amp;gt; define shape data. In the pop-up input &amp;ldquo;officeNumber&amp;rdquo; as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/5.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/6.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Step 4
-
-&lt;ul&gt;
-&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/65.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Step 5
-
-&lt;ul&gt;
-&lt;li&gt;A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose &amp;ldquo;define shape data&amp;rdquo;. In the pop-up input &amp;ldquo;scale&amp;rdquo; as a title and the actual length as value. Save.&lt;/li&gt;
-&lt;li&gt;Note that the units you put in the &amp;ldquo;value&amp;rdquo; field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/7.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Step 6
-
-&lt;ul&gt;
-&lt;li&gt;When you&amp;rsquo;re done, save your Visio project to come back and modify your map whenever you want.&lt;/li&gt;
-&lt;li&gt;After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/8.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/9.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Make sure you don&amp;rsquo;t have any particular shape selected to avoid having only this shape saved.&lt;/li&gt;
-&lt;li&gt;Go to file -&amp;gt; export -&amp;gt; change file type. Double-click on &amp;ldquo;SVG Scalable Vector Graphics&amp;rdquo;. Save your map as &amp;ldquo;map.svg&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;WARNING: Don&amp;rsquo;t save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.&lt;/p&gt;
-
-&lt;h4 id=&#34;toc_8&#34;&gt;Getting a Path&lt;/h4&gt;
-
-&lt;h4 id=&#34;toc_9&#34;&gt;Running From Azure&lt;/h4&gt;
-
-&lt;p&gt;&lt;Need Anna&#39;s help filling in&gt;&lt;/p&gt;
 </description>
     </item>
     
