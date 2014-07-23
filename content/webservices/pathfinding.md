@@ -43,7 +43,7 @@ weight: 80
 * Now you have all the code you need. You should be able to just click Test->Run->All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don't worry, this is easy to fix.
 * Right click on the project name again in the Solution Explorer. Select Add->Reference...
 
-![Add Items](/windows-on-fridges/img/Creating Test Project/Add-Reference)
+![Add References](/windows-on-fridges/img/Creating Test Project/Add-Reference)
 
 * On the left hand side of the pop-up, click on Assemblies->Framework. Next, click the checkmark next to each of the following Assemblies:
     * System.Drawing
@@ -53,7 +53,7 @@ weight: 80
     * System.Xml.Linq
 * Once all these are checked, click ok.
 
-![Add Items](/windows-on-fridges/img/Creating Test Project/AddingReferences)
+![Which References](/windows-on-fridges/img/Creating Test Project/AddingReferences)
 
 * NOW you can click Test->Run->All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.
 
