@@ -24,16 +24,28 @@ This is the parts list for the robot that we built.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://windowsondevices.com&#34;&gt;Galileo Board&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://radioshack.com&#34;&gt;Motor Shield&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92&#34;&gt;Motor Shield&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://makeblocks.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Wireless Adapter&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Galileo Battery&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;USB to Barrel Plug&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Motor Battery&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Deans connector&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;Battery Charger&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://amazon.com&#34;&gt;USB Hub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://thinkgeek.com&#34;&gt;Micro Fridge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_sp-btf_title_1_8?ie=UTF8&amp;amp;qid=1406065590&amp;amp;sr=8-8&amp;amp;keywords=wifi+adapter+netgear&#34;&gt;Wireless Adapter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Mophie-Powerstation-4000mAh-External-BlackBerry/dp/B005OW4BFE/ref=sr_sp-atf_title_1_1?ie=UTF8&amp;amp;qid=1406065626&amp;amp;sr=8-1&amp;amp;keywords=mophie+battery+pack&#34;&gt;Galileo Battery&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Galileo requires 2A at 5V&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Generic-Volt-Barrel-Power-Cable/dp/B00304DZ7I/ref=sr_sp-atf_title_1_2?ie=UTF8&amp;amp;qid=1406065711&amp;amp;sr=8-2&amp;amp;keywords=usb+to+barrel&#34;&gt;USB to Barrel Plug&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Venom-5000mAh-8-Cell-Battery-Universal/dp/B001JTWSX8&#34;&gt;Motor Battery&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ensure you motor shield can handle the voltage you will provide.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Great-Planes-Charge-Banana-Ultra/dp/B001BHLWKI/ref=sr_sp-btf_title_1_13?ie=UTF8&amp;amp;qid=1406065892&amp;amp;sr=8-13&amp;amp;keywords=deans+connector+male&#34;&gt;Deans connector&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The leads will need to be stripped to connect to the motor shield.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Tenergy-Universal-Smart-Charger-Battery/dp/B003MXMJX8/ref=sr_sp-atf_title_1_1?ie=UTF8&amp;amp;qid=1406065971&amp;amp;sr=8-1&amp;amp;keywords=tenergy+charger&#34;&gt;Battery Charger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/AmazonBasics-4-Port-USB-2-0-Ultra-Mini/dp/B003M0NURK/ref=sr_sp-atf_title_1_2?ie=UTF8&amp;amp;qid=1406066066&amp;amp;sr=8-2&amp;amp;keywords=usb+hub&#34;&gt;USB Hub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.thinkgeek.com/product/96b3/&#34;&gt;Micro Fridge&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -48,19 +60,41 @@ This is the parts list for the robot that we built.&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_0&#34;&gt;Building the Robot&lt;/h2&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Step 1. Motors&lt;/h2&gt;
+&lt;h2 id=&#34;toc_1&#34;&gt;Step 1. Robot frame&lt;/h2&gt;
+
+&lt;p&gt;There are many frames to choose from when it comes to building a small to mid sized robot. &lt;a href=&#34;http://www.makeblock.cc/&#34;&gt;Makeblock&lt;/a&gt; is a simple open platform for robotics that is easy to put together. Here is an example configuration of a Makeblock robot with a galileo attached. You can get pretty creative here, there is no right way to build an awesome robot.
+We chose to use the &lt;a href=&#34;/windows-on-fridges/pdf/Makeblock-Big-Tank.pdf&#34;&gt;Big Tank&lt;/a&gt; frame.
+&lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-frame.jpg&#34; alt=&#34;nodebot frame&#34; /&gt;
+
+There are many configurations of robots you can build on Makeblocks &lt;a href=&#34;https://github.com/Makeblock-official/Assembly-Instructions&#34;&gt;assembly instruction&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Step 2. Motors&lt;/h2&gt;
 
 &lt;p&gt;Your Galileo should be plugged in and you should have &lt;a href=&#34;http://ms-iot.github.io/content/HelloBlinky.htm&#34;&gt;HelloBlinky&lt;/a&gt; working.
 Connect the motor shield to the galileo and attach the 2 motors to the shield.
-The motor shield we used is a &lt;a href=&#34;http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92&#34;&gt;SeeedStudio V2 Motor Shield&lt;/a&gt;. This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_2&#34;&gt;Step 2. Robot frame&lt;/h2&gt;
-
-&lt;p&gt;There are many frames to choose from when it comes to building a small to mid sized robot. &lt;a href=&#34;http://www.makeblock.cc/&#34;&gt;Makeblock&lt;/a&gt; is a simple open platform for robotics that is easy to put together. Here is an example configuration of a Makeblock robot with a galileo attached. You can get pretty creative here, there is no right way to build an awesome robot.&lt;/p&gt;
+The motor shield we used is a &lt;a href=&#34;http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92&#34;&gt;SeeedStudio V1/V2 Motor Shield&lt;/a&gt;. This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.
+&lt;em&gt;Either the V1 or V2 motor shield from SeeedStudio will work&lt;/em&gt;
+&lt;img src=&#34;/windows-on-fridges/img/nodebot/nodebot-motors-shield.jpg&#34; alt=&#34;Motors and shield&#34; /&gt;
+&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_3&#34;&gt;Step 3. Putting it all together&lt;/h2&gt;
 
 &lt;p&gt;Secure all your parts on the robot frame. You will need space for a Galileo, 2 batteries, and a wifi adapter.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Step 4. Set up Wifi Adapter&lt;/h2&gt;
+
+&lt;p&gt;Wifi gaming adapters allow you to connect devices to wifi that otherwise could
+only connect over LAN.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Purchase an adapter, such as &lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_1_3?ie=UTF8&amp;amp;qid=1404169366&amp;amp;sr=8-3&amp;amp;keywords=wireless+gaming+adapter&#34;&gt;this recommended option&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow the instructions supplied with your gaming adapter to connect it to your wireless network.&lt;/li&gt;
+&lt;li&gt;Connect the Gaming Adapter to the Galileo with an ethernet cable.&lt;/li&gt;
+&lt;li&gt;The recommended adapter also includes a USB power cable; If your adapter includes a USB power cable connect it to the Galileo with a &lt;a href=&#34;http://www.amazon.com/Micro-USB-Male-Female-Adapter/dp/B0027YYMU6&#34;&gt;Micro USB Male to USB A Female Adapter&lt;/a&gt; . The Galileo can provide sufficient power to the recommended adapter.&lt;/li&gt;
+&lt;li&gt;Connect your development machine to the same wireless network as the gaming adapter.&lt;/li&gt;
+&lt;li&gt;Ping the Galileo by hostname and ensure it is connected to the network.&lt;/li&gt;
+&lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -140,94 +174,6 @@ motors.right.stop()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;At this point we should have a working robot that you can control from the command line.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Calibrating the Robot&lt;/h2&gt;
-
-&lt;p&gt;The commands coming from Azure are in this format:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:0},{&amp;quot;Distance&amp;quot;:1.4142135623730952,&amp;quot;Angle&amp;quot;:45},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:-135},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:180}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But the commands the robot understands are in this format:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;[{&amp;quot;direction&amp;quot;:&#39;RIGHT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;LEFT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To translate between the two, we need to find out how long it takes the robot to turn a certain angle, and how long it takes to go forward a certain distance. The duration needed for each command can be easily calculated given the right, left, and forwards speeds. To make sure these speeds stay constant, we will have a set PWM at which they are measured. See below for instructions on how to measure the right and left rotational speeds, and the forward speed.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var direction; 
-var speed; 
-
-if (command.Angle &amp;gt; 0) { 
-    this.motorControl(&#39;RIGHT&#39;, setPWM, command.Angle / rotationalSpeedRight); 
-    // deg/(deg/ms) = ms 
-} else if (command.Angle &amp;lt; 0) { 
-
-this.motorControl(&#39;LEFT&#39;, setPWM, command.Angle / rotationalSpeedLeft);  
-// deg/(deg/ms) = ms 
-} 
-
-this.motorControl(&#39;FORWARD&#39;, setPWM, command.Distance / forwardSpeed);  
-// distance/(distance/ms) = ms 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;toc_2&#34;&gt;Calibration Variables&lt;/h3&gt;
-
-&lt;p&gt;Every robot will be slightly different. To calibrate your robot to accurately follow your commands, follow the directions below.&lt;/p&gt;
-
-&lt;p&gt;While measuring, keep in mind that your robot might move differently based on what surface (ex: carpet, tile, or wood flooring) it is moving on. Try to take your measurements on the surface the robot will be using most. If there are significant differences in robot performance on different surfaces you may want to keep the robot from going on certain surfaces that will throw it off by removing those paths from your map. The weight of the robot will also cause these numbers to shift. Do your measurements with a full can in the fridge.&lt;/p&gt;
-
-&lt;h4 id=&#34;toc_3&#34;&gt;PWM&lt;/h4&gt;
-
-&lt;p&gt;If we are going to measure a consistent speed of the robot, the motors need to have a consistent PWM. Choose one [0, 255] and stick with it. This must stay constant throughout your measurements and whenever your robot is following the angle, distance style of instructions or else your measured speeds will be meaningless.&lt;/p&gt;
-
-&lt;h4 id=&#34;toc_4&#34;&gt;Rotational Speed Right&lt;/h4&gt;
-
-&lt;p&gt;Rotational speed right can be calculated by sending the command&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{direction: RIGHT, speed: setPWM, duration: 100} 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then measure the degrees the robot turned. It may be helpful to mark the robot&amp;rsquo;s initial heading on the ground with tape to assist with measurements.&lt;/p&gt;
-
-&lt;p&gt;Try with a few different durations to make sure the degrees/duration stays relatively consistent.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rotationalSpeedRight = average(degrees/duration)  // degrees/millisecond when turning right  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;toc_5&#34;&gt;Rotational Speed Left&lt;/h4&gt;
-
-&lt;p&gt;Rotational speed left can be similarly calculated with&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{direction: LEFT, speed: setPWM, duration: 100} 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It may turn out to be the same as rotationalSpeedRight, but you can&amp;rsquo;t assume that will be the case.&lt;/p&gt;
-
-&lt;p&gt;Again, try with a few different durations to make sure the it is relatively consistent.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rotationalSpeedLeft = average(degrees/duration)  // degrees/millisecond when turning left 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;toc_6&#34;&gt;Forward Speed&lt;/h4&gt;
-
-&lt;p&gt;forwardSpeed is the distance your robot moves forward in one millisecond.&lt;/p&gt;
-
-&lt;p&gt;The unit of distance you use should match the unit of distance of the map you use.&lt;/p&gt;
-
-&lt;p&gt;For example, if your directions pass in the distance in meters, forwardSpeed should be calculated in meters/millisecond.&lt;/p&gt;
-
-&lt;p&gt;Use&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{direction: FORWARD, speed: setPWM, duration: 100}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and measure how far your robot moves forward.&lt;/p&gt;
-
-&lt;p&gt;Again, marking the ground could be helpful.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;forwardSpeed = average(distance/millisecond)  // distance/millisecond when going forward 
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -264,27 +210,100 @@ git push azure master
     </item>
     
     <item>
-      <title>Wifi Adapter</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/wifiadapter</link>
+      <title>Calibration</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/calibrating</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/wifiadapter</guid>
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/calibrating</guid>
       <description>
 
-&lt;h2 id=&#34;toc_0&#34;&gt;Using a Wifi Gaming Adapter with the Intel Galileo&lt;/h2&gt;
+&lt;h2 id=&#34;toc_0&#34;&gt;Calibrating the Robot&lt;/h2&gt;
 
-&lt;p&gt;Wifi gaming adapters allow you to connect devices to wifi that otherwise could
-only connect over LAN.&lt;/p&gt;
+&lt;p&gt;The commands coming from Azure are in this format:&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Purchase an adapter, such as &lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_1_3?ie=UTF8&amp;amp;qid=1404169366&amp;amp;sr=8-3&amp;amp;keywords=wireless+gaming+adapter&#34;&gt;this recommended option&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Follow the instructions supplied with your gaming adapter to connect it to your wireless network.&lt;/li&gt;
-&lt;li&gt;Connect the Gaming Adapter to the Galileo with an ethernet cable.&lt;/li&gt;
-&lt;li&gt;The recommended adapter also includes a USB power cable; If your adapter includes a USB power cable connect it to the Galileo with a &lt;a href=&#34;http://www.amazon.com/Micro-USB-Male-Female-Adapter/dp/B0027YYMU6&#34;&gt;Micro USB Male to USB A Female Adapter&lt;/a&gt; . The Galileo can provide sufficient power to the recommended adapter.&lt;/li&gt;
-&lt;li&gt;Connect your development machine to the same wireless network as the gaming adapter.&lt;/li&gt;
-&lt;li&gt;Ping the Galileo by hostname and ensure it is connected to the network.&lt;/li&gt;
-&lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;[{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:0},{&amp;quot;Distance&amp;quot;:1.4142135623730952,&amp;quot;Angle&amp;quot;:45},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:-135},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:180}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But the commands the robot understands are in this format:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[{&amp;quot;direction&amp;quot;:&#39;RIGHT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;LEFT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To translate between the two, we need to find out how long it takes the robot to turn a certain angle, and how long it takes to go forward a certain distance. The duration needed for each command can be easily calculated given the right, left, and forwards speeds. To make sure these speeds stay constant, we will have a set PWM at which they are measured. See below for instructions on how to measure the right and left rotational speeds, and the forward speed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var direction; 
+var speed; 
+
+if (command.Angle &amp;gt; 0) { 
+    this.motorControl(&#39;RIGHT&#39;, setPWM, command.Angle / rotationalSpeedRight); 
+    // deg/(deg/ms) = ms 
+} else if (command.Angle &amp;lt; 0) { 
+
+this.motorControl(&#39;LEFT&#39;, setPWM, command.Angle / rotationalSpeedLeft);  
+// deg/(deg/ms) = ms 
+} 
+
+this.motorControl(&#39;FORWARD&#39;, setPWM, command.Distance / forwardSpeed);  
+// distance/(distance/ms) = ms 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Calibration Variables&lt;/h3&gt;
+
+&lt;p&gt;Every robot will be slightly different. To calibrate your robot to accurately follow your commands, follow the directions below.&lt;/p&gt;
+
+&lt;p&gt;While measuring, keep in mind that your robot might move differently based on what surface (ex: carpet, tile, or wood flooring) it is moving on. Try to take your measurements on the surface the robot will be using most. If there are significant differences in robot performance on different surfaces you may want to keep the robot from going on certain surfaces that will throw it off by removing those paths from your map. The weight of the robot will also cause these numbers to shift. Do your measurements with a full can in the fridge.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_2&#34;&gt;PWM&lt;/h4&gt;
+
+&lt;p&gt;If we are going to measure a consistent speed of the robot, the motors need to have a consistent PWM. Choose one [0, 255] and stick with it. This must stay constant throughout your measurements and whenever your robot is following the angle, distance style of instructions or else your measured speeds will be meaningless.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_3&#34;&gt;Rotational Speed Right&lt;/h4&gt;
+
+&lt;p&gt;Rotational speed right can be calculated by sending the command&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{direction: RIGHT, speed: setPWM, duration: 100} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then measure the degrees the robot turned. It may be helpful to mark the robot&amp;rsquo;s initial heading on the ground with tape to assist with measurements.&lt;/p&gt;
+
+&lt;p&gt;Try with a few different durations to make sure the degrees/duration stays relatively consistent.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rotationalSpeedRight = average(degrees/duration)  // degrees/millisecond when turning right  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;toc_4&#34;&gt;Rotational Speed Left&lt;/h4&gt;
+
+&lt;p&gt;Rotational speed left can be similarly calculated with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{direction: LEFT, speed: setPWM, duration: 100} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It may turn out to be the same as rotationalSpeedRight, but you can&amp;rsquo;t assume that will be the case.&lt;/p&gt;
+
+&lt;p&gt;Again, try with a few different durations to make sure the it is relatively consistent.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rotationalSpeedLeft = average(degrees/duration)  // degrees/millisecond when turning left 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;toc_5&#34;&gt;Forward Speed&lt;/h4&gt;
+
+&lt;p&gt;forwardSpeed is the distance your robot moves forward in one millisecond.&lt;/p&gt;
+
+&lt;p&gt;The unit of distance you use should match the unit of distance of the map you use.&lt;/p&gt;
+
+&lt;p&gt;For example, if your directions pass in the distance in meters, forwardSpeed should be calculated in meters/millisecond.&lt;/p&gt;
+
+&lt;p&gt;Use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{direction: FORWARD, speed: setPWM, duration: 100}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and measure how far your robot moves forward.&lt;/p&gt;
+
+&lt;p&gt;Again, marking the ground could be helpful.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;forwardSpeed = average(distance/millisecond)  // distance/millisecond when going forward 
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
