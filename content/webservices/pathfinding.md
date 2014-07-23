@@ -85,11 +85,15 @@ We have a simple converter that takes an image of the map in SVG format and crea
   ![Shape data](/windows-on-fridges/img/map/6.jpg)
 
 * Step 4
+  * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don't want the robot to sit in a hallway all the time. This way you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its "officeNumber" value to 0.
+  ![Starting point](/windows-on-fridges/img/map/6.5.jpg)
+
+* Step 5
   * A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose "define shape data". In the pop-up input "scale" as a title and the actual length as value. Save. 
   * Note that the units you put in the "value" field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.
   ![Scale](/windows-on-fridges/img/map/7.jpg)
    
-* Step 5
+* Step 6
   * When you're done, save your Visio project to come back and modify your map whenever you want. 
   * After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.
   ![Before](/windows-on-fridges/img/map/8.jpg)
