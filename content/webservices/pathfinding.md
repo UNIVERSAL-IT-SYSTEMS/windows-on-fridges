@@ -124,6 +124,7 @@ To try out the pathfinding algorithm locally you can use a console application w
 * To access the source files clone the git repository at https://github.com/ms-iot/wof-webapp.git. 
 •	Image clone ripo
 * Delete workerRole.cs from the project. 
+* Put your map into the source folder.
 * Run “wof-pathfinding.exe”. 
 
 Congratulations! Now you can convert your map into a graph and run pathfinding on it.
