@@ -85,7 +85,7 @@ We have a simple converter that takes an image of the map in SVG format and crea
   ![Shape data](/windows-on-fridges/img/map/6.jpg)
 
 * Step 4
-  * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don't want the robot to sit in a hallway all the time. This way you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its "officeNumber" value to 0.
+  * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don't want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its "officeNumber" value to 0.
   ![Starting point](/windows-on-fridges/img/map/6.5.jpg)
 
 * Step 5
