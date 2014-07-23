@@ -17,11 +17,21 @@ weight: 100
 
 The commands coming from Azure are in this format: 
 
-    [{"Distance":1,"Angle":0},{"Distance":1.4142135623730952,"Angle":45},{"Distance":1,"Angle":-135},{"Distance":1,"Angle":180}]
+    "commandList": [
+      {"Distance":1,"Angle":0},
+      {"Distance":1.4142135623730952,"Angle":45},
+      {"Distance":1,"Angle":-135},
+      {"Distance":1,"Angle":180}
+    ]
 
 But the commands the robot understands are in this format: 
 
-    [{"direction":'RIGHT',"speed":255,"duration":100},{"direction":'FORWARD',"speed":255,"duration":100},{"direction":'LEFT',"speed":255,"duration":100},{"direction":'FORWARD',"speed":255,"duration":100}]
+    "commandList": [
+      {"direction":'RIGHT',"speed":255,"duration":100},
+      {"direction":'FORWARD',"speed":255,"duration":100},
+      {"direction":'LEFT',"speed":255,"duration":100},
+      {"direction":'FORWARD',"speed":255,"duration":100}
+    ]
     
 To translate between the two, we need to find out how long it takes the robot to turn a certain angle, and how long it takes to go forward a certain distance. The duration needed for each command can be easily calculated given the right, left, and forwards speeds. To make sure these speeds stay constant, we will have a set PWM at which they are measured. See below for instructions on how to measure the right and left rotational speeds, and the forward speed. 
 
