@@ -21,35 +21,35 @@ Johnny-Five is the client library we will be using to interact with Firmata on t
 
   * To get started clone the [wof-nodebot-client](https://github.com/ms-iot/wof-nodebot) repo.
 
-    git clone https://github.com/ms-iot/wof-nodebot
+        git clone https://github.com/ms-iot/wof-nodebot
 
   * Install Node dependencies from the packages.json file.
 
-    cd wof-nodebot
-    npm install
+        cd wof-nodebot
+        npm install
 
   * Comment out line 485, there are some issues with a logging dependency
 
-    //message[color];
+        //message[color];
 
   * In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.
 
-    var galileoIP = 'mygalileo';
+        var galileoIP = 'mygalileo';
 
   * When we connect to a socket server you may want to change the serverUrl to an endpoint on Azure.
 
-    var serverUrl = 'http://localhost:1337';
+        var serverUrl = 'http://localhost:1337';
     
   * We should now be able to test the client, from the client source directory
 
-    node client.js
+        node client.js
     
   * We should see a REPL prompt, at the prompt we can test the motors
 
-    motors.left.fwd(255)
-    motors.right.rev(255)
-    motors.left.stop()
-    motors.right.stop()
+        motors.left.fwd(255)
+        motors.right.rev(255)
+        motors.left.stop()
+        motors.right.stop()
     
 At this point we should have a working robot that you can control from the command line.
 We will now connect the client to the socket server that can run locally or on Azure.
@@ -61,24 +61,24 @@ We will now connect the client to the socket server that can run locally or on A
   
   * In the case of Node we use the net package to create a socket connection on the _default port 27015_
     
-    var net = require("net");
+        var net = require("net");
 
-    var socket = net.createConnection(27015, galileoIP); 
-    console.log('Socket created.');
-    this.socket.on('data', function (data) {
-      // Log the response from the HTTP server.
-      console.log('RESPONSE: ' + data);
-    }).on('connect', function () {
-      // Manually write an HTTP request.
-      console.log("connected");
-    }).on('end', function () {
-      console.log('DONE');
-    });
+        var socket = net.createConnection(27015, galileoIP); 
+        console.log('Socket created.');
+        this.socket.on('data', function (data) {
+          // Log the response from the HTTP server.
+          console.log('RESPONSE: ' + data);
+        }).on('connect', function () {
+          // Manually write an HTTP request.
+          console.log("connected");
+        }).on('end', function () {
+          console.log('DONE');
+        });
 
   * Then we can create a Johnny-Five board object with this socket as the port.
     
-    var five = require("johnny-five");
+        var five = require("johnny-five");
 
-    board = new five.Board({
-      port: socket
-    });
+        board = new five.Board({
+          port: socket
+        });
