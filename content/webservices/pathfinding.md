@@ -122,7 +122,10 @@ Congratulations! Your map is ready. You can view the generated SVG code by openi
 To try out the pathfinding algorithm locally you can use a console application we created. You do need to [create a map](link) first to run the pathfinding.
 
 * To access the source files clone the git repository at https://github.com/ms-iot/wof-webapp.git. 
-•	Image clone ripo
+
+    git clone http://github.com/ms-iot/wof-nodebot-server
+    
+    
 * Delete workerRole.cs from the project. 
 * Put your map into the source folder.
 * Run “wof-pathfinding.exe”. 
