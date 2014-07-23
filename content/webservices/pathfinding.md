@@ -53,7 +53,7 @@ We have a simple converter that takes an image of the map in SVG format and crea
   * Install Microsoft Visio 2013 if you don't have one already
   
 * Step 2
-  * Take any map of the space in JPEG or PDF format and open it in Visio
+  * Take any map of the space in JPEG format and open it in Visio
     * WARNING: Other file types might work with this instructions but were not tested.
     * HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.
     ![Opening in Visio](/windows-on-fridges/img/map/1.jpg)
