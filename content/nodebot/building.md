@@ -26,10 +26,10 @@ There are many configurations of robots you can build on Makeblocks [assembly in
   * The motor shield we used is a [SeeedStudio V1/V2 Motor Shield](http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92). This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.
     * There is more documentation for the motor shield on the SeeedStudio [wiki](http://www.seeedstudio.com/wiki/Motor_Shield_V2.0).
     _Either the V1 or V2 motor shield from SeeedStudio will work_
+<img src="/windows-on-fridges/img/nodebot/motorshield.jpg" style='width:100%;' border="0" alt="Null">
   * Connect the motor shield to the Galileo.
   * Attach 2 motors to the shield, the polarity does not matter but will affect the direction of the motors. You may have to switch the wires if the motors are turning the wrong way.
   * Attach the battery connector to the motor shield's external power input.
-<img src="/windows-on-fridges/img/nodebot/motorshield.jpg" style='width:100%;' border="0" alt="Null">
   * All together it should look something like this. _This version has the V1 shield, they are functionally the same_
 <img src="/windows-on-fridges/img/nodebot/nodebot-motors-shield.jpg" style='width:100%;' border="0" alt="Null">
 
