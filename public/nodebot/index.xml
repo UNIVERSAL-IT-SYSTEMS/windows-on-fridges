@@ -301,12 +301,22 @@ var serverUrl = &#39;test-robotcontrol.azurewebsites.net&#39;;
 
 &lt;p&gt;The commands coming from Azure are in this format:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:0},{&amp;quot;Distance&amp;quot;:1.4142135623730952,&amp;quot;Angle&amp;quot;:45},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:-135},{&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:180}]
+&lt;pre&gt;&lt;code&gt;&amp;quot;commandList&amp;quot;: [
+  {&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:0},
+  {&amp;quot;Distance&amp;quot;:1.4142135623730952,&amp;quot;Angle&amp;quot;:45},
+  {&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:-135},
+  {&amp;quot;Distance&amp;quot;:1,&amp;quot;Angle&amp;quot;:180}
+]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;But the commands the robot understands are in this format:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[{&amp;quot;direction&amp;quot;:&#39;RIGHT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;LEFT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},{&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100}]
+&lt;pre&gt;&lt;code&gt;&amp;quot;commandList&amp;quot;: [
+  {&amp;quot;direction&amp;quot;:&#39;RIGHT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},
+  {&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},
+  {&amp;quot;direction&amp;quot;:&#39;LEFT&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100},
+  {&amp;quot;direction&amp;quot;:&#39;FORWARD&#39;,&amp;quot;speed&amp;quot;:255,&amp;quot;duration&amp;quot;:100}
+]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;To translate between the two, we need to find out how long it takes the robot to turn a certain angle, and how long it takes to go forward a certain distance. The duration needed for each command can be easily calculated given the right, left, and forwards speeds. To make sure these speeds stay constant, we will have a set PWM at which they are measured. See below for instructions on how to measure the right and left rotational speeds, and the forward speed.&lt;/p&gt;
