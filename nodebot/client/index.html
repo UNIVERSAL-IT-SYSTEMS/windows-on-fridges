@@ -70,8 +70,6 @@
             </a>
                 <ul class="sub">
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/meta/roadmap"> Future </a> </li>
-                    
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/meta/license"> License </a> </li>
                     
                 </ul>
@@ -91,12 +89,6 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/introduction"> Introduction </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/quickstart"> Quickstart </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/configuration"> Configuration </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/overview/source-directory"> Source Organization </a> </li>
-                    
                 </ul>
               
               </li>
@@ -111,12 +103,6 @@
                 
             </a>
                 <ul class="sub">
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/hardware"> hardware </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/building"> build </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/firmata"> firmata </a> </li>
                     
                     <li class="active"><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/client"> client </a> </li>
                     
@@ -139,36 +125,19 @@
             </a>
                 <ul class="sub">
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/azure"> Azure </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/webapp"> Webapp </a> </li>
-                    
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/testing"> Testing </a> </li>
                     
                 </ul>
               
               </li>
           
               
-
-            <li class="sub-menu">
-            <a href="javascript:;" class="">
-                <i class='fa fa-group'></i>
-                
-                <span>community</span>
-                
-            </a>
-                <ul class="sub">
+                <li>
+                <a class="" href="">
+                    <i class='fa fa-group'></i>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/community/press"> Press </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/community/contributing"> Contributing </a> </li>
-                    
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/community/contact"> Contact </a> </li>
-                    
-                </ul>
+                    <span>community</span>
+                </a>
               
               </li>
           
@@ -223,35 +192,42 @@
 <ul>
 <li><p>To get started clone the <a href="https://github.com/ms-iot/wof-nodebot">wof-nodebot-client</a> repo.</p>
 
-<p>git clone <a href="https://github.com/ms-iot/wof-nodebot">https://github.com/ms-iot/wof-nodebot</a></p></li>
+<pre><code>git clone https://github.com/ms-iot/wof-nodebot
+</code></pre></li>
 
 <li><p>Install Node dependencies from the packages.json file.</p>
 
-<p>cd wof-nodebot
-npm install</p></li>
+<pre><code>cd wof-nodebot
+npm install
+</code></pre></li>
 
 <li><p>Comment out line 485, there are some issues with a logging dependency</p>
 
-<p>//message[color];</p></li>
+<pre><code>//message[color];
+</code></pre></li>
 
 <li><p>In the client.js file change galileoIP to reflect either the hostname or IP Address of your board.</p>
 
-<p>var galileoIP = &lsquo;mygalileo&rsquo;;</p></li>
+<pre><code>var galileoIP = 'mygalileo';
+</code></pre></li>
 
 <li><p>When we connect to a socket server you may want to change the serverUrl to an endpoint on Azure.</p>
 
-<p>var serverUrl = &lsquo;<a href="http://localhost:1337'">http://localhost:1337'</a>;</p></li>
+<pre><code>var serverUrl = 'http://localhost:1337';
+</code></pre></li>
 
 <li><p>We should now be able to test the client, from the client source directory</p>
 
-<p>node client.js</p></li>
+<pre><code>node client.js
+</code></pre></li>
 
 <li><p>We should see a REPL prompt, at the prompt we can test the motors</p>
 
-<p>motors.left.fwd(255)
+<pre><code>motors.left.fwd(255)
 motors.right.rev(255)
 motors.left.stop()
-motors.right.stop()</p></li>
+motors.right.stop()
+</code></pre></li>
 </ul>
 
 <p>At this point we should have a working robot that you can control from the command line.
@@ -265,27 +241,31 @@ We will now connect the client to the socket server that can run locally or on A
 <ul>
 <li><p>In the case of Node we use the net package to create a socket connection on the <em>default port 27015</em></p>
 
-<p>var net = require(&ldquo;net&rdquo;);</p>
+<pre><code>var net = require(&quot;net&quot;);
 
-<p>var socket = net.createConnection(27015, galileoIP);
-console.log(&lsquo;Socket created.&rsquo;);
-this.socket.on(&lsquo;data&rsquo;, function (data) {
+
+var socket = net.createConnection(27015, galileoIP); 
+console.log('Socket created.');
+this.socket.on('data', function (data) {
   // Log the response from the HTTP server.
-  console.log(&lsquo;RESPONSE: &lsquo; + data);
-}).on(&lsquo;connect&rsquo;, function () {
+  console.log('RESPONSE: ' + data);
+}).on('connect', function () {
   // Manually write an HTTP request.
-  console.log(&ldquo;connected&rdquo;);
-}).on(&lsquo;end&rsquo;, function () {
-  console.log(&lsquo;DONE&rsquo;);
-});</p></li>
+  console.log(&quot;connected&quot;);
+}).on('end', function () {
+  console.log('DONE');
+});
+</code></pre></li>
 
 <li><p>Then we can create a Johnny-Five board object with this socket as the port.</p>
 
-<p>var five = require(&ldquo;johnny-five&rdquo;);</p>
+<pre><code>var five = require(&quot;johnny-five&quot;);
 
-<p>board = new five.Board({
+
+board = new five.Board({
   port: socket
-});</p></li>
+});
+</code></pre></li>
 </ul>
 
 
