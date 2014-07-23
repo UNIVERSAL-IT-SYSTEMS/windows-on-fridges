@@ -18,15 +18,19 @@ weight: 60
 
 ## Step 1. Robot frame
 There are many frames to choose from when it comes to building a small to mid sized robot. [Makeblock](http://www.makeblock.cc/) is a simple open platform for robotics that is easy to put together. Here is an example configuration of a Makeblock robot with a galileo attached. You can get pretty creative here, there is no right way to build an awesome robot.
-We chose to use the [Big Tank](/windows-on-fridges/pdf/Makeblock-Big-Tank.pdf) frame.
+We chose to build the [Big Tank](/windows-on-fridges/pdf/Makeblock-Big-Tank.pdf) frame.
 <img src="/windows-on-fridges/img/nodebot/nodebot-frame.jpg" style='width:100%;' border="0" alt="Null">
 There are many configurations of robots you can build on Makeblocks [assembly instruction](https://github.com/Makeblock-official/Assembly-Instructions).
 
 ## Step 2. Motors
-Your Galileo should be plugged in and you should have [HelloBlinky](http://ms-iot.github.io/content/HelloBlinky.htm) working. 
-Connect the motor shield to the galileo and attach the 2 motors to the shield.
-The motor shield we used is a [SeeedStudio V1/V2 Motor Shield](http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92). This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.
-_Either the V1 or V2 motor shield from SeeedStudio will work_
+  * The motor shield we used is a [SeeedStudio V1/V2 Motor Shield](http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92). This shield can either be powered directly from the board or from an external power source via its external power jack. Without external power the motors may not turn when a load is applied.
+    * There is more documentation for the motor shield on the SeeedStudio [wiki](http://www.seeedstudio.com/wiki/Motor_Shield_V2.0).
+    _Either the V1 or V2 motor shield from SeeedStudio will work_
+  * Connect the motor shield to the Galileo.
+  * Attach 2 motors to the shield, the polarity does not matter but will affect the direction of the motors. You may have to switch the wires if the motors are turning the wrong way.
+  * Attach the battery connector to the motor shield's external power input.
+<img src="/windows-on-fridges/img/nodebot/motorshield.jpg" style='width:100%;' border="0" alt="Null">
+  * All together it should look something like this. _This version has the V1 shield, they are functionally the same_
 <img src="/windows-on-fridges/img/nodebot/nodebot-motors-shield.jpg" style='width:100%;' border="0" alt="Null">
 
 ## Step 3. Putting it all together
