@@ -23,7 +23,7 @@ Firmata must be running on the board before the node client can interact with it
 
   * Clone the Galileo Firmata Repository
 
-    git clone https://github.com/path/to/galileo/firmata
+        git clone https://github.com/path/to/galileo/firmata
 
   * Open the Visual Studio project.
   * Configure the remote debugging settings.  
@@ -31,8 +31,8 @@ Firmata must be running on the board before the node client can interact with it
   * Deploy the project to the Galileo.
   * Once you have deployed you will be able to telnet into the Galileo and remotely start firmata
       
-    telnet mygalileo
-    cd c:\test
-    Firmata.exe
+        telnet mygalileo
+        cd c:\test
+        Firmata.exe
 
   * We can now control the Galileo using the Firmata protocol with any client library.
