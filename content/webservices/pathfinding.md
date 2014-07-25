@@ -14,54 +14,9 @@ weight: 80
 ---
 
 ## Path Finding
-### Editing and Testing the Code
 
 
-
-#### Create a Unit Test Project
-* If you haven't already, download Visual Studio. <link> //Should this be in getting started?
-* The first step is to make sure the code works. Create a new test project by opening Visual Studio and going to File->New->Project at the top.
-
-<img src="/windows-on-fridges/img/creating-test-project/file-new-project.png" style='width:100%;' border="0" alt="Null">
-
-* On the left hand side of the pop-up window, select Installed->Templates->Visual C#->Test. Then in the middle part of the pop-up, click on Unit Test Project. Having a Unit Test Project will allow you to easily run all the tests at once. If you change anything in the code, you can quickly know whether it broke something else. Be sure to change the name of the project at the bottom. We called ours PathFindingTests, but you can name yours whatever you like. Press ok when you are done.
-
-<img src="/windows-on-fridges/img/creating-test-project/new-unit-test-project.png" style='width:100%;' border="0" alt="Null">
-
-#### Adding the Files
-* Now that you have a brand new Unit Test Project, you need to add the test files, and the files you need to run those tests... These can be found on our [web app's github repository](https://github.com/ms-iot/wof-webapp.png).
-* While those files are downloading, create a place to put them in your project. The files will be sorted into classes and tests so let's make two folders in our project labeled classes, and tests. Right click on the project name in the solution explorer (found on the right hand side). Select Add->New Folder as shown in the picture. Do this twice, naming one "tests" and the other "classes".
-
-<img src="/windows-on-fridges/img/creating-test-project/add-folder.png" style='width:100%;' border="0" alt="Null">
-
-* Once you have downloaded the files, right click on the newly created classes file. Select Add->Existing Item... Find the place where you downloaded the wof-webapp code. In wof-webapp->App_Code, open the classes folder and select all the files in there. Click add. Do the same with the tests folder, selecting all the files from github's test folder and clicking add.
-
-<img src="/windows-on-fridges/img/creating-test-project/add-existing-item.png" style='width:100%;' border="0" alt="Null">
-
-#### Adding References
-
-* Now you have all the code you need. You should be able to just click Test->Run->All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don't worry, this is easy to fix.
-* Right click on the project name again in the Solution Explorer. Select Add->Reference...
-
-<img src="/windows-on-fridges/img/creating-test-project/add-reference.png" style='width:100%;' border="0" alt="Null">
-
-* On the left hand side of the pop-up, click on Assemblies->Framework. Next, click the checkmark next to each of the following Assemblies:
-    * System.Drawing
-    * System.Web.Extensions
-    * System.Windows
-    * System.XML
-    * System.Xml.Linq
-* Once all these are checked, click ok.
-
-<img src="/windows-on-fridges/img/creating-test-project/picking-references.png" style='width:100%;' border="0" alt="Null">
-
-* NOW you can click Test->Run->All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.
-
-#### What's Next?
-* If all the tests pass, then you know you can use the files in the project. If you want to make changes to any of these files or extend them in any way, make sure that you write tests for your changes and that your changes don't break anyone ese's tests. 
-
-### Running the Code
-#### Creating an SVG Map
+### Creating an SVG Map
 
 We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:
 
@@ -117,7 +72,7 @@ Step 6
 
 Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.
 
-#### Running pathfinding locally
+### Running pathfinding locally
 
 To try out the pathfinding algorithm locally you can use a console application we created. You do need to [create a map](link) first to run the pathfinding.
 
@@ -130,7 +85,7 @@ To try out the pathfinding algorithm locally you can use a console application w
 
 Congratulations! Now you can convert your map into a graph and run pathfinding on it.
 
-#### Running Pathfinding From Azure
+### Running Pathfinding From Azure
 
 To deploy pathfinding to Azure you have to go through and [set up Azure account with all necessary services](link) first.
 
@@ -214,6 +169,59 @@ Step 7.
 Just comment out the line that sends the instructions to Robot. It is in WorkerRole.cs in Run function.
 
 <img src="/windows-on-fridges/img/cloudServices/13.jpg" style='width:100%;' border="0" alt="Null">
- 
 
+
+### Editing and Testing the Code
+
+#### Create a Unit Test Project
+
+* The first step is to make sure the code works. Create a new test project by opening Visual Studio and going to File->New->Project at the top.
+
+<img src="/windows-on-fridges/img/creating-test-project/file-new-project.png" style='width:100%;' border="0" alt="Null">
+
+* On the left hand side of the pop-up window, select Installed->Templates->Visual C#->Test. Then in the middle part of the pop-up, click on Unit Test Project. Having a Unit Test Project will allow you to easily run all the tests at once. If you change anything in the code, you can quickly know whether it broke something else. Be sure to change the name of the project at the bottom. We called ours PathFindingTests, but you can name yours whatever you like. Press ok when you are done.
+
+<img src="/windows-on-fridges/img/creating-test-project/new-unit-test-project.png" style='width:100%;' border="0" alt="Null">
+
+#### Adding the Files
+* Now that you have a brand new Unit Test Project, you need to add the test files, and the files you need to run those tests... These can be found on our [web app's github repository](https://github.com/ms-iot/wof-webapp.png).
+* While those files are downloading, create a place to put them in your project. The files will be sorted into classes and tests so let's make two folders in our project labeled classes, and tests. Right click on the project name in the solution explorer (found on the right hand side). Select Add->New Folder as shown in the picture. Do this twice, naming one "tests" and the other "classes".
+
+<img src="/windows-on-fridges/img/creating-test-project/add-folder.png" style='width:100%;' border="0" alt="Null">
+
+* Once you have downloaded the files, right click on the newly created classes file. Select Add->Existing Item... Find the place where you downloaded the wof-webapp code. In wof-webapp->App_Code, open the classes folder and select all the files in there. Click add. Do the same with the tests folder, selecting all the files from github's test folder and clicking add.
+
+<img src="/windows-on-fridges/img/creating-test-project/add-existing-item.png" style='width:100%;' border="0" alt="Null">
+
+#### Adding References
+
+* Now you have all the code you need. You should be able to just click Test->Run->All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don't worry, this is easy to fix.
+* Right click on the project name again in the Solution Explorer. Select Add->Reference...
+
+<img src="/windows-on-fridges/img/creating-test-project/add-reference.png" style='width:100%;' border="0" alt="Null">
+
+* On the left hand side of the pop-up, click on Assemblies->Framework. Next, click the checkmark next to each of the following Assemblies:
+    * System.Drawing
+    * System.Web.Extensions
+    * System.Windows
+    * System.XML
+    * System.Xml.Linq
+* Once all these are checked, click ok.
+
+<img src="/windows-on-fridges/img/creating-test-project/picking-references.png" style='width:100%;' border="0" alt="Null">
+
+* NOW you can click Test->Run->All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.
+
+#### What's Next?
+
+* If all the tests pass, then you know you can use the files in the project. If you want to make changes to any of these files or extend them in any way, make sure that you write tests for your changes and that your changes don't break anyone ese's tests.
+
+ 
+#### Testing your cloud services.
+
+There are few functions in WorkerRole.cs that you can use to do partial testing with your changes. 
+
+  * storeResultingPath stores an image with the generated path in your storage wher you put map.svg. 
+
+  * getDummieRecords creates a list of Record objects from the list of officeNumbers you give it. 
 
