@@ -78,7 +78,7 @@ To try out the pathfinding algorithm locally you can use a console application w
 
 * To access the source files clone the git repository at https://github.com/ms-iot/wof-webapp.git. 
 
-    git clone https://github.com/ms-iot/wof-webapp.git
+    * git clone https://github.com/ms-iot/wof-webapp.git
 
 * Delete WorkerRole.cs from the project. 
 * Run “wof-pathfinding.exe”. 
@@ -110,7 +110,9 @@ Step 2.
  
 Step 3.
   * Get the source files by cloning the repository at https://github.com/ms-iot/wof-webapp.git.
-    Git clone https://github.com/ms-iot/wof-webapp.git
+
+    * git clone https://github.com/ms-iot/wof-webapp.git
+
   * Delete “Main.cs” and “wof-pathfinding.exe” from source files. These files are for [running pathfinding locally](link).
   * Copy source files into your newly created cloud services source folder (where the new WorkerRole1.cs is right now).
   * In Solution explorer right-click on your solution inside the cloud services project and go to Add->Existing item…
