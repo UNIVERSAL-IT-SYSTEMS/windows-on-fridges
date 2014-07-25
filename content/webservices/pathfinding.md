@@ -130,5 +130,92 @@ To try out the pathfinding algorithm locally you can use a console application w
 
 Congratulations! Now you can convert your map into a graph and run pathfinding on it.
 
-#### Running From Azure
- <Need Anna's help filling in>
+#### Running Pathfinding From Azure
+
+To deploy pathfinding to Azure you have to go through and [set up Azure account with all necessary services](link) first.
+
+* Step 1.
+* Upload your map to Azure using Server Explorer in Visual Studio. 
+    * In Server Explorer navigate to Windows Azure -> Storage -> your storage account name -> Blobs. Double-click on container you want to use. Upload the map you created.
+    * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs
+ 
+<img src="/windows-on-fridges/img/cloudServices/1.JPG" style='width:100%;' border="0" alt="Null">
+
+<img src="/windows-on-fridges/img/cloudServices/2.jpg" style='width:100%;' border="0" alt="Null">
+
+ 
+* Step 2.
+* In Visual Studio, create new cloud services with one worker role:
+    * Go to File -> New -> Project -> Cloud -> Windows Azure Cloud Service. Input your cloud service name. Press “ok”.
+
+<img src="/windows-on-fridges/img/cloudServices/3.JPG" style='width:100%;' border="0" alt="Null">
+
+    * In the next menu, choose one worker role, press “ok”.
+    
+<img src="/windows-on-fridges/img/cloudServices/4.JPG" style='width:100%;' border="0" alt="Null">
+ 
+* Step 3.
+    * Get the source files by cloning the repository at https://github.com/ms-iot/wof-webapp.git.
+    Git clone https://github.com/ms-iot/wof-webapp.git    
+    * Delete “Main.cs” and “wof-pathfinding.exe” from source files. These files are for [running pathfinding locally](link).
+    * Copy source files into your newly created cloud services source folder (where the new WorkerRole1.cs is right now).
+    * In Solution explorer right-click on your solution inside the cloud services project and go to Add->Existing item…
+    
+<img src="/windows-on-fridges/img/cloudServices/5.jpg" style='width:100%;' border="0" alt="Null">
+Add all files from the source folder.
+
+* Step 4.
+* Connect your worker role to the right storage account (the one you uploaded your SVG map to):
+    * In solution explorer navigate to Roles -> WorkerRole. Right-click on it and double click on “Properties”.
+    
+<img src="/windows-on-fridges/img/cloudServices/6.jpg" style='width:100%;' border="0" alt="Null">
+ 
+    * In the properties window choose “Settings”. At the end of the setting that has the type “Connection String” and value “UseDevelopmentStorage=true” click on the button with three dots. In the pop-up choose “Your subscription” and choose the correct storage account name from the dropdown. Press ok.
+ 
+<img src="/windows-on-fridges/img/cloudServices/7.jpg" style='width:100%;' border="0" alt="Null">
+
+
+* Step 5.
+    * Open WorkerRole.cs by double-clicking it in Solution Explorer.
+    * At the top of worker role class replace [your mobile services host] by your mobile services host name. It will look like “something.azure-mobile.net”.
+    * Replace [your key] with the security key to your mobile services.
+    * Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.
+    
+<img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:100%;' border="0" alt="Null">
+    
+    * HINT: To find your security key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.
+    
+<img src="/windows-on-fridges/img/cloudServices/9.jpg" style='width:100%;' border="0" alt="Null">
+ 
+    * If you did not name the table in your database “offices”, change the “table_name” to your table name.
+    * If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.
+    
+* Step 6.
+
+* Try running your cloud services locally by pressing f5. 
+
+* Step 7. 
+* Publish your cloud services to Azure:
+    * Go to Solution Explorer, right-click on your cloud services and choose “Publish” from the dropdown.
+    
+<img src="/windows-on-fridges/img/cloudServices/10.jpg" style='width:100%;' border="0" alt="Null">
+ 
+    * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
+    * In the “cloud service” dropdown choose the cloud service you created previously for pathfinding. Click “Next”.
+    * Make sure that it says “New profile” at the top and the storage that has your SVG map in the “Storage account” line. Hit “Publish”.
+    * Publishing might take a few minutes. Windows Azure Activity Log will tell you when the deployment is done. 
+     
+<img src="/windows-on-fridges/img/cloudServices/11.jpg" style='width:100%;' border="0" alt="Null">
+    
+    * You can also check the status of your deployment in the Management Portal.
+    
+<img src="/windows-on-fridges/img/cloudServices/12.JPG" style='width:100%;' border="0" alt="Null">
+ 
+
+* HINT: Don’t have a nodebot set up or the robot ready yet?
+Just comment out the line that sends the instructions to Robot. It is in WorkerRole.cs in Run function.
+
+<img src="/windows-on-fridges/img/cloudServices/13.jpg" style='width:100%;' border="0" alt="Null">
+ 
+
+
