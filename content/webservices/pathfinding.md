@@ -65,10 +65,10 @@ weight: 80
 
 We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:
 
-* Step 1
+Step 1
   * Install Microsoft Visio 2013 if you don't have one already
-  
-* Step 2
+
+Step 2
   * Take any map of the space in JPEG format and open it in Visio
     * WARNING: Other file types might work with these instructions but were not tested.
     * HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.
@@ -79,7 +79,7 @@ We have a simple converter that takes an image of the map in SVG format and crea
 
 <img src="/windows-on-fridges/img/map/2.jpg" style='width:100%;' border="0" alt="Null">
 
-* Step 3
+Step 3
   * Use the line tool to draw all paths that you want the robot to wander. Make sure you "snap" the lines together if you want the two paths to actually be connected.
 
   <img src="/windows-on-fridges/img/map/3.jpg" style='width:100%;' border="0" alt="Null">
@@ -92,18 +92,18 @@ We have a simple converter that takes an image of the map in SVG format and crea
 
   <img src="/windows-on-fridges/img/map/6.JPG" style='width:100%;' border="0" alt="Null">
 
-* Step 4
+Step 4
   * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don't want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its "officeNumber" value to 0.
 
   <img src="/windows-on-fridges/img/map/65.JPG" style='width:100%;' border="0" alt="Null">
 
-* Step 5
+Step 5
   * A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose "define shape data". In the pop-up input "scale" as a title and the actual length as value. Save. 
   * Note that the units you put in the "value" field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.
 
   <img src="/windows-on-fridges/img/map/7.JPG" style='width:100%;' border="0" alt="Null">
    
-* Step 6
+Step 6
   * When you're done, save your Visio project to come back and modify your map whenever you want. 
   * After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.
 
@@ -136,78 +136,77 @@ To deploy pathfinding to Azure you have to go through and [set up Azure account 
 
 Step 1.
 * Upload your map to Azure using Server Explorer in Visual Studio. 
-    * In Server Explorer navigate to Windows Azure -> Storage -> your storage account name -> Blobs. Double-click on container you want to use. Upload the map you created.
-    * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs
- 
+  * In Server Explorer navigate to Windows Azure -> Storage -> your storage account name -> Blobs. Double-click on container you want to use. Upload the map you created.
+  * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs
+
 <img src="/windows-on-fridges/img/cloudServices/1.JPG" style='width:100%;' border="0" alt="Null">
 
 <img src="/windows-on-fridges/img/cloudServices/2.jpg" style='width:100%;' border="0" alt="Null">
 
 Step 2.
 * In Visual Studio, create new cloud services with one worker role:
-    * Go to File -> New -> Project -> Cloud -> Windows Azure Cloud Service. Input your cloud service name. Press “ok”.
-  
+  * Go to File -> New -> Project -> Cloud -> Windows Azure Cloud Service. Input your cloud service name. Press “ok”.
+
 <img src="/windows-on-fridges/img/cloudServices/3.JPG" style='width:100%;' border="0" alt="Null">
 
-    * In the next menu, choose one worker role, press “ok”.
-    
+  * In the next menu, choose one worker role, press “ok”.
+
 <img src="/windows-on-fridges/img/cloudServices/4.JPG" style='width:100%;' border="0" alt="Null">
  
-* Step 3.
-    * Get the source files by cloning the repository at https://github.com/ms-iot/wof-webapp.git.
-    Git clone https://github.com/ms-iot/wof-webapp.git    
-    * Delete “Main.cs” and “wof-pathfinding.exe” from source files. These files are for [running pathfinding locally](link).
-    * Copy source files into your newly created cloud services source folder (where the new WorkerRole1.cs is right now).
-    * In Solution explorer right-click on your solution inside the cloud services project and go to Add->Existing item…
-    
-<img src="/windows-on-fridges/img/cloudServices/5.jpg" style='width:100%;' border="0" alt="Null">
-Add all files from the source folder.
+Step 3.
+  * Get the source files by cloning the repository at https://github.com/ms-iot/wof-webapp.git.
+    Git clone https://github.com/ms-iot/wof-webapp.git
+  * Delete “Main.cs” and “wof-pathfinding.exe” from source files. These files are for [running pathfinding locally](link).
+  * Copy source files into your newly created cloud services source folder (where the new WorkerRole1.cs is right now).
+  * In Solution explorer right-click on your solution inside the cloud services project and go to Add->Existing item…
+  
+  <img src="/windows-on-fridges/img/cloudServices/5.jpg" style='width:100%;' border="0" alt="Null">
+  
+  Add all files from the source folder.
 
-* Step 4.
+Step 4.
 * Connect your worker role to the right storage account (the one you uploaded your SVG map to):
-    * In solution explorer navigate to Roles -> WorkerRole. Right-click on it and double click on “Properties”.
-    
+  * In solution explorer navigate to Roles -> WorkerRole. Right-click on it and double click on “Properties”.
+
 <img src="/windows-on-fridges/img/cloudServices/6.jpg" style='width:100%;' border="0" alt="Null">
  
-    * In the properties window choose “Settings”. At the end of the setting that has the type “Connection String” and value “UseDevelopmentStorage=true” click on the button with three dots. In the pop-up choose “Your subscription” and choose the correct storage account name from the dropdown. Press ok.
- 
+  * In the properties window choose “Settings”. At the end of the setting that has the type “Connection String” and value “UseDevelopmentStorage=true” click on the button with three dots. In the pop-up choose “Your subscription” and choose the correct storage account name from the dropdown. Press ok.
+
 <img src="/windows-on-fridges/img/cloudServices/7.jpg" style='width:100%;' border="0" alt="Null">
 
+Step 5.
+  * Open WorkerRole.cs by double-clicking it in Solution Explorer.
+  * At the top of worker role class replace [your mobile services host] by your mobile services host name. It will look like “something.azure-mobile.net”.
+  * Replace [your key] with the security key to your mobile services.
+  * Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.
 
-* Step 5.
-    * Open WorkerRole.cs by double-clicking it in Solution Explorer.
-    * At the top of worker role class replace [your mobile services host] by your mobile services host name. It will look like “something.azure-mobile.net”.
-    * Replace [your key] with the security key to your mobile services.
-    * Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.
-    
 <img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:100%;' border="0" alt="Null">
     
-    * HINT: To find your security key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.
-    
+  * HINT: To find your security key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.
+
 <img src="/windows-on-fridges/img/cloudServices/9.jpg" style='width:100%;' border="0" alt="Null">
  
-    * If you did not name the table in your database “offices”, change the “table_name” to your table name.
-    * If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.
-    
-* Step 6.
+  * If you did not name the table in your database “offices”, change the “table_name” to your table name.
+  * If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.
 
+Step 6.
 * Try running your cloud services locally by pressing f5. 
 
-* Step 7. 
+Step 7. 
 * Publish your cloud services to Azure:
-    * Go to Solution Explorer, right-click on your cloud services and choose “Publish” from the dropdown.
-    
+  * Go to Solution Explorer, right-click on your cloud services and choose “Publish” from the dropdown.
+
 <img src="/windows-on-fridges/img/cloudServices/10.jpg" style='width:100%;' border="0" alt="Null">
  
-    * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
-    * In the “cloud service” dropdown choose the cloud service you created previously for pathfinding. Click “Next”.
-    * Make sure that it says “New profile” at the top and the storage that has your SVG map in the “Storage account” line. Hit “Publish”.
-    * Publishing might take a few minutes. Windows Azure Activity Log will tell you when the deployment is done. 
-     
+  * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
+  * In the “cloud service” dropdown choose the cloud service you created previously for pathfinding. Click “Next”.
+  * Make sure that it says “New profile” at the top and the storage that has your SVG map in the “Storage account” line. Hit “Publish”.
+  * Publishing might take a few minutes. Windows Azure Activity Log will tell you when the deployment is done. 
+
 <img src="/windows-on-fridges/img/cloudServices/11.jpg" style='width:100%;' border="0" alt="Null">
     
-    * You can also check the status of your deployment in the Management Portal.
-    
+  * You can also check the status of your deployment in the Management Portal.
+
 <img src="/windows-on-fridges/img/cloudServices/12.JPG" style='width:100%;' border="0" alt="Null">
  
 
