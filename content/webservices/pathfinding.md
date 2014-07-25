@@ -134,7 +134,7 @@ Congratulations! Now you can convert your map into a graph and run pathfinding o
 
 To deploy pathfinding to Azure you have to go through and [set up Azure account with all necessary services](link) first.
 
-* Step 1.
+Step 1.
 * Upload your map to Azure using Server Explorer in Visual Studio. 
     * In Server Explorer navigate to Windows Azure -> Storage -> your storage account name -> Blobs. Double-click on container you want to use. Upload the map you created.
     * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs
@@ -143,11 +143,10 @@ To deploy pathfinding to Azure you have to go through and [set up Azure account 
 
 <img src="/windows-on-fridges/img/cloudServices/2.jpg" style='width:100%;' border="0" alt="Null">
 
- 
-* Step 2.
+Step 2.
 * In Visual Studio, create new cloud services with one worker role:
     * Go to File -> New -> Project -> Cloud -> Windows Azure Cloud Service. Input your cloud service name. Press “ok”.
-
+  
 <img src="/windows-on-fridges/img/cloudServices/3.JPG" style='width:100%;' border="0" alt="Null">
 
     * In the next menu, choose one worker role, press “ok”.
