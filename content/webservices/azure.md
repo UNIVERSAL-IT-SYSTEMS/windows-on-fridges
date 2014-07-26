@@ -16,11 +16,18 @@ weight: 60
 ##Setting up Azure
 
 To host our web services on Azure you will need five main components that will be referred to as:
-1.	Web-app
-2.	Mobile Services
-3.	Storage
-4.	Cloud services
-5.	Nodebot server
+
+  1.Web-app  
+  
+  2.Mobile Services 
+  
+  3.Storage
+  
+  4.Cloud services
+  
+  5.Nodebot Server
+  
+
 
 ####Step 1.
 
@@ -57,13 +64,7 @@ Now that you created mobile services, you need to create the database schema tha
 
  
 * When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
-Add the following columns:
-
-Data Type     Column Name
-
-String		    office
-String 		    cancelled
-String 		    complete
+Add the following columns: "office" (string), "cancelled" (boolean), "complete" (boolean).
 
 Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying.
 
