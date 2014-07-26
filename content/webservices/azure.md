@@ -45,23 +45,23 @@ Now that you have an account you can go to your Management portal and create Mob
 * Go to Azure.microsoft.com -> Management portal. Sign in to your Azure account.
 * At the bottom of the page click new -> Compute -> Mobile service -> create
 
-
+<img src="/windows-on-fridges/img/azure/1.jpg" style='width:100%;' border="0" alt="Null">
  
 * Type in the URL for your mobile service. This URL will later be referred to as your mobile service host. From the Database dropdown choose creating a new database. For region choose the region that is closest to you. For backend choose JavaScript. Press the arrow at the bottom right corner.
- 
 
+<img src="/windows-on-fridges/img/azure/2.jpg" style='width:100%;' border="0" alt="Null">
 
 * Choose “New SQL database server” and input server login and password. You will have to enter these credentials later on, so try to not forget them! Press the checkmark symbol.
 * When the status says “ready”, the mobile service is created.
 
 Now that you created mobile services, you need to create the database schema that the app is using
 * For that, go to your new mobile service - > DATA. Press “add a table”.
- 
 
+<img src="/windows-on-fridges/img/azure/3.jpg" style='width:100%;' border="0" alt="Null">
 
 * Enter “offices” as a table name. Press the checkmark symbol.
 
-
+<img src="/windows-on-fridges/img/azure/4.jpg" style='width:100%;' border="0" alt="Null">
  
 * When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
 Add the following columns: "office" (string), "cancelled" (boolean), "complete" (boolean).
@@ -76,7 +76,7 @@ Now let’s create a web-site and connect it to mobile services.
   * HINT: Don’t remember your database name? Go to your mobile service CONFIGURE tab. The database name is at the top.
 * Now you have to give permissions to your website to connect to your mobile services. Go to mobile services you created. Open CONFIGURE tab. In the Cross-Origin Resource Sharing (CORS) add your website’s URL. 
 
-
+<img src="/windows-on-fridges/img/azure/5.jpg" style='width:100%;' border="0" alt="Null">
  
 * Press “save” at the bottom of the page.
 
