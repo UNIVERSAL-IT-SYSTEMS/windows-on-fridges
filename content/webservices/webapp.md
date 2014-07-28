@@ -15,3 +15,74 @@ weight: 70
 
 ## Web App
 
+Our web application is a simple one-page app that has responsive design and can be used to call the robot to a certain room, cancel the request to a certain room, check on the request status, and submit feedback.
+
+<img src="/windows-on-fridges/img/app/0.jpg" style='width:100%;' border="0" alt="Null">
+
+* Submitting the request:
+* To submit request the user needs to submit an office number to deliver a drink to and press “fetch the fridge” button.
+
+* Cancelling the request:
+* After request is submitted it can be cancelled by pressing the “Cancel request” button
+
+* Check on the status:
+* If the drink is already on a way to a submitted room, the web app will inform a user.
+
+* Submit feedback:
+* The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.
+
+To get the web app to work, you should have [set up your Azure account](link). Now you can get this web-app to run on Azure and work with your mobile services!
+
+####Step 1.
+
+* Get the source files by cloning the git repository at https://github.com/ms-iot/wof-webapp.git
+    * git clone https://github.com/ms-iot/wof-webapp.git
+
+####Step 2.
+
+Prepare your database to send you the feedback from the app. We will use sendGrid for that. If you don't want to receive emails from your web-app with feedback people leave, skip this step.
+  * Follow [these instructions](http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/) to get a free SendGid account and get your SendGrid username and password.
+  * Open "insertFeedbackScript.js" from the files you got from Git. Replace "[your sendgrid username]" with your SendGrid username, "[your sendgrid password]" with your SendGrid password, and "youremail@host.com" with the email you want to use for feedback. 
+
+####Step 3.
+
+* Open “page.js”. At the very top of the page replace “[your address]” with the address of your mobile service, and "[your key]" with the application key to your mobile service.
+
+<img src="/windows-on-fridges/img/app/1.jpg" style='width:100%;' border="0" alt="Null">
+ 
+  * HINT: To find your key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.
+
+<img src="/windows-on-fridges/img/cloudServices/9.jpg" style='width:100%;' border="0" alt="Null">
+
+####Step 3.
+
+Create the website project:
+  * In Visual Studio, go to File  -> New - > Website … 
+
+<img src="/windows-on-fridges/img/app/2.jpg" style='width:100%;' border="0" alt="Null">
+   
+  * In the pop-up choose ASP.NET empty website. Click “ok”.
+
+<img src="/windows-on-fridges/img/app/3.jpg" style='width:100%;' border="0" alt="Null">
+ 
+  * Add source files, except "insertFeedbackScript.js" to the source folder of your new project. 
+  * In Solution explorer right-click on your website and go to Add->Existing item…  Add all files from the source folder.
+
+####Step 4.
+
+Publish your website to Azure:
+  * Go to Solution Explorer, right-click on your website and choose “Publish” from the dropdown.
+  * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
+  * In the “Existing Web Sites” dropdown choose the website you created previously for user interaction. Click “Next”.
+
+<img src="/windows-on-fridges/img/app/4.jpg" style='width:100%;' border="0" alt="Null">
+ 
+  * In the next window, choose your mobile services SQL server name from the dropdown. Enter the password you set for that database. Hit “Create”.
+  * HINT: to find out your SQL server name, in Azure management portal go to your mobile Service -> Configure.
+
+<img src="/windows-on-fridges/img/app/5.jpg" style='width:100%;' border="0" alt="Null">
+
+  * Publish your website. When it is published, the browser window will open up and you will be able to start using your new web-app.
+
+Note that if you haven’t [uploaded the map of the space] (link to creating SVG map) yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.
+
