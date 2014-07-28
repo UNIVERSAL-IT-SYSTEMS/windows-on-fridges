@@ -97,7 +97,7 @@ Create cloud services where all the pathfinding will be happening.
 
 ####Step 7. 
 
-To create a Nodebot Server you need another web site. You already know how to create web sites, but this one will have git as source control method. Follow [these instructions](http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/) to create the website and [instructions on Nodebot page](link) to get source files from GitHub and upload them to your new website. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki.
+To create a Nodebot Server you need another web site. You already know how to create web sites, but this one will have git as source control method. Follow [these instructions](http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/) to create the website and [instructions on Nodebot page](http://ms-iot.github.io/windows-on-fridges/nodebot/server/) to get source files from GitHub and upload them to your new website. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki.
 
 
 Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.
