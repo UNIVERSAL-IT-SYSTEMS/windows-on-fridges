@@ -10,7 +10,7 @@ next: /windows-on-fridges/webservices/testing
 notoc: true
 prev: /windows-on-fridges/webservices/webapp
 title: Path Finding
-weight: 80
+weight: 90
 ---
 
 ## Path Finding
