@@ -6,7 +6,7 @@ linktitle: Webapp
 menu:
   main:
     parent: web services 
-next: /windows-on-fridges/webservices/pathfinding
+next: /windows-on-fridges/webservices/map
 notoc: true
 prev: /windows-on-fridges/webservices/azure
 title: Web App 
@@ -31,7 +31,7 @@ Our web application is a simple one-page app that has responsive design and can 
 * Submit feedback:
 * The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.
 
-To get the web app to work, you should have [set up your Azure account](link). Now you can get this web-app to run on Azure and work with your mobile services!
+To get the web app to work, you should have [set up your Azure account](http://ms-iot.github.io/windows-on-fridges/webservices/azure/). Now you can get this web-app to run on Azure and work with your mobile services!
 
 ####Step 1.
 
@@ -84,5 +84,5 @@ Publish your website to Azure:
 
   * Publish your website. When it is published, the browser window will open up and you will be able to start using your new web-app.
 
-Note that if you haven’t [uploaded the map of the space] (link to creating SVG map) yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.
+Note that if you haven’t [uploaded the map of the space](http://ms-iot.github.io/windows-on-fridges/webservices/map/) yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.
 
