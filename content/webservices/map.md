@@ -1,17 +1,17 @@
 ---
 aliases:
-- /doc/testing/
+- /doc/map/
 date: 2014-07-01
-linktitle: Testing
+linktitle: Map
 menu:
   main:
     parent: web services 
 next: /windows-on-fridges/community/press
 notoc: true
 prev: /windows-on-fridges/webservices/pathfinding
-title: Testing
-weight: 90
+title: Upload Map
+weight: 80
 ---
 
-## Testing
+## Map Upload
 
