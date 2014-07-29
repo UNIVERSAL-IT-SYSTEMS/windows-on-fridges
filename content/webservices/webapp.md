@@ -41,11 +41,15 @@ To get the web app to work, you should have [set up your Azure account](http://m
 
 #### Step 2.
  
-Prepare your database to send you the feedback from the app. We will use [SendGrid](http://sendgrid.com/) for that. If you don't want to receive emails from your web-app with feedback people leave, skip this step.
+Prepare your database to send you the feedback from the app. We will use [SendGrid](http://sendgrid.com/) for that. If you don't want to receive emails from your web-app with feedback that people leave, skip this step.
 
   * Follow [these instructions](http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/) to get a free SendGid account and get your SendGrid username and password.
   * Open "insertFeedbackScript.js" from the files you got from Git in any editor. Replace "[your sendgrid username]" with your SendGrid username, "[your sendgrid password]" with your SendGrid password, and "youremail@host.com" with the email you want to use for feedback. Save.
-  * In your Azure manegement portal, go to your mobile service -> DATA -> Feedback -> SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.
+  * HINT: To find out your sendgrid username and password once you created the account, in Azure management portal go to ADD-ONS (in the menu on the left) -> SendGrid -> Connection Info (at the bottom).
+
+<img src="/windows-on-fridges/img/app/12.jpg" style='width:70%;' border="0" alt="Null">
+
+  * In your Azure management portal, go to your mobile service -> DATA -> Feedback -> SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.
 
 <img src="/windows-on-fridges/img/app/6.jpg" style='width:100%;' border="0" alt="Null">
 
