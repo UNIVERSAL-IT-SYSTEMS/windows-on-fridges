@@ -71,4 +71,17 @@ We have a simple converter that takes an image of the map in SVG format and crea
   * Go to file -> export -> change file type. Double-click on "SVG Scalable Vector Graphics". Save your map as "map.svg".
   * WARNING: Don't save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.
 
-Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.
+Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio. Now let's upload it to Azure. For this step, you should have [set up your Azure services](http://ms-iot.github.io/windows-on-fridges/webservices/azure/).
+
+#### Step 8.
+
+* Upload your map to Azure using Server Explorer in Visual Studio. 
+  * In Server Explorer navigate to Windows Azure -> Storage -> your storage account name -> Blobs. Double-click on container you want to use. Upload the map you created.
+  * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs
+
+<img src="/windows-on-fridges/img/cloudServices/1.JPG" style='width:70%;' border="0" alt="Null">
+
+
+
+<img src="/windows-on-fridges/img/cloudServices/2.jpg" style='width:90%;' border="0" alt="Null">
+
