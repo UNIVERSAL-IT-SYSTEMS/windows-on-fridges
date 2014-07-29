@@ -143,9 +143,9 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/webapp"> Webapp </a> </li>
                     
-                    <li class="active"><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
+                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/map"> Map </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/testing"> Testing </a> </li>
+                    <li class="active"><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
                     
                 </ul>
               
@@ -200,7 +200,7 @@
               <div class="row">
                   <div class="col-md-1">
                       
-                      <a class="navigation prev" href="/windows-on-fridges/webservices/webapp">
+                      <a class="navigation prev" href="/windows-on-fridges/webservices/map">
                       <i class="fa fa-angle-left"></i>
                       </a>
                       
@@ -216,12 +216,134 @@
 
 <h2 id="toc_0">Path Finding</h2>
 
-<h3 id="toc_1">Editing and Testing the Code</h3>
+<p>Pathfinding is a process that happens on the cloud from the moment a user requests a dink to his room to the moment when robot gets the directions how to get there. To make it fairly simple, we used the map of the space to implement indoor navigation. The map is used to create a special scheme of the space in SVG format. Than we convert this scheme from SVG to graph structure, where every room becomes a node and every path becomes an edge. Than we use greedy search to find the shortest path between two nodes (rooms). The resulting path is translated into JSON array of instructions for the robot. They include the angle to turn and the distance to go in this direction.</p>
 
-<h4 id="toc_2">Create a Unit Test Project</h4>
+<h3 id="toc_1">Running pathfinding locally</h3>
+
+<p>To try out the pathfinding algorithm locally you can use a console application we created. You do need to <a href="http://ms-iot.github.io/windows-on-fridges/webservices/map/">create a map</a> first to run the pathfinding.</p>
 
 <ul>
-<li>If you haven&rsquo;t already, download Visual Studio. <link> //Should this be in getting started?</li>
+<li><p>To access the source files clone the git repository at <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a>.</p>
+
+<ul>
+<li>git clone <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a></li>
+</ul></li>
+
+<li><p>Delete WorkerRole.cs from the project.</p></li>
+
+<li><p>Run “wof-pathfinding.exe”.</p></li>
+</ul>
+
+<p>Congratulations! Now you can convert your map into a graph and run pathfinding on it.</p>
+
+<h3 id="toc_2">Running Pathfinding From Azure</h3>
+
+<p>To deploy pathfinding to Azure you have to go through and <a href="http://ms-iot.github.io/windows-on-fridges/webservices/azure/">set up Azure account with all necessary services</a> first.</p>
+
+<p>Step 1.
+* Upload your map to Azure using Server Explorer in Visual Studio.
+  * In Server Explorer navigate to Windows Azure -&gt; Storage -&gt; your storage account name -&gt; Blobs. Double-click on container you want to use. Upload the map you created.
+  * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs</p>
+
+<p><img src="/windows-on-fridges/img/cloudServices/1.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<p><img src="/windows-on-fridges/img/cloudServices/2.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 2.
+* In Visual Studio, create new cloud services with one worker role:
+  * Go to File -&gt; New -&gt; Project -&gt; Cloud -&gt; Windows Azure Cloud Service. Input your cloud service name. Press “ok”.</p>
+
+<p><img src="/windows-on-fridges/img/cloudServices/3.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>In the next menu, choose one worker role, press “ok”.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/4.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 3.
+  * Get the source files by cloning the repository at <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a>.</p>
+
+<pre><code>* git clone https://github.com/ms-iot/wof-webapp.git
+</code></pre>
+
+<ul>
+<li>Delete “Main.cs” and “wof-pathfinding.exe” from source files. These files are for running pathfinding locally.</li>
+<li>Copy source files into your newly created cloud services source folder (where the new WorkerRole1.cs is right now).</li>
+<li>In Solution explorer right-click on your solution inside the cloud services project and go to Add-&gt;Existing item…</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/5.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Add all files from the source folder.</p>
+
+<p>Step 4.
+* Connect your worker role to the right storage account (the one you uploaded your SVG map to):
+  * In solution explorer navigate to Roles -&gt; WorkerRole. Right-click on it and double click on “Properties”.</p>
+
+<p><img src="/windows-on-fridges/img/cloudServices/6.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>In the properties window choose “Settings”. At the end of the setting that has the type “Connection String” and value “UseDevelopmentStorage=true” click on the button with three dots. In the pop-up choose “Your subscription” and choose the correct storage account name from the dropdown. Press ok.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/7.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 5.
+  * Open WorkerRole.cs by double-clicking it in Solution Explorer.
+  * At the top of worker role class replace [your mobile services host] by your mobile services host name. It will look like “something.azure-mobile.net”.
+  * Replace [your key] with the security key to your mobile services.
+  * Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.</p>
+
+<p><img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>HINT: To find your security key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/9.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>If you did not name the table in your database “offices”, change the “table_name” to your table name.</li>
+<li>If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.</li>
+</ul>
+
+<p>Step 6.
+* Try running your cloud services locally by pressing f5.</p>
+
+<p>Step 7.
+* Publish your cloud services to Azure:
+  * Go to Solution Explorer, right-click on your cloud services and choose “Publish” from the dropdown.</p>
+
+<p><img src="/windows-on-fridges/img/cloudServices/10.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.</li>
+<li>In the “cloud service” dropdown choose the cloud service you created previously for pathfinding. Click “Next”.</li>
+<li>Make sure that it says “New profile” at the top and the storage that has your SVG map in the “Storage account” line. Hit “Publish”.</li>
+<li>Publishing might take a few minutes. Windows Azure Activity Log will tell you when the deployment is done.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/11.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>You can also check the status of your deployment in the Management Portal.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/12.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>HINT: Don’t have a nodebot set up or the robot ready yet?
+Just comment out the line that sends the instructions to Robot. It is in WorkerRole.cs in Run function.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/13.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<h3 id="toc_3">Editing and Testing the Code</h3>
+
+<h4 id="toc_4">Create a Unit Test Project</h4>
+
+<ul>
 <li>The first step is to make sure the code works. Create a new test project by opening Visual Studio and going to File-&gt;New-&gt;Project at the top.</li>
 </ul>
 
@@ -233,7 +355,7 @@
 
 <p><img src="/windows-on-fridges/img/creating-test-project/new-unit-test-project.png" style='width:100%;' border="0" alt="Null"></p>
 
-<h4 id="toc_3">Adding the Files</h4>
+<h4 id="toc_5">Adding the Files</h4>
 
 <ul>
 <li>Now that you have a brand new Unit Test Project, you need to add the test files, and the files you need to run those tests&hellip; These can be found on our <a href="https://github.com/ms-iot/wof-webapp.png">web app&rsquo;s github repository</a>.</li>
@@ -248,7 +370,7 @@
 
 <p><img src="/windows-on-fridges/img/creating-test-project/add-existing-item.png" style='width:100%;' border="0" alt="Null"></p>
 
-<h4 id="toc_4">Adding References</h4>
+<h4 id="toc_6">Adding References</h4>
 
 <ul>
 <li>Now you have all the code you need. You should be able to just click Test-&gt;Run-&gt;All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don&rsquo;t worry, this is easy to fix.</li>
@@ -276,109 +398,21 @@
 <li>NOW you can click Test-&gt;Run-&gt;All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.</li>
 </ul>
 
-<h4 id="toc_5">What&rsquo;s Next?</h4>
+<h4 id="toc_7">What&rsquo;s Next?</h4>
 
 <ul>
 <li>If all the tests pass, then you know you can use the files in the project. If you want to make changes to any of these files or extend them in any way, make sure that you write tests for your changes and that your changes don&rsquo;t break anyone ese&rsquo;s tests.</li>
 </ul>
 
-<h3 id="toc_6">Running the Code</h3>
+<h4 id="toc_8">Testing your cloud services.</h4>
 
-<h4 id="toc_7">Creating an SVG Map</h4>
-
-<p>We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:</p>
+<p>There are few functions in WorkerRole.cs that you can use to do partial testing with your changes.</p>
 
 <ul>
-<li><p>Step 1</p>
+<li><p>storeResultingPath stores an image with the generated path in your storage wher you put map.svg.</p></li>
 
-<ul>
-<li>Install Microsoft Visio 2013 if you don&rsquo;t have one already</li>
-</ul></li>
-
-<li><p>Step 2</p>
-
-<ul>
-<li>Take any map of the space in JPEG format and open it in Visio</li>
-<li>WARNING: Other file types might work with these instructions but were not tested.</li>
-<li>HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.</li>
-</ul></li>
+<li><p>getDummieRecords creates a list of Record objects from the list of officeNumbers you give it.</p></li>
 </ul>
-
-<p><img src="/windows-on-fridges/img/map/1.jpg" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>To make your future SVG map easily extractable from the image you opened, create a new layer by going to Home -&gt; Layers -&gt; Layer properties -&gt; New. Press &ldquo;ok&rdquo; after you’re done.</li>
-</ul>
-
-<p><img src="/windows-on-fridges/img/map/2.jpg" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>Step 3
-
-<ul>
-<li>Use the line tool to draw all paths that you want the robot to wander. Make sure you &ldquo;snap&rdquo; the lines together if you want the two paths to actually be connected.</li>
-</ul></li>
-</ul>
-
-<p><img src="/windows-on-fridges/img/map/3.jpg" style='width:100%;' border="0" alt="Null"></p>
-
-<p><img src="/windows-on-fridges/img/map/4.jpg" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -&gt; define shape data. In the pop-up input &ldquo;officeNumber&rdquo; as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.</li>
-</ul>
-
-<p><img src="/windows-on-fridges/img/map/5.jpg" style='width:100%;' border="0" alt="Null"></p>
-
-<p><img src="/windows-on-fridges/img/map/6.JPG" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>Step 4
-
-<ul>
-<li>With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &ldquo;officeNumber&rdquo; value to 0.</li>
-</ul></li>
-</ul>
-
-<p><img src="/windows-on-fridges/img/map/65.JPG" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>Step 5
-
-<ul>
-<li>A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose &ldquo;define shape data&rdquo;. In the pop-up input &ldquo;scale&rdquo; as a title and the actual length as value. Save.</li>
-<li>Note that the units you put in the &ldquo;value&rdquo; field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.</li>
-</ul></li>
-</ul>
-
-<p><img src="/windows-on-fridges/img/map/7.JPG" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>Step 6
-
-<ul>
-<li>When you&rsquo;re done, save your Visio project to come back and modify your map whenever you want.</li>
-<li>After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.</li>
-</ul></li>
-</ul>
-
-<p><img src="/windows-on-fridges/img/map/8.JPG" style='width:100%;' border="0" alt="Null"></p>
-
-<p><img src="/windows-on-fridges/img/map/9.JPG" style='width:100%;' border="0" alt="Null"></p>
-
-<ul>
-<li>Make sure you don&rsquo;t have any particular shape selected to avoid having only this shape saved.</li>
-<li>Go to file -&gt; export -&gt; change file type. Double-click on &ldquo;SVG Scalable Vector Graphics&rdquo;. Save your map as &ldquo;map.svg&rdquo;.</li>
-<li>WARNING: Don&rsquo;t save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.</li>
-</ul>
-
-<p>Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.</p>
-
-<h4 id="toc_8">Getting a Path</h4>
-
-<h4 id="toc_9">Running From Azure</h4>
-
-<p><Need Anna's help filling in></p>
 
 
                     </div>
@@ -386,7 +420,7 @@
                 </div>
                 <div class="col-md-1">
                     
-                    <a class="navigation next" href="/windows-on-fridges/webservices/testing">
+                    <a class="navigation next" href="/windows-on-fridges/community/press">
                         <i class="fa fa-angle-right"> </i>
                     </a>
                     

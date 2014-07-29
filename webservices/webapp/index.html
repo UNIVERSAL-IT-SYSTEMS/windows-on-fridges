@@ -143,9 +143,9 @@
                     
                     <li class="active"><a href="http://ms-iot.github.io/windows-on-fridges/webservices/webapp"> Webapp </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
+                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/map"> Map </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/testing"> Testing </a> </li>
+                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
                     
                 </ul>
               
@@ -216,13 +216,110 @@
 
 <h2 id="toc_0">Web App</h2>
 
+<p>Our web application is a simple one-page app that has responsive design and can be used to call the robot to a certain room, cancel the request to a certain room, check on the request status, and submit feedback.</p>
+
+<p><img src="/windows-on-fridges/img/app/0.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Submitting the request:</li>
+
+<li><p>To submit request the user needs to submit an office number to deliver a drink to and press “fetch the fridge” button.</p></li>
+
+<li><p>Cancelling the request:</p></li>
+
+<li><p>After request is submitted it can be cancelled by pressing the “Cancel request” button</p></li>
+
+<li><p>Check on the status:</p></li>
+
+<li><p>If the drink is already on a way to a submitted room, the web app will inform a user.</p></li>
+
+<li><p>Submit feedback:</p></li>
+
+<li><p>The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.</p></li>
+</ul>
+
+<p>To get the web app to work, you should have <a href="http://ms-iot.github.io/windows-on-fridges/webservices/azure/">set up your Azure account</a>. Now you can get this web-app to run on Azure and work with your mobile services!</p>
+
+<p>####Step 1.</p>
+
+<ul>
+<li>Get the source files by cloning the git repository at <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a>
+
+<ul>
+<li>git clone <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a></li>
+</ul></li>
+</ul>
+
+<p>####Step 2.</p>
+
+<p>Prepare your database to send you the feedback from the app. We will use sendGrid for that. If you don&rsquo;t want to receive emails from your web-app with feedback people leave, skip this step.
+  * Follow <a href="http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/">these instructions</a> to get a free SendGid account and get your SendGrid username and password.
+  * Open &ldquo;insertFeedbackScript.js&rdquo; from the files you got from Git. Replace &ldquo;[your sendgrid username]&rdquo; with your SendGrid username, &ldquo;[your sendgrid password]&rdquo; with your SendGrid password, and &ldquo;youremail@host.com&rdquo; with the email you want to use for feedback.
+  * In your Azure manegement portal, go to your mobile service -&gt; DATA -&gt; Feedback -&gt; SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.</p>
+
+<p><img src="/windows-on-fridges/img/app/6.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p>####Step 3.</p>
+
+<ul>
+<li>Open “page.js”. At the very top of the page replace “[your address]” with the address of your mobile service, and &ldquo;[your key]&rdquo; with the application key to your mobile service.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/app/1.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>HINT: To find your key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/cloudServices/9.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p>####Step 3.</p>
+
+<p>Create the website project:
+  * In Visual Studio, go to File  -&gt; New - &gt; Website …</p>
+
+<p><img src="/windows-on-fridges/img/app/2.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>In the pop-up choose ASP.NET empty website. Click “ok”.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/app/3.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Add source files, except &ldquo;insertFeedbackScript.js&rdquo; to the source folder of your new project.</li>
+<li>In Solution explorer right-click on your website and go to Add-&gt;Existing item…  Add all files from the source folder.</li>
+</ul>
+
+<p>####Step 4.</p>
+
+<p>Publish your website to Azure:
+  * Go to Solution Explorer, right-click on your website and choose “Publish” from the dropdown.
+  * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
+  * In the “Existing Web Sites” dropdown choose the website you created previously for user interaction. Click “Next”.</p>
+
+<p><img src="/windows-on-fridges/img/app/4.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>In the next window, choose your mobile services SQL server name from the dropdown. Enter the password you set for that database. Hit “Create”.</li>
+<li>HINT: to find out your SQL server name, in Azure management portal go to your mobile Service -&gt; Configure.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/app/5.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Publish your website. When it is published, the browser window will open up and you will be able to start using your new web-app.</li>
+</ul>
+
+<p>Note that if you haven’t <a href="http://ms-iot.github.io/windows-on-fridges/webservices/map/">uploaded the map of the space</a> yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.</p>
+
 
                     </div>
                     </section>
                 </div>
                 <div class="col-md-1">
                     
-                    <a class="navigation next" href="/windows-on-fridges/webservices/pathfinding">
+                    <a class="navigation next" href="/windows-on-fridges/webservices/map">
                         <i class="fa fa-angle-right"> </i>
                     </a>
                     
