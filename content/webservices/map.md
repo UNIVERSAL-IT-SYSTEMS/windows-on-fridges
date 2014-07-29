@@ -43,15 +43,15 @@ We have a simple converter that takes an image of the map in SVG format and crea
 
   * Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -> define shape data. In the pop-up input "officeNumber" as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.
 
-  <img src="/windows-on-fridges/img/map/5.jpg" style='width:70%;' border="0" alt="Null">
+  <img src="/windows-on-fridges/img/map/5.jpg" style='width:60%;' border="0" alt="Null">
 
-  <img src="/windows-on-fridges/img/map/6.JPG" style='width:70%;' border="0" alt="Null">
+  <img src="/windows-on-fridges/img/map/6.JPG" style='width:60%;' border="0" alt="Null">
 
 #### Step 4
 
   * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don't want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its "officeNumber" value to 0.
 
-  <img src="/windows-on-fridges/img/map/65.JPG" style='width:70%;' border="0" alt="Null">
+  <img src="/windows-on-fridges/img/map/65.JPG" style='width:50%;' border="0" alt="Null">
 
 #### Step 5
 
@@ -79,7 +79,7 @@ Congratulations! Your map is ready. You can view the generated SVG code by openi
   * In Server Explorer navigate to Windows Azure -> Storage -> your storage account name -> Blobs. Double-click on container you want to use. Upload the map you created.
   * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs
 
-<img src="/windows-on-fridges/img/cloudServices/1.JPG" style='width:70%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/cloudServices/1.JPG" style='width:50%;' border="0" alt="Null">
 
 
 
