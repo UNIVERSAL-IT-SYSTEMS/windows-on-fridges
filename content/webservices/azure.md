@@ -110,7 +110,9 @@ Create cloud services where all the pathfinding will be happening.
 
 #### Step 7. 
 
-To create a Nodebot Server you need another web site. You already know how to create web sites, but this one will have git as source control method. 
+To create a Nodebot Server you need another web site. In this step we will create the website on Azure, clone the nodebot-server repository, and publish the source files to your new Azure website using git. If you already done any of this steps while following [the Nodebot Server wiki](http://ms-iot.github.io/windows-on-fridges/nodebot/server/), you can skip them this step.
+
+You already know how to create web sites, but this one will have git as source control method. 
 
 * Click the + NEW icon on the bottom left of the portal. Click WEB SITE, then QUICK CREATE. Enter a value for URL. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki. Select the datacenter for your web site in the REGION dropdown. Leave other settings unchanged. Click the checkmark at the bottom of the dialog. You need to wait for the website to be created. It will take about a minute.
 * Once the web site status changes to Running, click on the name of the web site to access the Dashboard.
@@ -124,8 +126,9 @@ To create a Nodebot Server you need another web site. You already know how to cr
 <img src="/windows-on-fridges/img/azure/7.png" style='width:100%;' border="0" alt="Null">
 
 * To enable Git publishing, you must provide a user name and password. If you have previously enabled publishing for an Azure Web Site, you will not be prompted for the user name or password. Instead, a Git repository will be created using the user name and password you previously specified. Make a note of the user name and password, as they will be used for Git publishing to all Azure Web Sites you create.
-* Get the nodebot code from Github git clone http://github.com/ms-iot/wof-nodebot-server
-
+* Get the nodebot code from Github:
+    git clone http://github.com/ms-iot/wof-nodebot-server    
+* Now in the folder you
 
 
 Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.
