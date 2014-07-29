@@ -42,6 +42,7 @@ Get [Azure SDK](http://www.microsoft.com/en-us/download/details.aspx?id=15658) f
 #### Step 3.
 
 Now that you have an account you can go to your Management portal and create Mobile services.
+
 * Go to Azure.microsoft.com -> Management portal. Sign in to your Azure account.
 * At the bottom of the page click new -> Compute -> Mobile service -> create
 
@@ -71,6 +72,7 @@ Now you have Mobile service and database set up! If you want to study Azure Mobi
 #### Step 4.
 
 Now let’s create a web-site and connect it to mobile services.
+
 * At the bottom of the page click new -> Compute -> Web Site -> Custom Create
 * Input the URL. This will be the actual URL of your web-app used to fetch the robot. Choose your plan. Choose the database you just created for mobile services. Input login and password you created in the previous step.
   * HINT: Don’t remember your database name? Go to your mobile service CONFIGURE tab. The database name is at the top.
@@ -85,6 +87,7 @@ Now your website is created!
 #### Step 5. 
 
 Now let’s create a new storage. 
+
 * At the bottom of the page click new -> Data services -> Storage -> Quick Create. Input your storage URL and closest geo location to you. Press “Create storage account”.
 * Now in the panel on the left, choose STORAGE and go to your new storage account. Go to CONTAINERS tab. Create a container called “maps”. Choose “Public Blob” in Access dropdown.
 * To find out more about storage go to http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/ 
@@ -92,6 +95,7 @@ Now let’s create a new storage.
 #### Step 6.
 
 Create cloud services where all the pathfinding will be happening. 
+
 * At the bottom of the page click new -> Compute -> Cloud Service -> Quick Create. Input your cloud services URL and closest geo location to you. Press “Create cloud service”.
 * To find out more about cloud services go to http://azure.microsoft.com/en-us/documentation/services/cloud-services/
 
