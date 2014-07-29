@@ -23,7 +23,7 @@ Firmata must be running on the board before the node client can interact with it
 
   * Clone the Galileo Firmata Repository
 
-        git clone https://github.com/path/to/galileo/firmata
+        git clone https://github.com/ms-iot/arduino
 
   * Open the Visual Studio project.
   * Configure the remote debugging settings.  
