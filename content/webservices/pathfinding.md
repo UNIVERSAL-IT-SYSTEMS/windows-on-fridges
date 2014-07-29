@@ -72,7 +72,7 @@ To deploy pathfinding to Azure you have to go through and [set up Azure account 
 
   * Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.
 
-<img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:70%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:50%;' border="0" alt="Null">
  
   * If you did not name the table in your database “offices”, change the “table_name” to your table name.
   * If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.
@@ -122,7 +122,7 @@ Just comment out the line that sends the instructions to Robot. It is in WorkerR
 
 * Right click on the project name in the solution explorer (found on the right hand side). Select Add->New Folder as shown in the picture. Do this twice, naming one "tests" and the other "classes".
 
-<img src="/windows-on-fridges/img/creating-test-project/add-folder.png" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/creating-test-project/add-folder.png" style='width:70%;' border="0" alt="Null">
 
 * Once you have downloaded the files, copy the files from "classes" folder that you got from GitHub, except WorkerRole.cs. Right click on the newly created classes file. Select "paste". Do the same with the tests folder, by copying all the files from github's test folder and clicking paste.
 
