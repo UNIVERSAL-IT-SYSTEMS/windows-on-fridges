@@ -15,101 +15,143 @@
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
       
       <guid>http://ms-iot.github.io/windows-on-fridges/webservices/azure</guid>
-      <description>&lt;p&gt;##Setting up Azure&lt;/p&gt;
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Setting up Azure&lt;/h2&gt;
 
 &lt;p&gt;To host our web services on Azure you will need five main components that will be referred to as:&lt;/p&gt;
 
-&lt;p&gt;1.Web-app&lt;/p&gt;
+&lt;p&gt;1.Web-app  (a UI to call the robot to a room), which will be created in the &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/webapp/&#34;&gt;web-app wiki&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;2.Mobile Services&lt;/p&gt;
+&lt;p&gt;2.Mobile Services (SQL server and database to store requests)&lt;/p&gt;
 
-&lt;p&gt;3.Storage&lt;/p&gt;
+&lt;p&gt;3.Storage (place to store your map of the space)&lt;/p&gt;
 
-&lt;p&gt;4.Cloud services&lt;/p&gt;
+&lt;p&gt;4.Cloud services (server that will run pathfinding once the request is made)&lt;/p&gt;
 
-&lt;p&gt;5.Nodebot Server&lt;/p&gt;
+&lt;p&gt;5.Nodebot Server (server that posts requests to robot)&lt;/p&gt;
 
-&lt;p&gt;####Step 1.&lt;/p&gt;
+&lt;h4 id=&#34;toc_1&#34;&gt;Step 1.&lt;/h4&gt;
 
 &lt;p&gt;However, you should start with creating Azure account. You can either &lt;a href=&#34;http://azure.microsoft.com/en-us/pricing/free-trial/&#34;&gt;start a free 30-day trial&lt;/a&gt; or go ahead and &lt;a href=&#34;http://msdn.microsoft.com/en-US/library/azure/hh531793.aspx#BKMK_AdminGuidelines&#34;&gt;buy a subscription&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;####Step 2.&lt;/p&gt;
+&lt;h4 id=&#34;toc_2&#34;&gt;Step 2.&lt;/h4&gt;
 
-&lt;p&gt;For this project you will need Visual Studio installed. While much of it can be done using git, some things, like manually uploading files to Azure Storage, are still unavailable any other way but through Visual Studio. Besides that, Azure SDK for Visual Studio is a very convenient way to publish changes to your code to Azure.&lt;/p&gt;
+&lt;p&gt;For this project you will need &lt;a href=&#34;http://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx&#34;&gt;Visual Studio&lt;/a&gt; installed. While much of it can be done using git, some things, like manually uploading files to Azure Storage, are still unavailable any other way but through Visual Studio. Besides that, Azure SDK for Visual Studio is a very convenient way to publish changes to your code to Azure.&lt;/p&gt;
 
-&lt;p&gt;Get &lt;a href=&#34;http://www.microsoft.com/en-us/download/details.aspx?id=15658&#34;&gt;Azure SDK&lt;/a&gt; for Visual Studio.&lt;/p&gt;
+&lt;p&gt;Get Azure SDK for Visual Studio. You can use &lt;a href=&#34;http://www.microsoft.com/web/downloads/platform.aspx&#34;&gt;this installer&lt;/a&gt; to get the one you need.&lt;/p&gt;
 
-&lt;p&gt;####Step 3.&lt;/p&gt;
+&lt;h4 id=&#34;toc_3&#34;&gt;Step 3.&lt;/h4&gt;
 
-&lt;p&gt;Now that you have an account you can go to your Management portal and create Mobile services.
-* Go to Azure.microsoft.com -&amp;gt; Management portal. Sign in to your Azure account.
-* At the bottom of the page click new -&amp;gt; Compute -&amp;gt; Mobile service -&amp;gt; create&lt;/p&gt;
+&lt;p&gt;Now that you have an account you can go to your Management portal and create Mobile services.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Go to Azure.microsoft.com -&amp;gt; Management portal. Sign in to your Azure account.&lt;/li&gt;
+&lt;li&gt;At the bottom of the page click New -&amp;gt; Compute -&amp;gt; Mobile service -&amp;gt; create&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/1.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Type in the URL for your mobile service. This URL will later be referred to as your mobile service host. From the Database dropdown choose creating a new database. For region choose the region that is closest to you. For backend choose JavaScript. Press the arrow at the bottom right corner.&lt;/li&gt;
+&lt;li&gt;Type in the URL for your mobile service. This URL will later be referred to as your mobile service host. From the Database dropdown choose creating a new database. For region choose the region that is closest to you. For backend choose JavaScript. Leave other settings unchanged. Press the arrow at the bottom right corner.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/2.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/2.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Choose “New SQL database server” and input server login and password. You will have to enter these credentials later on, so try to not forget them! Press the checkmark symbol.&lt;/li&gt;
-&lt;li&gt;When the status says “ready”, the mobile service is created.&lt;/li&gt;
+&lt;li&gt;Choose “New SQL database server” and input server login and password. You will have to enter these credentials later on, so try to not forget them!  Leave other settings unchanged. Press the checkmark symbol.&lt;/li&gt;
+&lt;li&gt;You need to wait for the service to be created. It will take about a minute. When the status says “ready”, the mobile service is created.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Now that you created mobile services, you need to create the database schema that the app is using
-* For that, go to your new mobile service - &amp;gt; DATA. Press “add a table”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/3.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now that you created mobile services, you need to create the database schema that the app is using&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Enter “offices” as a table name. Press the checkmark symbol.&lt;/li&gt;
+&lt;li&gt;For that, go to your new mobile service - &amp;gt; DATA. Press “add a table”.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/4.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/3.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
-Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;cancelled&amp;rdquo; (boolean), &amp;ldquo;complete&amp;rdquo; (boolean).&lt;/li&gt;
+&lt;li&gt;Enter “offices” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/4.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;cancelled&amp;rdquo; (boolean), &amp;ldquo;complete&amp;rdquo; (boolean).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add another table titled “Feedback”: Go to your new mobile service - &amp;gt; DATA. Press “add a table”. Enter “Feedback” as a table name. Leave other settings unchanged.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following column: &amp;ldquo;text&amp;rdquo; (string).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying&#34;&gt;http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;####Step 4.&lt;/p&gt;
+&lt;h4 id=&#34;toc_4&#34;&gt;Step 6.&lt;/h4&gt;
 
-&lt;p&gt;Now let’s create a web-site and connect it to mobile services.
-* At the bottom of the page click new -&amp;gt; Compute -&amp;gt; Web Site -&amp;gt; Custom Create
-* Input the URL. This will be the actual URL of your web-app used to fetch the robot. Choose your plan. Choose the database you just created for mobile services. Input login and password you created in the previous step.
-  * HINT: Don’t remember your database name? Go to your mobile service CONFIGURE tab. The database name is at the top.
-* Now you have to give permissions to your website to connect to your mobile services. Go to mobile services you created. Open CONFIGURE tab. In the Cross-Origin Resource Sharing (CORS) add your website’s URL.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/5.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now let’s create a new storage.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Press “save” at the bottom of the page.&lt;/li&gt;
+&lt;li&gt;At the bottom of the page click new -&amp;gt; Data services -&amp;gt; Storage -&amp;gt; Quick Create. Input your storage URL and closest geo location to you. Leave other settings unchanged. Press “Create storage account”. You need to wait for the storage to be created. It will take about a minute.&lt;/li&gt;
+&lt;li&gt;Now in the panel on the left, choose STORAGE and go to your new storage account. Go to CONTAINERS tab. Create a container called “maps”. Choose “Public Blob” in Access dropdown. Press the checkmark symbol.&lt;/li&gt;
+&lt;li&gt;While the storage is being created you can go on with the instructions.&lt;/li&gt;
+&lt;li&gt;To find out more about storage go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/&#34;&gt;http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Now your website is created!&lt;/p&gt;
+&lt;h4 id=&#34;toc_5&#34;&gt;Step 7.&lt;/h4&gt;
 
-&lt;p&gt;####Step 5.&lt;/p&gt;
+&lt;p&gt;Create cloud services where all the pathfinding will be happening.&lt;/p&gt;
 
-&lt;p&gt;Now let’s create a new storage.
-* At the bottom of the page click new -&amp;gt; Data services -&amp;gt; Storage -&amp;gt; Quick Create. Input your storage URL and closest geo location to you. Press “Create storage account”.
-* Now in the panel on the left, choose STORAGE and go to your new storage account. Go to CONTAINERS tab. Create a container called “maps”. Choose “Public Blob” in Access dropdown.
-* To find out more about storage go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/&#34;&gt;http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;At the bottom of the page click new -&amp;gt; Compute -&amp;gt; Cloud Service -&amp;gt; Quick Create. Input your cloud services URL and closest geo location to you. Leave other settings unchanged. Press “Create cloud service”.&lt;/li&gt;
+&lt;li&gt;While the cloud service is being created you can go on with the instructions.&lt;/li&gt;
+&lt;li&gt;To find out more about cloud services go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/services/cloud-services/&#34;&gt;http://azure.microsoft.com/en-us/documentation/services/cloud-services/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;####Step 6.&lt;/p&gt;
+&lt;h4 id=&#34;toc_6&#34;&gt;Step 8.&lt;/h4&gt;
 
-&lt;p&gt;Create cloud services where all the pathfinding will be happening.
-* At the bottom of the page click new -&amp;gt; Compute -&amp;gt; Cloud Service -&amp;gt; Quick Create. Input your cloud services URL and closest geo location to you. Press “Create cloud service”.
-* To find out more about cloud services go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/services/cloud-services/&#34;&gt;http://azure.microsoft.com/en-us/documentation/services/cloud-services/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To create a Nodebot Server you need a web site. In this step we will create the website on Azure, clone the nodebot-server repository, and publish the source files to your new Azure website using git. If you already done any of this steps while following &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/nodebot/server/&#34;&gt;the Nodebot Server wiki&lt;/a&gt;, you can skip them this step.&lt;/p&gt;
 
-&lt;p&gt;####Step 7.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the + NEW icon on the bottom left of the portal. Click WEB SITE, then QUICK CREATE. Enter a value for URL. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki. Select the datacenter for your web site in the REGION dropdown. Leave other settings unchanged. Click the checkmark at the bottom of the dialog. You need to wait for the website to be created. It will take about a minute.&lt;/li&gt;
+&lt;li&gt;Once the web site status changes to Running, click on the name of the web site to access the Dashboard.&lt;/li&gt;
+&lt;li&gt;At the bottom right of the Quickstart page, select Set up a deployment from source control.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;To create a Nodebot Server you need another web site. You already know how to create web sites, but this one will have git as source control method. Follow &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/&#34;&gt;these instructions&lt;/a&gt; to create the website and &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/nodebot/server/&#34;&gt;instructions on Nodebot page&lt;/a&gt; to get source files from GitHub and upload them to your new website. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/6.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When asked &amp;ldquo;Where is your source code?&amp;rdquo; select Local Git repository, and then click the arrow.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/7.png&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To enable Git publishing, you must provide a user name and password. If you have previously enabled publishing for an Azure Web Site, you will not be prompted for the user name or password. Instead, a Git repository will be created using the user name and password you previously specified. Make a note of the user name and password, as they will be used for Git publishing to all Azure Web Sites you create.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Get the nodebot code from Github:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone http://github.com/ms-iot/wof-nodebot-server    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Find out URL to you local repository in Azure management portal: go to your nodebot website -&amp;gt; DEPLOYMENTS. Copy the GIT URL at the top right corner.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/8.jpg&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Now in the folder your local repository is perform the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add azure [URL for remote repository you just copied]
+git push azure master    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can find out more about deploying to Azure from git at &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/&#34;&gt;http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;toc_7&#34;&gt;Now you have four out of five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to create the web-app, upload the map to your storage, and set up cloud services to do pathfinding.&lt;/h4&gt;
 </description>
     </item>
     
@@ -125,51 +167,55 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 
 &lt;p&gt;Our web application is a simple one-page app that has responsive design and can be used to call the robot to a certain room, cancel the request to a certain room, check on the request status, and submit feedback.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/0.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/0.jpg&#34; style=&#39;width:60%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Submitting the request:&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Submitting the request:
+To submit request the user needs to submit an office number to deliver a drink to and press “fetch the fridge” button.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;To submit request the user needs to submit an office number to deliver a drink to and press “fetch the fridge” button.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cancelling the request:
+After request is submitted it can be cancelled by pressing the “Cancel request” button&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Cancelling the request:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Check on the status:
+If the drink is already on a way to a submitted room, the web app will inform a user.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;After request is submitted it can be cancelled by pressing the “Cancel request” button&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Check on the status:&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;If the drink is already on a way to a submitted room, the web app will inform a user.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Submit feedback:&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Submit feedback:
+The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;To get the web app to work, you should have &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/azure/&#34;&gt;set up your Azure account&lt;/a&gt;. Now you can get this web-app to run on Azure and work with your mobile services!&lt;/p&gt;
 
-&lt;p&gt;####Step 1.&lt;/p&gt;
+&lt;h4 id=&#34;toc_1&#34;&gt;Step 1.&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Get the source files by cloning the git repository at &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.git&#34;&gt;https://github.com/ms-iot/wof-webapp.git&lt;/a&gt;
+&lt;li&gt;&lt;p&gt;Get the source files by cloning the git repository at &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.git&#34;&gt;https://github.com/ms-iot/wof-webapp.git&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;git clone &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.git&#34;&gt;https://github.com/ms-iot/wof-webapp.git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/wof-webapp.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;####Step 2.&lt;/p&gt;
+&lt;h4 id=&#34;toc_2&#34;&gt;Step 2.&lt;/h4&gt;
 
-&lt;p&gt;Prepare your database to send you the feedback from the app. We will use sendGrid for that. If you don&amp;rsquo;t want to receive emails from your web-app with feedback people leave, skip this step.
-  * Follow &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/&#34;&gt;these instructions&lt;/a&gt; to get a free SendGid account and get your SendGrid username and password.
-  * Open &amp;ldquo;insertFeedbackScript.js&amp;rdquo; from the files you got from Git. Replace &amp;ldquo;[your sendgrid username]&amp;rdquo; with your SendGrid username, &amp;ldquo;[your sendgrid password]&amp;rdquo; with your SendGrid password, and &amp;ldquo;youremail@host.com&amp;rdquo; with the email you want to use for feedback.
-  * In your Azure manegement portal, go to your mobile service -&amp;gt; DATA -&amp;gt; Feedback -&amp;gt; SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.&lt;/p&gt;
+&lt;p&gt;Prepare your database to send you the feedback from the app. We will use &lt;a href=&#34;http://sendgrid.com/&#34;&gt;SendGrid&lt;/a&gt; for that. If you don&amp;rsquo;t want to receive emails from your web-app with feedback that people leave, skip this step.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Follow &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/&#34;&gt;these instructions&lt;/a&gt; to get a free SendGid account and get your SendGrid username and password.&lt;/li&gt;
+&lt;li&gt;Open &amp;ldquo;insertFeedbackScript.js&amp;rdquo; from the files you got from Git in any editor. Replace &amp;ldquo;[your sendgrid username]&amp;rdquo; with your SendGrid username, &amp;ldquo;[your sendgrid password]&amp;rdquo; with your SendGrid password, and &amp;ldquo;youremail@host.com&amp;rdquo; with the email you want to use for feedback. Save.&lt;/li&gt;
+&lt;li&gt;HINT: To find out your sendgrid username and password once you created the account, in Azure management portal go to ADD-ONS (in the menu on the left) -&amp;gt; SendGrid -&amp;gt; Connection Info (at the bottom).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/12.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In your Azure management portal, go to your mobile service -&amp;gt; DATA -&amp;gt; Feedback -&amp;gt; SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/6.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;####Step 3.&lt;/p&gt;
+&lt;h4 id=&#34;toc_3&#34;&gt;Step 3.&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Open “page.js”. At the very top of the page replace “[your address]” with the address of your mobile service, and &amp;ldquo;[your key]&amp;rdquo; with the application key to your mobile service.&lt;/li&gt;
+&lt;li&gt;Open “page.js” from the files you got from Git in any editor. At the very top of the page replace “[your address]” with the address of your mobile service, and &amp;ldquo;[your key]&amp;rdquo; with the application key to your mobile service.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/1.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
@@ -178,12 +224,19 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 &lt;li&gt;HINT: To find your key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/9.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/8.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;####Step 3.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Save page.js&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Create the website project:
-  * In Visual Studio, go to File  -&amp;gt; New - &amp;gt; Website …&lt;/p&gt;
+&lt;h4 id=&#34;toc_4&#34;&gt;Step 4.&lt;/h4&gt;
+
+&lt;p&gt;Create the website project:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In Visual Studio, go to File  -&amp;gt; New - &amp;gt; Website …&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/2.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
@@ -194,31 +247,57 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/3.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Add source files, except &amp;ldquo;insertFeedbackScript.js&amp;rdquo; to the source folder of your new project.&lt;/li&gt;
-&lt;li&gt;In Solution explorer right-click on your website and go to Add-&amp;gt;Existing item…  Add all files from the source folder.&lt;/li&gt;
+&lt;li&gt;Copy source files you got from git (including page.js you modified), except &amp;ldquo;insertFeedbackScript.js&amp;rdquo;. In Solution Explorer in visual Studio right-click on your web site, and click &amp;ldquo;paste&amp;rdquo; You source files should appear in Soution Explorer.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;####Step 4.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/7.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;Publish your website to Azure:
-  * Go to Solution Explorer, right-click on your website and choose “Publish” from the dropdown.
-  * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
-  * In the “Existing Web Sites” dropdown choose the website you created previously for user interaction. Click “Next”.&lt;/p&gt;
+&lt;h4 id=&#34;toc_5&#34;&gt;Step 5.&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/4.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Publish your website to Azure:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;In the next window, choose your mobile services SQL server name from the dropdown. Enter the password you set for that database. Hit “Create”.&lt;/li&gt;
-&lt;li&gt;HINT: to find out your SQL server name, in Azure management portal go to your mobile Service -&amp;gt; Configure.&lt;/li&gt;
+&lt;li&gt;Go to Solution Explorer, right-click on your website and choose “Publish Web Site” from the dropdown.&lt;/li&gt;
+&lt;li&gt;In the pop-up click on &amp;ldquo;Windows Azure Web Sites&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/5.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/8.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Publish your website. When it is published, the browser window will open up and you will be able to start using your new web-app.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In the next pop-up sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Just right to the “Existing Web Sites” dropdown choose &amp;ldquo;New&amp;hellip;&amp;rdquo;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/map/&#34;&gt;uploaded the map of the space&lt;/a&gt; yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/9.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the next window, for Site name input the URL you want your web-app to be located at. This will be the actual URL of your web-app used to fetch the robot. Choose your region. Choose the database you just created for mobile services. Input login and password you created when creating your mobile services. Hit “Create”.&lt;/li&gt;
+&lt;li&gt;HINT: Don’t remember your database name? In Azure management portal go to your mobile service CONFIGURE tab. The database name is at the top.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/10.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When the website is created, hit &amp;ldquo;Publish&amp;rdquo;. When it is published, the browser window will open up and you will be able to start using your new web-app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/app/11.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_6&#34;&gt;Step 6.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Now you have to give permissions to your website to connect to your mobile services. In Azure management portal go to mobile services you created. Open CONFIGURE tab. Under &amp;ldquo;Cross-Origin Resource Sharing (cors)&amp;rdquo; line add your website’s URL.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/5.jpg&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Press “save” at the bottom of the page.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now your website is created!
+Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/map/&#34;&gt;uploaded the map of the space&lt;/a&gt; yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.&lt;/p&gt;
 </description>
     </item>
     
@@ -234,55 +313,74 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 
 &lt;p&gt;We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:&lt;/p&gt;
 
-&lt;p&gt;Step 1
-  * Install Microsoft Visio 2013 if you don&amp;rsquo;t have one already&lt;/p&gt;
+&lt;h4 id=&#34;toc_1&#34;&gt;Step 1&lt;/h4&gt;
 
-&lt;p&gt;Step 2
-  * Take any map of the space in JPEG format and open it in Visio
-    * WARNING: Other file types might work with these instructions but were not tested.
-    * HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href=&#34;http://office.microsoft.com/en-us/visio/&#34;&gt;Microsoft Visio 2013&lt;/a&gt; if you don&amp;rsquo;t have one already. You can also subscribe for a &lt;a href=&#34;http://www.microsoft.com/en-us/evalcenter/evaluate-visio-professional-2013&#34;&gt;free trial&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/1.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;toc_2&#34;&gt;Step 2&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take any map of the space in JPEG format and open it in Visio
+
+&lt;ul&gt;
+&lt;li&gt;WARNING: Other file types might work with these instructions but were not tested.&lt;/li&gt;
+&lt;li&gt;HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/1.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;To make your future SVG map easily extractable from the image you opened, create a new layer by going to Home -&amp;gt; Layers -&amp;gt; Layer properties -&amp;gt; New. Press &amp;ldquo;ok&amp;rdquo; after you’re done.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/2.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/2.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;Step 3
-  * Use the line tool to draw all paths that you want the robot to wander. Make sure you &amp;ldquo;snap&amp;rdquo; the lines together if you want the two paths to actually be connected.&lt;/p&gt;
+&lt;h4 id=&#34;toc_3&#34;&gt;Step 3&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/3.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the line tool to draw all paths that you want the robot to wander. Make sure you &amp;ldquo;snap&amp;rdquo; the lines together if you want the two paths to actually be connected.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/4.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/3.jpg&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/4.jpg&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -&amp;gt; define shape data. In the pop-up input &amp;ldquo;officeNumber&amp;rdquo; as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/5.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/5.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/6.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/6.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;Step 4
-  * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.&lt;/p&gt;
+&lt;h4 id=&#34;toc_4&#34;&gt;Step 4&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/65.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Step 5
-  * A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose &amp;ldquo;define shape data&amp;rdquo;. In the pop-up input &amp;ldquo;scale&amp;rdquo; as a title and the actual length as value. Save.
-  * Note that the units you put in the &amp;ldquo;value&amp;rdquo; field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/65.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/7.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;toc_5&#34;&gt;Step 5&lt;/h4&gt;
 
-&lt;p&gt;Step 6
-  * When you&amp;rsquo;re done, save your Visio project to come back and modify your map whenever you want.
-  * After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose &amp;ldquo;define shape data&amp;rdquo;. In the pop-up input &amp;ldquo;scale&amp;rdquo; as a title and the actual length as value. Save.&lt;/li&gt;
+&lt;li&gt;Note that the units you put in the &amp;ldquo;value&amp;rdquo; field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/8.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/7.JPG&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/9.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;toc_6&#34;&gt;Step 6&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When you&amp;rsquo;re done, save your Visio project to come back and modify your map whenever you want.&lt;/li&gt;
+&lt;li&gt;After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/8.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;img src=&#34;/windows-on-fridges/img/map/9.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Make sure you don&amp;rsquo;t have any particular shape selected to avoid having only this shape saved.&lt;/li&gt;
@@ -290,7 +388,22 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 &lt;li&gt;WARNING: Don&amp;rsquo;t save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.&lt;/p&gt;
+&lt;p&gt;Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio. Now let&amp;rsquo;s upload it to Azure. For this step, you should have &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/azure/&#34;&gt;set up your Azure services&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_7&#34;&gt;Step 8.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Upload your map to Azure using Server Explorer in Visual Studio.
+
+&lt;ul&gt;
+&lt;li&gt;In Server Explorer navigate to Windows Azure -&amp;gt; Storage -&amp;gt; your storage account name -&amp;gt; Blobs. Double-click on container you want to use. Upload the map you created.&lt;/li&gt;
+&lt;li&gt;Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/1.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/2.jpg&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -306,20 +419,19 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 
 &lt;p&gt;Pathfinding is a process that happens on the cloud from the moment a user requests a dink to his room to the moment when robot gets the directions how to get there. To make it fairly simple, we used the map of the space to implement indoor navigation. The map is used to create a special scheme of the space in SVG format. Than we convert this scheme from SVG to graph structure, where every room becomes a node and every path becomes an edge. Than we use greedy search to find the shortest path between two nodes (rooms). The resulting path is translated into JSON array of instructions for the robot. They include the angle to turn and the distance to go in this direction.&lt;/p&gt;
 
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;To access the source files clone the git repository at &lt;a href=&#34;https://github.com/ms-iot/wof-pathfinding.git&#34;&gt;https://github.com/ms-iot/wof-pathfinding.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/wof-pathfinding.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&#34;toc_1&#34;&gt;Running pathfinding locally&lt;/h3&gt;
 
 &lt;p&gt;To try out the pathfinding algorithm locally you can use a console application we created. You do need to &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/map/&#34;&gt;create a map&lt;/a&gt; first to run the pathfinding.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;To access the source files clone the git repository at &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.git&#34;&gt;https://github.com/ms-iot/wof-webapp.git&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;git clone &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.git&#34;&gt;https://github.com/ms-iot/wof-webapp.git&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Delete WorkerRole.cs from the project.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Run “wof-pathfinding.exe”.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Find “wof-pathfinding.exe” in the files you got from GitHub and run it.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Congratulations! Now you can convert your map into a graph and run pathfinding on it.&lt;/p&gt;
@@ -328,18 +440,15 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 
 &lt;p&gt;To deploy pathfinding to Azure you have to go through and &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/azure/&#34;&gt;set up Azure account with all necessary services&lt;/a&gt; first.&lt;/p&gt;
 
-&lt;p&gt;Step 1.
-* Upload your map to Azure using Server Explorer in Visual Studio.
-  * In Server Explorer navigate to Windows Azure -&amp;gt; Storage -&amp;gt; your storage account name -&amp;gt; Blobs. Double-click on container you want to use. Upload the map you created.
-  * Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs&lt;/p&gt;
+&lt;h4 id=&#34;toc_3&#34;&gt;Step 1.&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/1.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In Visual Studio, create new cloud services with one worker role:
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/2.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Step 2.
-* In Visual Studio, create new cloud services with one worker role:
-  * Go to File -&amp;gt; New -&amp;gt; Project -&amp;gt; Cloud -&amp;gt; Windows Azure Cloud Service. Input your cloud service name. Press “ok”.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to File -&amp;gt; New -&amp;gt; Project -&amp;gt; Cloud -&amp;gt; Windows Azure Cloud Service. Input your cloud service name. Leave other settings unchanged. Press “ok”.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/3.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
@@ -347,63 +456,75 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 &lt;li&gt;In the next menu, choose one worker role, press “ok”.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/4.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/4.JPG&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;Step 3.
-  * Get the source files by cloning the repository at &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.git&#34;&gt;https://github.com/ms-iot/wof-webapp.git&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;* git clone https://github.com/ms-iot/wof-webapp.git
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;toc_4&#34;&gt;Step 2.&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Delete “Main.cs” and “wof-pathfinding.exe” from source files. These files are for running pathfinding locally.&lt;/li&gt;
-&lt;li&gt;Copy source files into your newly created cloud services source folder (where the new WorkerRole1.cs is right now).&lt;/li&gt;
-&lt;li&gt;In Solution explorer right-click on your solution inside the cloud services project and go to Add-&amp;gt;Existing item…&lt;/li&gt;
+&lt;li&gt;Delete “Main.cs” and “wof-pathfinding.exe” from source files you got from GitHub. These files are for running pathfinding locally.&lt;/li&gt;
+&lt;li&gt;Copy source files from the folder &amp;ldquo;classes&amp;rdquo;. In Solution explorer right-click on your solution inside the cloud services project and click &amp;ldquo;paste&amp;rdquo;. The source files should appear in solution explorer.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/5.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;toc_5&#34;&gt;Step 3.&lt;/h4&gt;
 
-&lt;p&gt;Add all files from the source folder.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connect your worker role to the right storage account (the one you uploaded your SVG map to):
 
-&lt;p&gt;Step 4.
-* Connect your worker role to the right storage account (the one you uploaded your SVG map to):
-  * In solution explorer navigate to Roles -&amp;gt; WorkerRole. Right-click on it and double click on “Properties”.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In solution explorer navigate to Roles -&amp;gt; WorkerRole. Right-click on it and double click on “Properties”.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/6.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/6.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;In the properties window choose “Settings”. At the end of the setting that has the type “Connection String” and value “UseDevelopmentStorage=true” click on the button with three dots. In the pop-up choose “Your subscription” and choose the correct storage account name from the dropdown. Press ok.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/7.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/7.jpg&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;Step 5.
-  * Open WorkerRole.cs by double-clicking it in Solution Explorer.
-  * At the top of worker role class replace [your mobile services host] by your mobile services host name. It will look like “something.azure-mobile.net”.
-  * Replace [your key] with the security key to your mobile services.
-  * Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.&lt;/p&gt;
+&lt;h4 id=&#34;toc_6&#34;&gt;Step 4.&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/8.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open WorkerRole.cs by double-clicking it in Solution Explorer.&lt;/li&gt;
+&lt;li&gt;At the top of worker role class replace [your mobile services host] by your mobile services host name. It will look like “something.azure-mobile.net”.&lt;/li&gt;
+&lt;li&gt;Replace [your key] with the security key to your mobile services.
 
 &lt;ul&gt;
 &lt;li&gt;HINT: To find your security key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/9.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/9.jpg&#34; style=&#39;width:60%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/8.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;If you did not name the table in your database “offices”, change the “table_name” to your table name.&lt;/li&gt;
 &lt;li&gt;If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Step 6.
-* Try running your cloud services locally by pressing f5.&lt;/p&gt;
+&lt;h4 id=&#34;toc_7&#34;&gt;Step 5.&lt;/h4&gt;
 
-&lt;p&gt;Step 7.
-* Publish your cloud services to Azure:
-  * Go to Solution Explorer, right-click on your cloud services and choose “Publish” from the dropdown.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Try running your cloud services locally by pressing f5.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/10.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;toc_8&#34;&gt;Step 6.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Publish your cloud services to Azure:
+
+&lt;ul&gt;
+&lt;li&gt;Go to Solution Explorer, right-click on your cloud services and choose “Publish” from the dropdown.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/10.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.&lt;/li&gt;
@@ -418,54 +539,50 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 &lt;li&gt;You can also check the status of your deployment in the Management Portal.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/12.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/12.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;HINT: Don’t have a nodebot set up or the robot ready yet?
-Just comment out the line that sends the instructions to Robot. It is in WorkerRole.cs in Run function.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&#34;toc_9&#34;&gt;Don’t have a nodebot set up or the robot ready yet?&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/13.jpg&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Just comment out the line that sends the instructions to Robot. It is in WorkerRole.cs in Run function.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_3&#34;&gt;Editing and Testing the Code&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/13.jpg&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_4&#34;&gt;Create a Unit Test Project&lt;/h4&gt;
+&lt;h3 id=&#34;toc_10&#34;&gt;Editing and Testing the Code&lt;/h3&gt;
+
+&lt;h4 id=&#34;toc_11&#34;&gt;Create a Unit Test Project&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;The first step is to make sure the code works. Create a new test project by opening Visual Studio and going to File-&amp;gt;New-&amp;gt;Project at the top.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/file-new-project.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/file-new-project.png&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;On the left hand side of the pop-up window, select Installed-&amp;gt;Templates-&amp;gt;Visual C#-&amp;gt;Test. Then in the middle part of the pop-up, click on Unit Test Project. Having a Unit Test Project will allow you to easily run all the tests at once. If you change anything in the code, you can quickly know whether it broke something else. Be sure to change the name of the project at the bottom. We called ours PathFindingTests, but you can name yours whatever you like. Press ok when you are done.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/new-unit-test-project.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/new-unit-test-project.png&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_5&#34;&gt;Adding the Files&lt;/h4&gt;
+&lt;h4 id=&#34;toc_12&#34;&gt;Adding the Files&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Now that you have a brand new Unit Test Project, you need to add the test files, and the files you need to run those tests&amp;hellip; These can be found on our &lt;a href=&#34;https://github.com/ms-iot/wof-webapp.png&#34;&gt;web app&amp;rsquo;s github repository&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;While those files are downloading, create a place to put them in your project. The files will be sorted into classes and tests so let&amp;rsquo;s make two folders in our project labeled classes, and tests. Right click on the project name in the solution explorer (found on the right hand side). Select Add-&amp;gt;New Folder as shown in the picture. Do this twice, naming one &amp;ldquo;tests&amp;rdquo; and the other &amp;ldquo;classes&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Right click on the project name in the solution explorer (found on the right hand side). Select Add-&amp;gt;New Folder as shown in the picture. Do this twice, naming one &amp;ldquo;tests&amp;rdquo; and the other &amp;ldquo;classes&amp;rdquo;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-folder.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Once you have downloaded the files, right click on the newly created classes file. Select Add-&amp;gt;Existing Item&amp;hellip; Find the place where you downloaded the wof-webapp code. In wof-webapp-&amp;gt;App_Code, open the classes folder and select all the files in there. Click add. Do the same with the tests folder, selecting all the files from github&amp;rsquo;s test folder and clicking add.&lt;/li&gt;
+&lt;li&gt;Once you have downloaded the files, copy the files from &amp;ldquo;classes&amp;rdquo; folder that you got from GitHub, except WorkerRole.cs. Right click on the newly created classes file. Select &amp;ldquo;paste&amp;rdquo;. Do the same with the tests folder, by copying all the files from github&amp;rsquo;s test folder and clicking paste.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-existing-item.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;toc_6&#34;&gt;Adding References&lt;/h4&gt;
+&lt;h4 id=&#34;toc_13&#34;&gt;Adding References&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Now you have all the code you need. You should be able to just click Test-&amp;gt;Run-&amp;gt;All Tests, right? Not quite. We are still missing some assembly references (as the debugger will gladly tell you if you try to build the project). Don&amp;rsquo;t worry, this is easy to fix.&lt;/li&gt;
 &lt;li&gt;Right click on the project name again in the Solution Explorer. Select Add-&amp;gt;Reference&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-reference.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-reference.png&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;On the left hand side of the pop-up, click on Assemblies-&amp;gt;Framework. Next, click the checkmark next to each of the following Assemblies:
@@ -480,19 +597,19 @@ Just comment out the line that sends the instructions to Robot. It is in WorkerR
 &lt;li&gt;Once all these are checked, click ok.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/picking-references.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/picking-references.png&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;NOW you can click Test-&amp;gt;Run-&amp;gt;All Tests and you should see them all pass with flying colors. If a test fails, try to figure out why it failed and submit a fix. Or yell at the person who changed the code without fixing the tests until they fix it.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;toc_7&#34;&gt;What&amp;rsquo;s Next?&lt;/h4&gt;
+&lt;h4 id=&#34;toc_14&#34;&gt;What&amp;rsquo;s Next?&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;If all the tests pass, then you know you can use the files in the project. If you want to make changes to any of these files or extend them in any way, make sure that you write tests for your changes and that your changes don&amp;rsquo;t break anyone ese&amp;rsquo;s tests.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;toc_8&#34;&gt;Testing your cloud services.&lt;/h4&gt;
+&lt;h4 id=&#34;toc_15&#34;&gt;Testing your cloud services.&lt;/h4&gt;
 
 &lt;p&gt;There are few functions in WorkerRole.cs that you can use to do partial testing with your changes.&lt;/p&gt;
 

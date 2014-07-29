@@ -218,51 +218,55 @@
 
 <p>Our web application is a simple one-page app that has responsive design and can be used to call the robot to a certain room, cancel the request to a certain room, check on the request status, and submit feedback.</p>
 
-<p><img src="/windows-on-fridges/img/app/0.jpg" style='width:100%;' border="0" alt="Null"></p>
+<p><img src="/windows-on-fridges/img/app/0.jpg" style='width:60%;' border="0" alt="Null"></p>
 
 <ul>
-<li>Submitting the request:</li>
+<li><p>Submitting the request:
+To submit request the user needs to submit an office number to deliver a drink to and press “fetch the fridge” button.</p></li>
 
-<li><p>To submit request the user needs to submit an office number to deliver a drink to and press “fetch the fridge” button.</p></li>
+<li><p>Cancelling the request:
+After request is submitted it can be cancelled by pressing the “Cancel request” button</p></li>
 
-<li><p>Cancelling the request:</p></li>
+<li><p>Check on the status:
+If the drink is already on a way to a submitted room, the web app will inform a user.</p></li>
 
-<li><p>After request is submitted it can be cancelled by pressing the “Cancel request” button</p></li>
-
-<li><p>Check on the status:</p></li>
-
-<li><p>If the drink is already on a way to a submitted room, the web app will inform a user.</p></li>
-
-<li><p>Submit feedback:</p></li>
-
-<li><p>The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.</p></li>
+<li><p>Submit feedback:
+The submit feedback field is at the bottom of the page. The feedback is sent to the owner’s email and stored at the database.</p></li>
 </ul>
 
 <p>To get the web app to work, you should have <a href="http://ms-iot.github.io/windows-on-fridges/webservices/azure/">set up your Azure account</a>. Now you can get this web-app to run on Azure and work with your mobile services!</p>
 
-<p>####Step 1.</p>
+<h4 id="toc_1">Step 1.</h4>
 
 <ul>
-<li>Get the source files by cloning the git repository at <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a>
+<li><p>Get the source files by cloning the git repository at <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a></p>
 
-<ul>
-<li>git clone <a href="https://github.com/ms-iot/wof-webapp.git">https://github.com/ms-iot/wof-webapp.git</a></li>
-</ul></li>
+<pre><code>git clone https://github.com/ms-iot/wof-webapp.git
+</code></pre></li>
 </ul>
 
-<p>####Step 2.</p>
+<h4 id="toc_2">Step 2.</h4>
 
-<p>Prepare your database to send you the feedback from the app. We will use sendGrid for that. If you don&rsquo;t want to receive emails from your web-app with feedback people leave, skip this step.
-  * Follow <a href="http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/">these instructions</a> to get a free SendGid account and get your SendGrid username and password.
-  * Open &ldquo;insertFeedbackScript.js&rdquo; from the files you got from Git. Replace &ldquo;[your sendgrid username]&rdquo; with your SendGrid username, &ldquo;[your sendgrid password]&rdquo; with your SendGrid password, and &ldquo;youremail@host.com&rdquo; with the email you want to use for feedback.
-  * In your Azure manegement portal, go to your mobile service -&gt; DATA -&gt; Feedback -&gt; SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.</p>
+<p>Prepare your database to send you the feedback from the app. We will use <a href="http://sendgrid.com/">SendGrid</a> for that. If you don&rsquo;t want to receive emails from your web-app with feedback that people leave, skip this step.</p>
+
+<ul>
+<li>Follow <a href="http://azure.microsoft.com/en-us/documentation/articles/sendgrid-dotnet-how-to-send-email/">these instructions</a> to get a free SendGid account and get your SendGrid username and password.</li>
+<li>Open &ldquo;insertFeedbackScript.js&rdquo; from the files you got from Git in any editor. Replace &ldquo;[your sendgrid username]&rdquo; with your SendGrid username, &ldquo;[your sendgrid password]&rdquo; with your SendGrid password, and &ldquo;youremail@host.com&rdquo; with the email you want to use for feedback. Save.</li>
+<li>HINT: To find out your sendgrid username and password once you created the account, in Azure management portal go to ADD-ONS (in the menu on the left) -&gt; SendGrid -&gt; Connection Info (at the bottom).</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/app/12.jpg" style='width:70%;' border="0" alt="Null"></p>
+
+<ul>
+<li>In your Azure management portal, go to your mobile service -&gt; DATA -&gt; Feedback -&gt; SCRIPT. Copy the code from insertFeedbackScript.js instead of the script that handles the insert at the moment. Save at the bottom of the page.</li>
+</ul>
 
 <p><img src="/windows-on-fridges/img/app/6.jpg" style='width:100%;' border="0" alt="Null"></p>
 
-<p>####Step 3.</p>
+<h4 id="toc_3">Step 3.</h4>
 
 <ul>
-<li>Open “page.js”. At the very top of the page replace “[your address]” with the address of your mobile service, and &ldquo;[your key]&rdquo; with the application key to your mobile service.</li>
+<li>Open “page.js” from the files you got from Git in any editor. At the very top of the page replace “[your address]” with the address of your mobile service, and &ldquo;[your key]&rdquo; with the application key to your mobile service.</li>
 </ul>
 
 <p><img src="/windows-on-fridges/img/app/1.jpg" style='width:100%;' border="0" alt="Null"></p>
@@ -271,12 +275,19 @@
 <li>HINT: To find your key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.</li>
 </ul>
 
-<p><img src="/windows-on-fridges/img/cloudServices/9.jpg" style='width:100%;' border="0" alt="Null"></p>
+<p><img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:70%;' border="0" alt="Null"></p>
 
-<p>####Step 3.</p>
+<ul>
+<li>Save page.js</li>
+</ul>
 
-<p>Create the website project:
-  * In Visual Studio, go to File  -&gt; New - &gt; Website …</p>
+<h4 id="toc_4">Step 4.</h4>
+
+<p>Create the website project:</p>
+
+<ul>
+<li>In Visual Studio, go to File  -&gt; New - &gt; Website …</li>
+</ul>
 
 <p><img src="/windows-on-fridges/img/app/2.jpg" style='width:100%;' border="0" alt="Null"></p>
 
@@ -287,31 +298,57 @@
 <p><img src="/windows-on-fridges/img/app/3.jpg" style='width:100%;' border="0" alt="Null"></p>
 
 <ul>
-<li>Add source files, except &ldquo;insertFeedbackScript.js&rdquo; to the source folder of your new project.</li>
-<li>In Solution explorer right-click on your website and go to Add-&gt;Existing item…  Add all files from the source folder.</li>
+<li>Copy source files you got from git (including page.js you modified), except &ldquo;insertFeedbackScript.js&rdquo;. In Solution Explorer in visual Studio right-click on your web site, and click &ldquo;paste&rdquo; You source files should appear in Soution Explorer.</li>
 </ul>
 
-<p>####Step 4.</p>
+<p><img src="/windows-on-fridges/img/app/7.jpg" style='width:70%;' border="0" alt="Null"></p>
 
-<p>Publish your website to Azure:
-  * Go to Solution Explorer, right-click on your website and choose “Publish” from the dropdown.
-  * Sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.
-  * In the “Existing Web Sites” dropdown choose the website you created previously for user interaction. Click “Next”.</p>
+<h4 id="toc_5">Step 5.</h4>
 
-<p><img src="/windows-on-fridges/img/app/4.jpg" style='width:100%;' border="0" alt="Null"></p>
+<p>Publish your website to Azure:</p>
 
 <ul>
-<li>In the next window, choose your mobile services SQL server name from the dropdown. Enter the password you set for that database. Hit “Create”.</li>
-<li>HINT: to find out your SQL server name, in Azure management portal go to your mobile Service -&gt; Configure.</li>
+<li>Go to Solution Explorer, right-click on your website and choose “Publish Web Site” from the dropdown.</li>
+<li>In the pop-up click on &ldquo;Windows Azure Web Sites&rdquo;</li>
 </ul>
 
-<p><img src="/windows-on-fridges/img/app/5.jpg" style='width:100%;' border="0" alt="Null"></p>
+<p><img src="/windows-on-fridges/img/app/8.jpg" style='width:70%;' border="0" alt="Null"></p>
 
 <ul>
-<li>Publish your website. When it is published, the browser window will open up and you will be able to start using your new web-app.</li>
+<li><p>In the next pop-up sign into your Azure account if you are not singed in and choose the subscription you want to use. Click “Next”.</p></li>
+
+<li><p>Just right to the “Existing Web Sites” dropdown choose &ldquo;New&hellip;&rdquo;.</p></li>
 </ul>
 
-<p>Note that if you haven’t <a href="http://ms-iot.github.io/windows-on-fridges/webservices/map/">uploaded the map of the space</a> yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.</p>
+<p><img src="/windows-on-fridges/img/app/9.jpg" style='width:70%;' border="0" alt="Null"></p>
+
+<ul>
+<li>In the next window, for Site name input the URL you want your web-app to be located at. This will be the actual URL of your web-app used to fetch the robot. Choose your region. Choose the database you just created for mobile services. Input login and password you created when creating your mobile services. Hit “Create”.</li>
+<li>HINT: Don’t remember your database name? In Azure management portal go to your mobile service CONFIGURE tab. The database name is at the top.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/app/10.jpg" style='width:70%;' border="0" alt="Null"></p>
+
+<ul>
+<li>When the website is created, hit &ldquo;Publish&rdquo;. When it is published, the browser window will open up and you will be able to start using your new web-app.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/app/11.jpg" style='width:70%;' border="0" alt="Null"></p>
+
+<h4 id="toc_6">Step 6.</h4>
+
+<ul>
+<li>Now you have to give permissions to your website to connect to your mobile services. In Azure management portal go to mobile services you created. Open CONFIGURE tab. Under &ldquo;Cross-Origin Resource Sharing (cors)&rdquo; line add your website’s URL.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/azure/5.jpg" style='width:80%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Press “save” at the bottom of the page.</li>
+</ul>
+
+<p>Now your website is created!
+Note that if you haven’t <a href="http://ms-iot.github.io/windows-on-fridges/webservices/map/">uploaded the map of the space</a> yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.</p>
 
 
                     </div>
