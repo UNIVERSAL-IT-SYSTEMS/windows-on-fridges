@@ -17,7 +17,7 @@ weight: 60
 
 To host our web services on Azure you will need five main components that will be referred to as:
 
-  1.Web-app  (a UI to call the robot to a room)
+  1.Web-app  (a UI to call the robot to a room), which will be created in the [web-app wiki](http://ms-iot.github.io/windows-on-fridges/webservices/webapp/)
   
   2.Mobile Services (SQL server and database to store requests)
   
@@ -75,23 +75,7 @@ Add the following column: "text" (string).
 
 Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying.
 
-#### Step 4.
-
-Now let’s create a web-site and connect it to mobile services.
-
-* At the bottom of the page click new -> Compute -> Web Site -> Custom Create
-* Input the URL. This will be the actual URL of your web-app used to fetch the robot. Choose your hosting plan. Choose the database you just created for mobile services. Input login and password you created in the previous step. Leave other settings unchanged.
-  * HINT: Don’t remember your database name? In Azure management portal go to your mobile service CONFIGURE tab. The database name is at the top.
-  * While the website is being created you can go on with the instructions.
-* Now you have to give permissions to your website to connect to your mobile services. Go to mobile services you created. Open CONFIGURE tab. Under "Cross-Origin Resource Sharing (cors)" line add your website’s URL. 
-
-<img src="/windows-on-fridges/img/azure/5.jpg" style='width:80%;' border="0" alt="Null">
- 
-* Press “save” at the bottom of the page.
-
-Now your website is created!
-
-#### Step 5. 
+#### Step 6. 
 
 Now let’s create a new storage. 
 
@@ -100,7 +84,7 @@ Now let’s create a new storage.
 * While the storage is being created you can go on with the instructions.
 * To find out more about storage go to http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/ 
 
-#### Step 6.
+#### Step 7.
 
 Create cloud services where all the pathfinding will be happening. 
 
@@ -108,11 +92,9 @@ Create cloud services where all the pathfinding will be happening.
 * While the cloud service is being created you can go on with the instructions.
 * To find out more about cloud services go to http://azure.microsoft.com/en-us/documentation/services/cloud-services/
 
-#### Step 7. 
+#### Step 8. 
 
-To create a Nodebot Server you need another web site. In this step we will create the website on Azure, clone the nodebot-server repository, and publish the source files to your new Azure website using git. If you already done any of this steps while following [the Nodebot Server wiki](http://ms-iot.github.io/windows-on-fridges/nodebot/server/), you can skip them this step.
-
-You already know how to create web sites, but this one will have git as source control method. 
+To create a Nodebot Server you need a web site. In this step we will create the website on Azure, clone the nodebot-server repository, and publish the source files to your new Azure website using git. If you already done any of this steps while following [the Nodebot Server wiki](http://ms-iot.github.io/windows-on-fridges/nodebot/server/), you can skip them this step.
 
 * Click the + NEW icon on the bottom left of the portal. Click WEB SITE, then QUICK CREATE. Enter a value for URL. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki. Select the datacenter for your web site in the REGION dropdown. Leave other settings unchanged. Click the checkmark at the bottom of the dialog. You need to wait for the website to be created. It will take about a minute.
 * Once the web site status changes to Running, click on the name of the web site to access the Dashboard.
@@ -142,5 +124,5 @@ You already know how to create web sites, but this one will have git as source c
 * You can find out more about deploying to Azure from git at http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
 
-#### Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.
+#### Now you have four out of five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to create the web-app, upload the map to your storage, and set up cloud services to do pathfinding.
 
