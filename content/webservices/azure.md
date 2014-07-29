@@ -44,13 +44,13 @@ Get Azure SDK for Visual Studio. You can use [this installer](http://www.microso
 Now that you have an account you can go to your Management portal and create Mobile services.
 
 * Go to Azure.microsoft.com -> Management portal. Sign in to your Azure account.
-* At the bottom of the page click new -> Compute -> Mobile service -> create
+* At the bottom of the page click New -> Compute -> Mobile service -> create
 
 <img src="/windows-on-fridges/img/azure/1.jpg" style='width:100%;' border="0" alt="Null">
  
 * Type in the URL for your mobile service. This URL will later be referred to as your mobile service host. From the Database dropdown choose creating a new database. For region choose the region that is closest to you. For backend choose JavaScript. Leave other settings unchanged. Press the arrow at the bottom right corner. 
 
-<img src="/windows-on-fridges/img/azure/2.jpg" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/azure/2.jpg" style='width:70%;' border="0" alt="Null">
 
 * Choose “New SQL database server” and input server login and password. You will have to enter these credentials later on, so try to not forget them!  Leave other settings unchanged. Press the checkmark symbol.
 * You need to wait for the service to be created. It will take about a minute. When the status says “ready”, the mobile service is created.
@@ -59,11 +59,11 @@ Now that you created mobile services, you need to create the database schema tha
 
 * For that, go to your new mobile service - > DATA. Press “add a table”. 
 
-<img src="/windows-on-fridges/img/azure/3.jpg" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/azure/3.jpg" style='width:50%;' border="0" alt="Null">
 
 * Enter “offices” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.
 
-<img src="/windows-on-fridges/img/azure/4.jpg" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/azure/4.jpg" style='width:70%;' border="0" alt="Null">
  
 * When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
 Add the following columns: "office" (string), "cancelled" (boolean), "complete" (boolean).
@@ -85,7 +85,7 @@ Now let’s create a web-site and connect it to mobile services.
   * While the website is being created you can go on with the instructions.
 * Now you have to give permissions to your website to connect to your mobile services. Go to mobile services you created. Open CONFIGURE tab. Under "Cross-Origin Resource Sharing (cors)" line add your website’s URL. 
 
-<img src="/windows-on-fridges/img/azure/5.jpg" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/azure/5.jpg" style='width:80%;' border="0" alt="Null">
  
 * Press “save” at the bottom of the page.
 
@@ -123,16 +123,22 @@ You already know how to create web sites, but this one will have git as source c
 
 * When asked "Where is your source code?" select Local Git repository, and then click the arrow.
 
-<img src="/windows-on-fridges/img/azure/7.png" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/azure/7.png" style='width:80%;' border="0" alt="Null">
 
 * To enable Git publishing, you must provide a user name and password. If you have previously enabled publishing for an Azure Web Site, you will not be prompted for the user name or password. Instead, a Git repository will be created using the user name and password you previously specified. Make a note of the user name and password, as they will be used for Git publishing to all Azure Web Sites you create.
 * Get the nodebot code from Github:
     git clone http://github.com/ms-iot/wof-nodebot-server    
-* Now in the folder you
+* Find out URL to you local repository in Azure management portal: go to your nodebot website -> DEPLOYMENTS. Copy the GIT URL at the top right corner. 
+
+<img src="/windows-on-fridges/img/azure/8.jpg" style='width:80%;' border="0" alt="Null">
+
+* Now in the folder your local repository is perform the following commands:
+
+    git remote add azure [URL for remote repository you just copied]
+    git push azure master    
+    
+* You can find out more about deploying to Azure from git at http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
 
-Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.
-
-
- 
+#### Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.
 
