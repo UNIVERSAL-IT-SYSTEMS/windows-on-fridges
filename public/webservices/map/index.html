@@ -8,7 +8,7 @@
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Firmata</title>
+    <title>Upload Map</title>
 
     <link href="http://ms-iot.github.io/windows-on-fridges/css/bootstrap-theme.css" rel="stylesheet">
     <link href="http://ms-iot.github.io/windows-on-fridges/css/elegant-icons-style.css" rel="stylesheet" />
@@ -103,7 +103,7 @@
           
               
 
-            <li class="sub-menu active">
+            <li class="sub-menu">
             <a href="javascript:;" class="">
                 <i class='fa fa-cogs'></i>
                 
@@ -116,7 +116,7 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/building"> build </a> </li>
                     
-                    <li class="active"><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/firmata"> firmata </a> </li>
+                    <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/firmata"> firmata </a> </li>
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/nodebot/client"> client </a> </li>
                     
@@ -130,7 +130,7 @@
           
               
 
-            <li class="sub-menu">
+            <li class="sub-menu active">
             <a href="javascript:;" class="">
                 <i class='fa fa-cloud'></i>
                 
@@ -143,7 +143,7 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/webapp"> Webapp </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/map"> Map </a> </li>
+                    <li class="active"><a href="http://ms-iot.github.io/windows-on-fridges/webservices/map"> Map </a> </li>
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
                     
@@ -173,7 +173,7 @@
               </li>
           
             <li> <a href="https://github.com/ms-iot/windows-on-fridges/issues" target="blank"><i class='fa fa-life-ring'></i>Issues & Help</a> </li>
-              <li><a href="https://github.com/ms-iot/windows-on-fridges/edit/master/content/nodebot/firmata.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
+              <li><a href="https://github.com/ms-iot/windows-on-fridges/edit/master/content/webservices/map.md" target="blank"><i class='fa fa-edit'></i> Refine this Page</a> </li>
         </ul>
         
     </div>
@@ -200,7 +200,7 @@
               <div class="row">
                   <div class="col-md-1">
                       
-                      <a class="navigation prev" href="/windows-on-fridges/nodebot/building">
+                      <a class="navigation prev" href="/windows-on-fridges/webservices/webapp">
                       <i class="fa fa-angle-left"></i>
                       </a>
                       
@@ -214,41 +214,67 @@
 
 
 
-<h2 id="toc_0">Firmata</h2>
+<h2 id="toc_0">Map Upload</h2>
 
-<p>Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with <a href="https://github.com/rwaldron/johnny-five">Johnny-Five</a> a NodeJS client library that is build for robotics.</p>
+<p>We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:</p>
 
-<p>We are using a <a href="http://github.com/connerbrooks/firmata-galileo">modified version</a> of <a href="http://github.com/firmata/arduino">Firmata Arduino</a> the headers have been altered to be compatible with the Galileo SDK.</p>
+<p>Step 1
+  * Install Microsoft Visio 2013 if you don&rsquo;t have one already</p>
 
-<h2 id="toc_1">Running Firmata</h2>
+<p>Step 2
+  * Take any map of the space in JPEG format and open it in Visio
+    * WARNING: Other file types might work with these instructions but were not tested.
+    * HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.</p>
 
-<p>Firmata must be running on the board before the node client can interact with it.</p>
-
-<ul>
-<li><p>Clone the Galileo Firmata Repository</p>
-
-<pre><code>git clone https://github.com/path/to/galileo/firmata
-</code></pre></li>
-
-<li><p>Open the Visual Studio project.</p></li>
-
-<li><p>Configure the remote debugging settings.</p>
+<p><img src="/windows-on-fridges/img/map/1.jpg" style='width:100%;' border="0" alt="Null"></p>
 
 <ul>
-<li>Refer to the <a href="http://ms-iot.github.io/content">Galileo SDK documentation</a>.</li>
-</ul></li>
-
-<li><p>Deploy the project to the Galileo.</p></li>
-
-<li><p>Once you have deployed you will be able to telnet into the Galileo and remotely start firmata</p>
-
-<pre><code>telnet mygalileo
-cd c:\test
-Firmata.exe
-</code></pre></li>
-
-<li><p>We can now control the Galileo using the Firmata protocol with any client library.</p></li>
+<li>To make your future SVG map easily extractable from the image you opened, create a new layer by going to Home -&gt; Layers -&gt; Layer properties -&gt; New. Press &ldquo;ok&rdquo; after you’re done.</li>
 </ul>
+
+<p><img src="/windows-on-fridges/img/map/2.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 3
+  * Use the line tool to draw all paths that you want the robot to wander. Make sure you &ldquo;snap&rdquo; the lines together if you want the two paths to actually be connected.</p>
+
+<p><img src="/windows-on-fridges/img/map/3.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p><img src="/windows-on-fridges/img/map/4.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -&gt; define shape data. In the pop-up input &ldquo;officeNumber&rdquo; as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/map/5.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<p><img src="/windows-on-fridges/img/map/6.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 4
+  * With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &ldquo;officeNumber&rdquo; value to 0.</p>
+
+<p><img src="/windows-on-fridges/img/map/65.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 5
+  * A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose &ldquo;define shape data&rdquo;. In the pop-up input &ldquo;scale&rdquo; as a title and the actual length as value. Save.
+  * Note that the units you put in the &ldquo;value&rdquo; field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.</p>
+
+<p><img src="/windows-on-fridges/img/map/7.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<p>Step 6
+  * When you&rsquo;re done, save your Visio project to come back and modify your map whenever you want.
+  * After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.</p>
+
+<p><img src="/windows-on-fridges/img/map/8.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<p><img src="/windows-on-fridges/img/map/9.JPG" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Make sure you don&rsquo;t have any particular shape selected to avoid having only this shape saved.</li>
+<li>Go to file -&gt; export -&gt; change file type. Double-click on &ldquo;SVG Scalable Vector Graphics&rdquo;. Save your map as &ldquo;map.svg&rdquo;.</li>
+<li>WARNING: Don&rsquo;t save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.</li>
+</ul>
+
+<p>Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio.</p>
 
 
                     </div>
@@ -256,7 +282,7 @@ Firmata.exe
                 </div>
                 <div class="col-md-1">
                     
-                    <a class="navigation next" href="/windows-on-fridges/nodebot/client">
+                    <a class="navigation next" href="/windows-on-fridges/webservices/pathfinding">
                         <i class="fa fa-angle-right"> </i>
                     </a>
                     

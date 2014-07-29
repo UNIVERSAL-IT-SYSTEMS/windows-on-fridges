@@ -143,9 +143,9 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/webapp"> Webapp </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
+                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/map"> Map </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/testing"> Testing </a> </li>
+                    <li><a href="http://ms-iot.github.io/windows-on-fridges/webservices/pathfinding"> Pathfinding </a> </li>
                     
                 </ul>
               
@@ -212,6 +212,101 @@
                           
                     <div class="panel-body">
 
+<p>##Setting up Azure</p>
+
+<p>To host our web services on Azure you will need five main components that will be referred to as:</p>
+
+<p>1.Web-app</p>
+
+<p>2.Mobile Services</p>
+
+<p>3.Storage</p>
+
+<p>4.Cloud services</p>
+
+<p>5.Nodebot Server</p>
+
+<p>####Step 1.</p>
+
+<p>However, you should start with creating Azure account. You can either <a href="http://azure.microsoft.com/en-us/pricing/free-trial/">start a free 30-day trial</a> or go ahead and <a href="http://msdn.microsoft.com/en-US/library/azure/hh531793.aspx#BKMK_AdminGuidelines">buy a subscription</a>.</p>
+
+<p>####Step 2.</p>
+
+<p>For this project you will need Visual Studio installed. While much of it can be done using git, some things, like manually uploading files to Azure Storage, are still unavailable any other way but through Visual Studio. Besides that, Azure SDK for Visual Studio is a very convenient way to publish changes to your code to Azure.</p>
+
+<p>Get <a href="http://www.microsoft.com/en-us/download/details.aspx?id=15658">Azure SDK</a> for Visual Studio.</p>
+
+<p>####Step 3.</p>
+
+<p>Now that you have an account you can go to your Management portal and create Mobile services.
+* Go to Azure.microsoft.com -&gt; Management portal. Sign in to your Azure account.
+* At the bottom of the page click new -&gt; Compute -&gt; Mobile service -&gt; create</p>
+
+<p><img src="/windows-on-fridges/img/azure/1.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Type in the URL for your mobile service. This URL will later be referred to as your mobile service host. From the Database dropdown choose creating a new database. For region choose the region that is closest to you. For backend choose JavaScript. Press the arrow at the bottom right corner.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/azure/2.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Choose “New SQL database server” and input server login and password. You will have to enter these credentials later on, so try to not forget them! Press the checkmark symbol.</li>
+<li>When the status says “ready”, the mobile service is created.</li>
+</ul>
+
+<p>Now that you created mobile services, you need to create the database schema that the app is using
+* For that, go to your new mobile service - &gt; DATA. Press “add a table”.</p>
+
+<p><img src="/windows-on-fridges/img/azure/3.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Enter “offices” as a table name. Press the checkmark symbol.</li>
+</ul>
+
+<p><img src="/windows-on-fridges/img/azure/4.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following columns: &ldquo;office&rdquo; (string), &ldquo;cancelled&rdquo; (boolean), &ldquo;complete&rdquo; (boolean).</li>
+</ul>
+
+<p>Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to <a href="http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying">http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying</a>.</p>
+
+<p>####Step 4.</p>
+
+<p>Now let’s create a web-site and connect it to mobile services.
+* At the bottom of the page click new -&gt; Compute -&gt; Web Site -&gt; Custom Create
+* Input the URL. This will be the actual URL of your web-app used to fetch the robot. Choose your plan. Choose the database you just created for mobile services. Input login and password you created in the previous step.
+  * HINT: Don’t remember your database name? Go to your mobile service CONFIGURE tab. The database name is at the top.
+* Now you have to give permissions to your website to connect to your mobile services. Go to mobile services you created. Open CONFIGURE tab. In the Cross-Origin Resource Sharing (CORS) add your website’s URL.</p>
+
+<p><img src="/windows-on-fridges/img/azure/5.jpg" style='width:100%;' border="0" alt="Null"></p>
+
+<ul>
+<li>Press “save” at the bottom of the page.</li>
+</ul>
+
+<p>Now your website is created!</p>
+
+<p>####Step 5.</p>
+
+<p>Now let’s create a new storage.
+* At the bottom of the page click new -&gt; Data services -&gt; Storage -&gt; Quick Create. Input your storage URL and closest geo location to you. Press “Create storage account”.
+* Now in the panel on the left, choose STORAGE and go to your new storage account. Go to CONTAINERS tab. Create a container called “maps”. Choose “Public Blob” in Access dropdown.
+* To find out more about storage go to <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/</a></p>
+
+<p>####Step 6.</p>
+
+<p>Create cloud services where all the pathfinding will be happening.
+* At the bottom of the page click new -&gt; Compute -&gt; Cloud Service -&gt; Quick Create. Input your cloud services URL and closest geo location to you. Press “Create cloud service”.
+* To find out more about cloud services go to <a href="http://azure.microsoft.com/en-us/documentation/services/cloud-services/">http://azure.microsoft.com/en-us/documentation/services/cloud-services/</a></p>
+
+<p>####Step 7.</p>
+
+<p>To create a Nodebot Server you need another web site. You already know how to create web sites, but this one will have git as source control method. Follow <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/">these instructions</a> to create the website and <a href="http://ms-iot.github.io/windows-on-fridges/nodebot/server/">instructions on Nodebot page</a> to get source files from GitHub and upload them to your new website. The URL you input for your website will be later referred to as “nodebot host” in Pathfinding wiki.</p>
+
+<p>Now you have all five components set up for your Web Services. You already deployed the nodebot source files in step 7, and your mobile services are ready as well. In the next tabs you can find out how to deploy the web-app, upload the map to your storage, and set up cloud services to do pathfinding.</p>
 
 
                     </div>
