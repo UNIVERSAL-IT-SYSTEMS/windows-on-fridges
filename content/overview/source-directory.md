@@ -16,7 +16,8 @@ weight: 50
 
 Sources for our project are located in multiple different repositories.
 
-  * Web App
-  * Nodebot Server
-  * Nodebot Client
-  * Documentation
+  * [Web App](https://github.com/ms-iot/wof-webapp)
+  * [Pathfinding](https://github.com/ms-iot/wof-pathfinding)
+  * [Nodebot Server](https://github.com/ms-iot/wof-nodebot-server)
+  * [Nodebot Client](https://github.com/ms-iot/wof-nodebot-client)
+  * [Documentation](https://github.com/ms-iot/windows-on-fridges)
