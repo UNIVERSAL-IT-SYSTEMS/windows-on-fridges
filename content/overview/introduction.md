@@ -24,10 +24,10 @@ would deliver drinks to your office.
 The full end to end consists of multiple different pieces.
 
  * [Web application](http://github.com/ms-iot/wof-webapp) that allows users to input a room they want a drink delivered to.
- * [Pathfinding service](http://github.com/ms-iot/wof-webapp) that is hosted on azure.
+ * [Pathfinding service](http://github.com/ms-iot/wof-pathfinding) that is hosted on azure.
  * [REST server](http://github.com/ms-iot/wof-nodebot-server) that interacts with the client.
  * [Client application](http://github.com/ms-iot/wof-nodebot-client) which interacts directly with the hardware.
- * [Firmata](http://google.com) the protocol running on the Galileo.
+ * [Firmata](http://firmata.org/wiki/Main_Page) the protocol running on the Galileo.
 
 All together this allows a user to input the room they want a drink delivered to.
 The path is then calculated and converted to a list of instructions that are then
