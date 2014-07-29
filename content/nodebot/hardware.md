@@ -20,7 +20,7 @@ This is the parts list for the robot that we built.
 
   * [Galileo Board](http://windowsondevices.com)
   * [Motor Shield](http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92)
-  * [Makeblock Robotics Kit](http://makeblocks.cc)
+  * [Makeblock Robotics Kit](http://makeblock.cc)
   * [Wireless Adapter](http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_sp-btf_title_1_8?ie=UTF8&qid=1406065590&sr=8-8&keywords=wifi+adapter+netgear)
   * [Galileo Battery](http://www.amazon.com/Mophie-Powerstation-4000mAh-External-BlackBerry/dp/B005OW4BFE/ref=sr_sp-atf_title_1_1?ie=UTF8&qid=1406065626&sr=8-1&keywords=mophie+battery+pack) 
     * Galileo requires 2A at 5V
