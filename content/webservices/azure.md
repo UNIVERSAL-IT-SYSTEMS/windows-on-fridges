@@ -127,15 +127,17 @@ You already know how to create web sites, but this one will have git as source c
 
 * To enable Git publishing, you must provide a user name and password. If you have previously enabled publishing for an Azure Web Site, you will not be prompted for the user name or password. Instead, a Git repository will be created using the user name and password you previously specified. Make a note of the user name and password, as they will be used for Git publishing to all Azure Web Sites you create.
 * Get the nodebot code from Github:
-    git clone http://github.com/ms-iot/wof-nodebot-server    
+
+        git clone http://github.com/ms-iot/wof-nodebot-server    
+        
 * Find out URL to you local repository in Azure management portal: go to your nodebot website -> DEPLOYMENTS. Copy the GIT URL at the top right corner. 
 
 <img src="/windows-on-fridges/img/azure/8.jpg" style='width:80%;' border="0" alt="Null">
 
 * Now in the folder your local repository is perform the following commands:
 
-    git remote add azure [URL for remote repository you just copied]
-    git push azure master    
+        git remote add azure [URL for remote repository you just copied]
+        git push azure master    
     
 * You can find out more about deploying to Azure from git at http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
