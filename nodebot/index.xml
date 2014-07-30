@@ -25,7 +25,7 @@ This is the parts list for the robot that we built.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://windowsondevices.com&#34;&gt;Galileo Board&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92&#34;&gt;Motor Shield&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://makeblocks.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://makeblock.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_sp-btf_title_1_8?ie=UTF8&amp;amp;qid=1406065590&amp;amp;sr=8-8&amp;amp;keywords=wifi+adapter+netgear&#34;&gt;Wireless Adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Mophie-Powerstation-4000mAh-External-BlackBerry/dp/B005OW4BFE/ref=sr_sp-atf_title_1_1?ie=UTF8&amp;amp;qid=1406065626&amp;amp;sr=8-1&amp;amp;keywords=mophie+battery+pack&#34;&gt;Galileo Battery&lt;/a&gt;
 
@@ -126,7 +126,7 @@ only connect over LAN.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/path/to/galileo/firmata
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/arduino
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Open the Visual Studio project.&lt;/p&gt;&lt;/li&gt;
