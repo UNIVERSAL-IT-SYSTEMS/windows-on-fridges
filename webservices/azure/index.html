@@ -72,8 +72,6 @@
                     
                     <li><a href="http://ms-iot.github.io/windows-on-fridges/meta/roadmap"> Future </a> </li>
                     
-                    <li><a href="http://ms-iot.github.io/windows-on-fridges/meta/license"> License </a> </li>
-                    
                 </ul>
               
               </li>
@@ -269,7 +267,7 @@
 <p><img src="/windows-on-fridges/img/azure/3.jpg" style='width:50%;' border="0" alt="Null"></p>
 
 <ul>
-<li>Enter “offices” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.</li>
+<li>Enter “Requests” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.</li>
 </ul>
 
 <p><img src="/windows-on-fridges/img/azure/4.jpg" style='width:70%;' border="0" alt="Null"></p>
@@ -282,6 +280,11 @@ Add the following columns: &ldquo;office&rdquo; (string), &ldquo;cancelled&rdquo
 
 <li><p>Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
 Add the following column: &ldquo;text&rdquo; (string).</p></li>
+
+<li><p>Add another table titled “Offices”: Go to your new mobile service - &gt; DATA. Press “add a table”. Enter “Offices” as a table name. Leave other settings unchanged.</p></li>
+
+<li><p>Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following column: &ldquo;number&rdquo; (string).</p></li>
 </ul>
 
 <p>Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to <a href="http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying">http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying</a>.</p>

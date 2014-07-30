@@ -101,6 +101,18 @@ Development Platform for Windows.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Contributing</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/community/contributing</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/community/contributing</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Future</title>
       <link>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
@@ -120,18 +132,6 @@ Development Platform for Windows.&lt;/p&gt;
 &lt;li&gt;Use Kinect for obstacle detection&lt;/li&gt;
 &lt;li&gt;Use wheel encoders for more precise distance recognition&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Contributing</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/community/contributing</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/community/contributing</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Contributing&lt;/h2&gt;
 </description>
     </item>
     
@@ -206,18 +206,6 @@ of this project&lt;/p&gt;
 &lt;h2 id=&#34;toc_1&#34;&gt;Nodebot Client&lt;/h2&gt;
 
 &lt;h2 id=&#34;toc_2&#34;&gt;Firmata&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>License</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/meta/license</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/meta/license</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;License&lt;/h2&gt;
 </description>
     </item>
     
@@ -306,7 +294,7 @@ of this project&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/3.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Enter “offices” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.&lt;/li&gt;
+&lt;li&gt;Enter “Requests” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/4.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
@@ -319,6 +307,11 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 
 &lt;li&gt;&lt;p&gt;Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
 Add the following column: &amp;ldquo;text&amp;rdquo; (string).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add another table titled “Offices”: Go to your new mobile service - &amp;gt; DATA. Press “add a table”. Enter “Offices” as a table name. Leave other settings unchanged.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following column: &amp;ldquo;number&amp;rdquo; (string).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying&#34;&gt;http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying&lt;/a&gt;.&lt;/p&gt;
@@ -440,52 +433,6 @@ only connect over LAN.&lt;/p&gt;
 &lt;li&gt;Connect your development machine to the same wireless network as the gaming adapter.&lt;/li&gt;
 &lt;li&gt;Ping the Galileo by hostname and ensure it is connected to the network.&lt;/li&gt;
 &lt;li&gt;You should now be able to deploy to the Galileo over wireless network!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Firmata</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
-
-&lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
-
-&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/connerbrooks/firmata-galileo&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt; the headers have been altered to be compatible with the Galileo SDK.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Running Firmata&lt;/h2&gt;
-
-&lt;p&gt;Firmata must be running on the board before the node client can interact with it.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/arduino
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Open the Visual Studio project.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Configure the remote debugging settings.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Refer to the &lt;a href=&#34;http://ms-iot.github.io/content&#34;&gt;Galileo SDK documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Deploy the project to the Galileo.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Once you have deployed you will be able to telnet into the Galileo and remotely start firmata&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;telnet mygalileo
-cd c:\test
-Firmata.exe
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;We can now control the Galileo using the Firmata protocol with any client library.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -633,6 +580,158 @@ The submit feedback field is at the bottom of the page. The feedback is sent to 
 
 &lt;p&gt;Now your website is created!
 Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/map/&#34;&gt;uploaded the map of the space&lt;/a&gt; yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
+
+&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/ms-iot/arduino&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt; the headers have been altered to be compatible with the Galileo SDK.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Running Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata must be running on the board before the node client can interact with it.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/arduino
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open the Visual Studio project.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Configure the remote debugging settings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Refer to the &lt;a href=&#34;http://ms-iot.github.io/content&#34;&gt;Galileo SDK documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Deploy the project to the Galileo.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once you have deployed you will be able to telnet into the Galileo and remotely start firmata&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;telnet mygalileo
+cd c:\test
+Firmata.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We can now control the Galileo using the Firmata protocol with any client library.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Upload Map</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/webservices/map</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/webservices/map</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Map Upload&lt;/h2&gt;
+
+&lt;p&gt;We have a simple converter that takes an image of the map in SVG format and creates a graph to make finding the shortest path between two rooms faster and easier. Our converter does not cover all the variety of SVG files, but strictly supports the maps generated the following way:&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_1&#34;&gt;Step 1&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href=&#34;http://office.microsoft.com/en-us/visio/&#34;&gt;Microsoft Visio 2013&lt;/a&gt; if you don&amp;rsquo;t have one already. You can also subscribe for a &lt;a href=&#34;http://www.microsoft.com/en-us/evalcenter/evaluate-visio-professional-2013&#34;&gt;free trial&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;toc_2&#34;&gt;Step 2&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take any map of the space in JPEG format and open it in Visio
+
+&lt;ul&gt;
+&lt;li&gt;WARNING: Other file types might work with these instructions but were not tested.&lt;/li&gt;
+&lt;li&gt;HINT: Cannot open your map in Visio? You might have to change the file type at the bottom right corner of the pop-up.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/1.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To make your future SVG map easily extractable from the image you opened, create a new layer by going to Home -&amp;gt; Layers -&amp;gt; Layer properties -&amp;gt; New. Press &amp;ldquo;ok&amp;rdquo; after you’re done.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/2.JPG&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_3&#34;&gt;Step 3&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the line tool to draw all paths that you want the robot to wander. Make sure you &amp;ldquo;snap&amp;rdquo; the lines together if you want the two paths to actually be connected.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/3.jpg&#34; style=&#39;width:80%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/4.jpg&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -&amp;gt; define shape data. In the pop-up input &amp;ldquo;officeNumber&amp;rdquo; as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/5.jpg&#34; style=&#39;width:60%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/6.JPG&#34; style=&#39;width:60%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_4&#34;&gt;Step 4&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/65.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_5&#34;&gt;Step 5&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A map is no good without the scale! To add the scale just put a line over something you know the actual length of, like a room or a hallway. Your map might have an actual scale at the bottom which you can use. Left-click on your scale and choose &amp;ldquo;define shape data&amp;rdquo;. In the pop-up input &amp;ldquo;scale&amp;rdquo; as a title and the actual length as value. Save.&lt;/li&gt;
+&lt;li&gt;Note that the units you put in the &amp;ldquo;value&amp;rdquo; field will be the units the program will use from now on. For example, if my scale is 15 meters, meters will be my units.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/7.JPG&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_6&#34;&gt;Step 6&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When you&amp;rsquo;re done, save your Visio project to come back and modify your map whenever you want.&lt;/li&gt;
+&lt;li&gt;After that, delete the underlying map image by selecting it with a pointer tool and pressing “delete” button.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/8.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;img src=&#34;/windows-on-fridges/img/map/9.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Make sure you don&amp;rsquo;t have any particular shape selected to avoid having only this shape saved.&lt;/li&gt;
+&lt;li&gt;Go to file -&amp;gt; export -&amp;gt; change file type. Double-click on &amp;ldquo;SVG Scalable Vector Graphics&amp;rdquo;. Save your map as &amp;ldquo;map.svg&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;WARNING: Don&amp;rsquo;t save your Visio project after you deleted the original map. This will make it very inconvenient to add changes to your map later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Congratulations! Your map is ready. You can view the generated SVG code by opening the map file in Notepad or Visual Studio. Now let&amp;rsquo;s upload it to Azure. For this step, you should have &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/azure/&#34;&gt;set up your Azure services&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_7&#34;&gt;Step 8.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Upload your map to Azure using Server Explorer in Visual Studio.
+
+&lt;ul&gt;
+&lt;li&gt;In Server Explorer navigate to Windows Azure -&amp;gt; Storage -&amp;gt; your storage account name -&amp;gt; Blobs. Double-click on container you want to use. Upload the map you created.&lt;/li&gt;
+&lt;li&gt;Note that your map should be called “map.svg” or replace “map.svg” by your name in WorkerRole.cs&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/1.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/2.jpg&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

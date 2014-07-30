@@ -117,7 +117,7 @@ only connect over LAN.&lt;/p&gt;
 
 &lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
 
-&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/connerbrooks/firmata-galileo&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt; the headers have been altered to be compatible with the Galileo SDK.&lt;/p&gt;
+&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/ms-iot/arduino&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt; the headers have been altered to be compatible with the Galileo SDK.&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_1&#34;&gt;Running Firmata&lt;/h2&gt;
 

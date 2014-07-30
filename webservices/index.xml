@@ -72,7 +72,7 @@
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/3.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Enter “offices” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.&lt;/li&gt;
+&lt;li&gt;Enter “Requests” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/azure/4.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
@@ -85,6 +85,11 @@ Add the following columns: &amp;ldquo;office&amp;rdquo; (string), &amp;ldquo;can
 
 &lt;li&gt;&lt;p&gt;Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
 Add the following column: &amp;ldquo;text&amp;rdquo; (string).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add another table titled “Offices”: Go to your new mobile service - &amp;gt; DATA. Press “add a table”. Enter “Offices” as a table name. Leave other settings unchanged.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following column: &amp;ldquo;number&amp;rdquo; (string).&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to &lt;a href=&#34;http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying&#34;&gt;http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying&lt;/a&gt;.&lt;/p&gt;
@@ -504,7 +509,7 @@ Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fr
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/8.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;If you did not name the table in your database “offices”, change the “table_name” to your table name.&lt;/li&gt;
+&lt;li&gt;If you did not name the tables in your database “Offices” and &amp;ldquo;Requests&amp;rdquo;, change “requests_table_name” and &amp;ldquo;offices_table_name&amp;rdquo; to your table names.&lt;/li&gt;
 &lt;li&gt;If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.&lt;/li&gt;
 &lt;/ul&gt;
 
