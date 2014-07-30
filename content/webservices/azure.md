@@ -61,7 +61,7 @@ Now that you created mobile services, you need to create the database schema tha
 
 <img src="/windows-on-fridges/img/azure/3.jpg" style='width:50%;' border="0" alt="Null">
 
-* Enter “offices” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.
+* Enter “Requests” as a table name. Leave other settings unchanged. Press the checkmark symbol. You need to wait for the table to be created. It will take about a minute.
 
 <img src="/windows-on-fridges/img/azure/4.jpg" style='width:70%;' border="0" alt="Null">
  
@@ -72,6 +72,11 @@ Add the following columns: "office" (string), "cancelled" (boolean), "complete" 
 
 * Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
 Add the following column: "text" (string). 
+
+* Add another table titled “Offices”: Go to your new mobile service - > DATA. Press “add a table”. Enter “Offices” as a table name. Leave other settings unchanged. 
+
+* Press the checkmark symbol. When the table is created, click on it. Go to COLUMNS. Press ADD COLUMN at the bottom.
+Add the following column: "number" (string). 
 
 Now you have Mobile service and database set up! If you want to study Azure Mobile Services more in-depth, go to http://azure.microsoft.com/en-us/documentation/articles/mobile-services-html-how-to-use-client-library/#querying.
 
