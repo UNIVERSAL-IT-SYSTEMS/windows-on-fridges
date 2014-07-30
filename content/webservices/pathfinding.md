@@ -74,7 +74,7 @@ To deploy pathfinding to Azure you have to go through and [set up Azure account 
 
 <img src="/windows-on-fridges/img/cloudServices/8.jpg" style='width:50%;' border="0" alt="Null">
  
-  * If you did not name the table in your database “offices”, change the “table_name” to your table name.
+  * If you did not name the tables in your database “Offices” and "Requests", change “requests_table_name” and "offices_table_name" to your table names.
   * If you did not name the container in your storage that contains the map “maps”, change the “container_name” to your container name.
 
 #### Step 5.
