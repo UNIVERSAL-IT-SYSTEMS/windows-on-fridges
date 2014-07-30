@@ -33,10 +33,10 @@ would deliver drinks to your office.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Web application&lt;/a&gt; that allows users to input a room they want a drink delivered to.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Pathfinding service&lt;/a&gt; that is hosted on azure.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-pathfinding&#34;&gt;Pathfinding service&lt;/a&gt; that is hosted on azure.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;REST server&lt;/a&gt; that interacts with the client.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-client&#34;&gt;Client application&lt;/a&gt; which interacts directly with the hardware.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://google.com&#34;&gt;Firmata&lt;/a&gt; the protocol running on the Galileo.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://firmata.org/wiki/Main_Page&#34;&gt;Firmata&lt;/a&gt; the protocol running on the Galileo.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;All together this allows a user to input the room they want a drink delivered to.
@@ -120,10 +120,11 @@ of this project&lt;/p&gt;
 &lt;p&gt;Sources for our project are located in multiple different repositories.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Web App&lt;/li&gt;
-&lt;li&gt;Nodebot Server&lt;/li&gt;
-&lt;li&gt;Nodebot Client&lt;/li&gt;
-&lt;li&gt;Documentation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-webapp&#34;&gt;Web App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-pathfinding&#34;&gt;Pathfinding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-nodebot-server&#34;&gt;Nodebot Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-nodebot-client&#34;&gt;Nodebot Client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/windows-on-fridges&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

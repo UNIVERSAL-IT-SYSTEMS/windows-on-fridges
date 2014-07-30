@@ -33,10 +33,10 @@ would deliver drinks to your office.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Web application&lt;/a&gt; that allows users to input a room they want a drink delivered to.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-webapp&#34;&gt;Pathfinding service&lt;/a&gt; that is hosted on azure.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-pathfinding&#34;&gt;Pathfinding service&lt;/a&gt; that is hosted on azure.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-server&#34;&gt;REST server&lt;/a&gt; that interacts with the client.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/ms-iot/wof-nodebot-client&#34;&gt;Client application&lt;/a&gt; which interacts directly with the hardware.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://google.com&#34;&gt;Firmata&lt;/a&gt; the protocol running on the Galileo.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://firmata.org/wiki/Main_Page&#34;&gt;Firmata&lt;/a&gt; the protocol running on the Galileo.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;All together this allows a user to input the room they want a drink delivered to.
@@ -106,7 +106,20 @@ Development Platform for Windows.&lt;/p&gt;
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
       <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
-      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Some ideas to build on this project:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create a bigger robot with a big base (e.g. electric wheel-chair base) and an actual mini-frige on top&lt;/li&gt;
+&lt;li&gt;Create the fridge that restocks itself&lt;/li&gt;
+&lt;li&gt;Attach a barcode scanner to the fridge to keep track of drinks available and inform user through the web-app&lt;/li&gt;
+&lt;li&gt;Make the robot to study the space and make a map itself&lt;/li&gt;
+&lt;li&gt;Make a convenient tool to draw maps and generate a simple SVG code.&lt;/li&gt;
+&lt;li&gt;Attach Cortana to the robot to enable voice communication&lt;/li&gt;
+&lt;li&gt;Use Kinect for obstacle detection&lt;/li&gt;
+&lt;li&gt;Use wheel encoders for more precise distance recognition&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -152,7 +165,7 @@ This is the parts list for the robot that we built.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://windowsondevices.com&#34;&gt;Galileo Board&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Motor-Shield-V20-p-1377.html?cPath=91_92&#34;&gt;Motor Shield&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://makeblocks.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://makeblock.cc&#34;&gt;Makeblock Robotics Kit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.amazon.com/NETGEAR-WNCE2001-Universal-Internet-Adapter/dp/B007CO5DZ4/ref=sr_sp-btf_title_1_8?ie=UTF8&amp;amp;qid=1406065590&amp;amp;sr=8-8&amp;amp;keywords=wifi+adapter+netgear&#34;&gt;Wireless Adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Mophie-Powerstation-4000mAh-External-BlackBerry/dp/B005OW4BFE/ref=sr_sp-atf_title_1_1?ie=UTF8&amp;amp;qid=1406065626&amp;amp;sr=8-1&amp;amp;keywords=mophie+battery+pack&#34;&gt;Galileo Battery&lt;/a&gt;
 
@@ -221,10 +234,11 @@ of this project&lt;/p&gt;
 &lt;p&gt;Sources for our project are located in multiple different repositories.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Web App&lt;/li&gt;
-&lt;li&gt;Nodebot Server&lt;/li&gt;
-&lt;li&gt;Nodebot Client&lt;/li&gt;
-&lt;li&gt;Documentation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-webapp&#34;&gt;Web App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-pathfinding&#34;&gt;Pathfinding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-nodebot-server&#34;&gt;Nodebot Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/wof-nodebot-client&#34;&gt;Nodebot Client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ms-iot/windows-on-fridges&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -451,7 +465,7 @@ only connect over LAN.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/path/to/galileo/firmata
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/arduino
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Open the Visual Studio project.&lt;/p&gt;&lt;/li&gt;

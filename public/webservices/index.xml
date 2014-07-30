@@ -352,9 +352,9 @@ Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fr
 &lt;li&gt;Use the line tool to create little strokes crossing the paths at the places you want robot to be able to stop at. To make your web-app aware of the available stops, after creating each of the strokes left-click on it and choose data -&amp;gt; define shape data. In the pop-up input &amp;ldquo;officeNumber&amp;rdquo; as a title and the actual room number as value. Save. To check that the officeNumber has actually been set up or to change the officeNumber you can always use the pointer tool to select the stroke and view the shape data.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/5.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/5.jpg&#34; style=&#39;width:60%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/6.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/6.JPG&#34; style=&#39;width:60%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;toc_4&#34;&gt;Step 4&lt;/h4&gt;
 
@@ -362,7 +362,7 @@ Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fr
 &lt;li&gt;With the current implementation the robot stops in the hallways where you placed the crossing points. But you don&amp;rsquo;t want the robot to sit in a hallway all the time. This way, you need a little hub for it to start from amd come back to. To do that draw a path leading inside the room you want the robot to be located. Inside the room create a crossing point by drawing another stroke and setting its &amp;ldquo;officeNumber&amp;rdquo; value to 0.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/65.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/map/65.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;toc_5&#34;&gt;Step 5&lt;/h4&gt;
 
@@ -401,7 +401,7 @@ Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fr
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/1.JPG&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/1.JPG&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/2.jpg&#34; style=&#39;width:90%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 </description>
@@ -501,7 +501,7 @@ Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fr
 &lt;li&gt;Replace [your nodebot host] with the host name for your nodebot app hosted on Azure. It will look like “something.azurewebsites.net”.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/8.jpg&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/cloudServices/8.jpg&#34; style=&#39;width:50%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;If you did not name the table in your database “offices”, change the “table_name” to your table name.&lt;/li&gt;
@@ -569,7 +569,7 @@ Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fr
 &lt;li&gt;Right click on the project name in the solution explorer (found on the right hand side). Select Add-&amp;gt;New Folder as shown in the picture. Do this twice, naming one &amp;ldquo;tests&amp;rdquo; and the other &amp;ldquo;classes&amp;rdquo;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-folder.png&#34; style=&#39;width:100%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/windows-on-fridges/img/creating-test-project/add-folder.png&#34; style=&#39;width:70%;&#39; border=&#34;0&#34; alt=&#34;Null&#34;&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Once you have downloaded the files, copy the files from &amp;ldquo;classes&amp;rdquo; folder that you got from GitHub, except WorkerRole.cs. Right click on the newly created classes file. Select &amp;ldquo;paste&amp;rdquo;. Do the same with the tests folder, by copying all the files from github&amp;rsquo;s test folder and clicking paste.&lt;/li&gt;

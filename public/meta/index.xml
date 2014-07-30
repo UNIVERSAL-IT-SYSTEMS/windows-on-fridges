@@ -15,7 +15,20 @@
       <pubDate>Mon, 01 Jul 2013 00:00:00 UTC</pubDate>
       
       <guid>http://ms-iot.github.io/windows-on-fridges/meta/roadmap</guid>
-      <description>&lt;p&gt;Some ideas to build on this project&lt;/p&gt;
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Some ideas to build on this project:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create a bigger robot with a big base (e.g. electric wheel-chair base) and an actual mini-frige on top&lt;/li&gt;
+&lt;li&gt;Create the fridge that restocks itself&lt;/li&gt;
+&lt;li&gt;Attach a barcode scanner to the fridge to keep track of drinks available and inform user through the web-app&lt;/li&gt;
+&lt;li&gt;Make the robot to study the space and make a map itself&lt;/li&gt;
+&lt;li&gt;Make a convenient tool to draw maps and generate a simple SVG code.&lt;/li&gt;
+&lt;li&gt;Attach Cortana to the robot to enable voice communication&lt;/li&gt;
+&lt;li&gt;Use Kinect for obstacle detection&lt;/li&gt;
+&lt;li&gt;Use wheel encoders for more precise distance recognition&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
