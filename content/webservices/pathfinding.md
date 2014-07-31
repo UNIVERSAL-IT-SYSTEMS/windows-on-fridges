@@ -15,7 +15,7 @@ weight: 90
 
 ## Path Finding
 
-Pathfinding is a process that happens on the cloud from the moment a user requests a dink to his room to the moment when robot gets the directions how to get there. To make it fairly simple, we used the map of the space to implement indoor navigation. The map is used to create a special scheme of the space in SVG format. Than we convert this scheme from SVG to graph structure, where every room becomes a node and every path becomes an edge. Than we use greedy search to find the shortest path between two nodes (rooms). The resulting path is translated into JSON array of instructions for the robot. They include the angle to turn and the distance to go in this direction.
+Pathfinding is a process that happens on the cloud from the moment a user requests a dink to his room to the moment when robot gets the directions how to get there. To make it fairly simple, we used the map of the space to implement indoor navigation. The map is used to create a special scheme of the space in SVG format. Than we convert this scheme from SVG to graph structure, where every room becomes a node and every path becomes an edge. Than we use greedy search to find the shortest path between two nodes (rooms). The resulting path is translated into JSON array of instructions for the robot. They include the angle to turn and the distance to go in this direction. You can find out how to create an SVG map [here](http://ms-iot.github.io/windows-on-fridges/webservices/map/).
 
 * To access the source files clone the git repository at https://github.com/ms-iot/wof-pathfinding.git 
 
