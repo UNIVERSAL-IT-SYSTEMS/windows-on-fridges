@@ -55,9 +55,9 @@ Prepare your database to send you the feedback from the app. We will use [SendGr
 
 #### Step 3.
 
-* Open “page.js” from the files you got from Git in any editor. At the very top of the page replace “[your address]” with the address of your mobile service, and "[your key]" with the application key to your mobile service.
+* Open “page.js” from the files you got from Git in any editor. At the very top of the page replace “yourservice.azure-mobile.net” with the address of your mobile service, and "your key" with the application key to your mobile service.
 
-<img src="/windows-on-fridges/img/app/1.jpg" style='width:100%;' border="0" alt="Null">
+<img src="/windows-on-fridges/img/app/13.jpg" style='width:90%;' border="0" alt="Null">
  
   * HINT: To find your key navigate to your mobile services in Azure Management Portal and press “Manage keys” at the bottom. Copy the application key from the pop-up.
 
