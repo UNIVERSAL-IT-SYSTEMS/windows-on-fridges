@@ -123,14 +123,14 @@ Development Platform for Windows.&lt;/p&gt;
 &lt;h2 id=&#34;toc_0&#34;&gt;Some ideas to build on this project:&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Create a bigger robot with a big base (e.g. electric wheel-chair base) and an actual mini-frige on top&lt;/li&gt;
-&lt;li&gt;Create the fridge that restocks itself&lt;/li&gt;
-&lt;li&gt;Attach a barcode scanner to the fridge to keep track of drinks available and inform user through the web-app&lt;/li&gt;
-&lt;li&gt;Make the robot to study the space and make a map itself&lt;/li&gt;
+&lt;li&gt;Create a bigger robot with a big base (e.g. electric wheel-chair base) and an actual mini-frige on top.&lt;/li&gt;
+&lt;li&gt;Create the fridge that restocks itself.&lt;/li&gt;
+&lt;li&gt;Attach a barcode scanner to the fridge to keep track of drinks available and inform user through the web-app.&lt;/li&gt;
+&lt;li&gt;Make the robot to study the space and make a map itself.&lt;/li&gt;
 &lt;li&gt;Make a convenient tool to draw maps and generate a simple SVG code.&lt;/li&gt;
-&lt;li&gt;Attach Cortana to the robot to enable voice communication&lt;/li&gt;
-&lt;li&gt;Use Kinect for obstacle detection&lt;/li&gt;
-&lt;li&gt;Use wheel encoders for more precise distance recognition&lt;/li&gt;
+&lt;li&gt;Attach Cortana to the robot to enable voice communication.&lt;/li&gt;
+&lt;li&gt;Use Kinect for obstacle detection.&lt;/li&gt;
+&lt;li&gt;Use wheel encoders for more precise distance recognition.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -438,6 +438,44 @@ only connect over LAN.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Firmata</title>
+      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is built for robotics.&lt;/p&gt;
+
+&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/ms-iot/arduino&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Running Firmata&lt;/h2&gt;
+
+&lt;p&gt;Firmata must be running on the board before the node client can interact with it.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/arduino
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Follow the &lt;a href=&#34;http://ms-iot.github.io/content/Firmata.htm&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once you have deployed you will be able to telnet into the Galileo and remotely start firmata.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;telnet mygalileo
+cd c:\test
+Firmata.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We can now control the Galileo using the Firmata protocol with any client library.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Web App</title>
       <link>http://ms-iot.github.io/windows-on-fridges/webservices/webapp</link>
       <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
@@ -580,52 +618,6 @@ The submit feedback field is at the bottom of the page. The feedback is sent to 
 
 &lt;p&gt;Now your website is created!
 Note that if you haven’t &lt;a href=&#34;http://ms-iot.github.io/windows-on-fridges/webservices/map/&#34;&gt;uploaded the map of the space&lt;/a&gt; yet, your web app will accept any room numbers to enable testing. Once you upload the map, your map will only accept office numbers present on the map.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Firmata</title>
-      <link>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</link>
-      <pubDate>Tue, 01 Jul 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://ms-iot.github.io/windows-on-fridges/nodebot/firmata</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;Firmata&lt;/h2&gt;
-
-&lt;p&gt;Firmata is a protocol that allows you to use a client library to interact with microcontrollers and other hardware. We will be using Standard Firmata on the Galileo and controlling it with &lt;a href=&#34;https://github.com/rwaldron/johnny-five&#34;&gt;Johnny-Five&lt;/a&gt; a NodeJS client library that is build for robotics.&lt;/p&gt;
-
-&lt;p&gt;We are using a &lt;a href=&#34;http://github.com/ms-iot/arduino&#34;&gt;modified version&lt;/a&gt; of &lt;a href=&#34;http://github.com/firmata/arduino&#34;&gt;Firmata Arduino&lt;/a&gt; the headers have been altered to be compatible with the Galileo SDK.&lt;/p&gt;
-
-&lt;h2 id=&#34;toc_1&#34;&gt;Running Firmata&lt;/h2&gt;
-
-&lt;p&gt;Firmata must be running on the board before the node client can interact with it.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Clone the Galileo Firmata Repository&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/ms-iot/arduino
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Open the Visual Studio project.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Configure the remote debugging settings.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Refer to the &lt;a href=&#34;http://ms-iot.github.io/content&#34;&gt;Galileo SDK documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Deploy the project to the Galileo.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Once you have deployed you will be able to telnet into the Galileo and remotely start firmata&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;telnet mygalileo
-cd c:\test
-Firmata.exe
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;We can now control the Galileo using the Firmata protocol with any client library.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
