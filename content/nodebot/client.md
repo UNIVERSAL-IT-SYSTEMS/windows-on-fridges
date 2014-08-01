@@ -19,16 +19,16 @@ _Make sure you have [NodeJS](http://nodejs.org) and [Python](http://python.org) 
 
 Johnny-Five is the client library we will be using to interact with Firmata on the Galileo. Johnny-Five requires [SerialPort](https://github.com/voodootikigod/node-serialport) which is built with Python.
 
-  * To get started clone the [wof-nodebot-client](https://github.com/ms-iot/wof-nodebot) repo.
+  * To get started clone the [wof-nodebot-client](https://github.com/ms-iot/wof-nodebot-client) repo.
 
         git clone https://github.com/ms-iot/wof-nodebot
 
   * Install Node dependencies from the packages.json file.
 
-        cd wof-nodebot
+        cd wof-nodebot-client
         npm install
 
-  * Comment out line 485, there are some issues with a logging dependency
+  * In wof-nodebot-client\node_modules\johnny-five\lib\board.js Comment out line 502, there are some issues with a logging dependency
 
         //message[color];
 
