@@ -64,16 +64,7 @@ We will now connect the client to the socket server that can run locally or on A
         var net = require("net");
 
         var socket = net.createConnection(27015, galileoIP); 
-        console.log('Socket created.');
-        this.socket.on('data', function (data) {
-          // Log the response from the HTTP server.
-          console.log('RESPONSE: ' + data);
-        }).on('connect', function () {
-          // Manually write an HTTP request.
-          console.log("connected");
-        }).on('end', function () {
-          console.log('DONE');
-        });
+    
 
   * Then we can create a Johnny-Five board object with this socket as the port.
     
