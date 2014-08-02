@@ -54,7 +54,7 @@ Johnny-Five is the client library we will be using to interact with Firmata on t
 At this point we should have a working robot that you can control from the command line.
 We will now connect the client to the socket server that can run locally or on Azure.
 
-## Connecting to Firmata
+## Connecting to Firmata in your own Application
 
   Firmata is normally controlled over serial however, the Galileo does not have a proper serial connection to the computer.
   We instead use [Network Serial](https://github.com/ms-iot/galileo-sdk/blob/develop/source/NetworkSerial.cpp) for serial communication.
