@@ -38,5 +38,5 @@ with the hardware.
 
 ## Next Steps
 
- * [Quick start](/overview/quickstart)
+ * [Quick start](/overview/quickstart.htm)
  * [Star us on Github](http://github.com/ms-iot/windows-on-fridges)
